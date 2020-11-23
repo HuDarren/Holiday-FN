@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import UserWishListA from "./user-wishlistA";
 
 function UserWishList() {
   const [state, setState] = useState({
@@ -10,35 +11,55 @@ function UserWishList() {
       wishList1: {
         id: "wishList1",
         title: "Christmas",
-        list: ["item1", "item2"],
+        listIds: ["item1", "item2"],
       },
       wishList2: {
         id: "wishList2",
         title: "Birthday",
-        list: ["item1", "item2"],
+        listIds: ["item1", "item2"],
       },
     },
     wishListOrder: ["wishList1", "wishList2"],
   });
 
-  const table = {};
-
-  function list() {
-    const wishListOrder = state.wishListOrder;
-    const wishListTitle = state.wishList;
-    for (let i = 0; i < wishListOrder.length; i++) {
-      table[wishListTitle[wishListOrder[i]].title] = [
-        wishListTitle[wishListOrder[i]].list,
-      ];
-    }
-    return table;
-  }
-
-  list(state);
-
-  console.log("console", table);
-
-  return <div>hello</div>;
+  return (
+    <div>
+      {state.wishListOrder.map((wishListId) => {
+        const wList = state.wishList[wishListId];
+        const list = wList.listIds.map(function (listId) {
+          return state.items[listId];
+        });
+        return (
+          <UserWishListA
+            key={wishListId}
+            state={state}
+            wList={wList}
+            list={list}
+          />
+        );
+      })}
+    </div>
+  );
 }
 
 export default UserWishList;
+
+//   const table = {};
+
+//   function list() {
+//     const wishListOrder = state.wishListOrder;
+//     const wishListTitle = state.wishList;
+//     for (let i = 0; i < wishListOrder.length; i++) {
+//       let title = wishListTitle[wishListOrder[i]].title;
+//       table[title] = [];
+//       let items = wishListTitle[wishListOrder[i]].list;
+//       for (let j = 0; j < items.length; j++) {
+//         table[title].push(state.items[items[j]].name);
+//       }
+//     }
+//     return table;
+//   }
+
+//     list(state);
+
+//   console.log("console", table);
