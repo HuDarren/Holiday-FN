@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { withRouter, Route, Switch } from "react-router-dom";
 import PropTypes from "prop-types";
 import { Login, Signup, UserHome, LandingHome } from "./components";
+import UserProfileForm from "./components/UserPage/user-profileForm";
 import { me } from "./store";
 
 class Routes extends Component {
@@ -18,6 +19,7 @@ class Routes extends Component {
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/username" component={UserHome} />
+        <Route path="/profileform" component={UserProfileForm} />
 
         {isLoggedIn && (
           <Switch>

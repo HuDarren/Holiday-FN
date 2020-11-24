@@ -6,8 +6,8 @@ import UserWishListForm from "./user-wishlistForm";
 function UserHome() {
   return (
     <div>
-      <UserWishListForm />
       <UserProfile />
+      <UserWishListForm />
       <UserWishList />
     </div>
   );

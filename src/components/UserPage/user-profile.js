@@ -3,7 +3,9 @@ import React from "react";
 function UserProfile() {
   return (
     <div>
-      <div>Welcome!</div>
+      <div>Picture</div>
+      <div>Name</div>
+      <div>Username</div>
     </div>
   );
 }
