@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import history from "../history";
 
@@ -71,6 +70,7 @@ export const updateUserThunk = (userId, info) => async (dispatch) => {
 /**
  * REDUCER
  */
+// eslint-disable-next-line import/no-anonymous-default-export
 export default function (state = defaultUser, action) {
   switch (action.type) {
     case GET_USER:
