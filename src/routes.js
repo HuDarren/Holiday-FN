@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter, Route, Switch } from "react-router-dom";
 import PropTypes from "prop-types";
-// import { Login, Signup, UserHome, LandingHome } from "./components";
-import UserProfileForm from "./components/UserPage/user-profileForm";
-import { Login, Signup } from "./components/LoginPage/auth-form";
-import UserHome from "./components/UserPage/user-home";
-import LandingHome from "./components/LandingPage/landing-home";
+import {
+  Login,
+  Signup,
+  UserHome,
+  LandingHome,
+  UserProfileForm,
+} from "./components/index";
 import { me } from "./store";
 
 class Routes extends Component {
@@ -21,8 +23,8 @@ class Routes extends Component {
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
-        {/* <Route path="/username" component={withRouter(UserHome)} /> */}
-        {/* <Route path="/profileform" component={withRouter(UserProfileForm)} /> */}
+        <Route path="/username" component={withRouter(UserHome)} />
+        <Route path="/profileform" component={withRouter(UserProfileForm)} />
         <Route path="/home" component={LandingHome} />
 
         {isLoggedIn && (
