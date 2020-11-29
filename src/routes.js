@@ -23,7 +23,7 @@ class Routes extends Component {
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
-        <Route path="/username" component={withRouter(UserHome)} />
+
         <Route path="/profileform" component={withRouter(UserProfileForm)} />
         <Route path="/home" component={LandingHome} />
 
@@ -31,6 +31,7 @@ class Routes extends Component {
           <Switch>
             {/* <Route path="/:username" component={EditProfile} /> */}
             <Route path="/home" component={LandingHome} />
+            <Route path="/userprofile" component={withRouter(UserHome)} />
           </Switch>
         )}
         <Route component={LandingHome} />

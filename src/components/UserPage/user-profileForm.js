@@ -1,25 +1,29 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { updateUserThunk } from "../../store";
 
-function UserProfileForm() {
+function UserProfileForm(props) {
   const [state, setState] = useState({
     name: "",
-    username: "",
     email: "",
     password: "",
   });
 
+  const { updateUser } = props;
+
   function handleSubmit(event) {
     event.preventDefault();
+    const { user } = props;
+    updateUser(user.id, state);
     setState({
       name: "",
-      username: "",
       email: "",
       password: "",
     });
   }
 
   function handleChange(event) {
-    setState(event.target.value);
+    setState({ ...state, [event.target.name]: event.target.value });
   }
 
   return (
@@ -35,7 +39,7 @@ function UserProfileForm() {
             onChange={handleChange}
           ></input>
         </div>
-        <div>
+        {/* <div>
           <label>Username</label>
           <input
             name="username"
@@ -44,7 +48,7 @@ function UserProfileForm() {
             placeholder="Change Username"
             onChange={handleChange}
           ></input>
-        </div>
+        </div> */}
         <div>
           <label>Email</label>
           <input
@@ -71,4 +75,12 @@ function UserProfileForm() {
   );
 }
 
-export default UserProfileForm;
+const mapState = (state) => ({
+  user: state.user,
+});
+
+const mapDispatch = (dispatch) => ({
+  updateUser: (userId, info) => dispatch(updateUserThunk(userId, info)),
+});
+
+export default connect(mapState, mapDispatch)(UserProfileForm);

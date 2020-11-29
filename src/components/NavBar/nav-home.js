@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -12,13 +13,15 @@ const NavHome = ({ handleClick, isLoggedIn }) => (
         <div>
           {/* The navbar will show these links after you log in */}
           <Link to="/home">Home</Link>
-          <a href="/home" onClick={handleClick}>
+          <a href="#" onClick={handleClick}>
             Logout
           </a>
+          <Link to="/userprofile">Profile</Link>
         </div>
       ) : (
         <div>
           {/* The navbar will show these links before you log in */}
+          <Link to="/home">Home</Link>
           <Link to="/login">Login</Link>
 
           <Link to="/signup">Sign Up</Link>
