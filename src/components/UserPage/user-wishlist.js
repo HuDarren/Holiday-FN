@@ -1,8 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import UserWishListA from "./user-wishlistA";
+import { fetchItem } from "../../store/item";
+import { connect } from "react-redux";
+import axios from "axios";
 
-function UserWishList() {
+function UserWishList(props) {
   const [state, setState] = useState({
     items: {
       item1: { id: "item1", name: "ps5", description: "a gaming system" },
@@ -61,6 +65,36 @@ function UserWishList() {
     setState(newState);
   };
 
+  // const data = async () => {
+  //   try {
+  //     const res = await axios.get("/api/items/2");
+  //     // console.log(typeof res.data[0].data);
+  //     const newState = res.data[0].data;
+  //     console.log("newState", newState);
+  //     setState(newState);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  // data();
+
+  // console.log("state", state);
+
+  useEffect(() => {
+    props.fetchItem(2);
+  }, []);
+
+  // console.log("state", props.item, wishList: {}, wishListOrder: "");
+
+  // setState({
+  //   items: JSON.parse(props.item.items),
+  //   wishList: props.item.wishList,
+  //   wishListOrder: props.item.wishListOrder,
+  // });
+
+  console.log(state);
+
   return (
     <div>
       <DragDropContext onDragEnd={onDragEnd}>
@@ -81,24 +115,12 @@ function UserWishList() {
   );
 }
 
-export default UserWishList;
+const mapState = (state) => ({
+  item: state.item,
+});
 
-//   const table = {};
+const mapDispatch = (dispatch) => ({
+  fetchItem: (userId) => dispatch(fetchItem(userId)),
+});
 
-//   function list() {
-//     const wishListOrder = state.wishListOrder;
-//     const wishListTitle = state.wishList;
-//     for (let i = 0; i < wishListOrder.length; i++) {
-//       let title = wishListTitle[wishListOrder[i]].title;
-//       table[title] = [];
-//       let items = wishListTitle[wishListOrder[i]].list;
-//       for (let j = 0; j < items.length; j++) {
-//         table[title].push(state.items[items[j]].name);
-//       }
-//     }
-//     return table;
-//   }
-
-//     list(state);
-
-//   console.log("console", table);
+export default connect(mapState, mapDispatch)(UserWishList);
