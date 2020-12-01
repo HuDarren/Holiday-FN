@@ -8,7 +8,7 @@ function WishListHome(props) {
       <div>{props.user.email}</div>
       <div>Count</div>
       <div>
-        <Link to="/wishListForm">Add To WishList</Link>
+        <Link to="/wishListView">Add To WishList</Link>
       </div>
     </div>
   );
@@ -19,4 +19,3 @@ const mapState = (state) => ({
 });
 
 export default connect(mapState)(WishListHome);
-

@@ -8,6 +8,8 @@ import {
   UserHome,
   LandingHome,
   UserProfileForm,
+  WishListForm,
+  WishListView,
 } from "./components/index";
 import { me } from "./store";
 
@@ -32,6 +34,8 @@ class Routes extends Component {
             {/* <Route path="/:username" component={EditProfile} /> */}
             <Route path="/home" component={LandingHome} />
             <Route path="/userprofile" component={withRouter(UserHome)} />
+            <Route path="/wishListForm" component={WishListForm} />
+            <Route path="/wishListView" component={WishListView} />
           </Switch>
         )}
         <Route component={LandingHome} />
