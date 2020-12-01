@@ -1,22 +1,14 @@
 import React from "react";
-import styled from "styled-components";
 import { connect } from "react-redux";
-
-const Container = styled.div`
-  border: 1px solid lightgrey;
-  padding: 50px;
-  margin-bottom: 20px;
-  margin-left: 100px;
-  margin-right: 100px;
-`;
+import "./user-z.css";
 
 function UserProfile(props) {
   return (
-    <Container>
-      <div>{props.user.name}</div>
-      <div>{props.user.email}</div>
-      <div>Username</div>
-    </Container>
+    <div className="user-container">
+      <div className="user-name">{props.user.name}</div>
+      <div className="user-name">{props.user.email}</div>
+      <div className="user-name">Username</div>
+    </div>
   );
 }
 
