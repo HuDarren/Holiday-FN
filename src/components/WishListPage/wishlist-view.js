@@ -1,75 +1,43 @@
-import React, { useState } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { fetchWishList } from "../../store/wishlist";
 import WishListViewB from "./wishlist-viewB";
+import { removeSingleWishListThunk } from "../../store/wishlist";
 
-class WishListView extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      list: "",
-    };
-  }
-  componentDidMount() {
-    this.props.fetchWishList(14);
-  }
 
-  render() {
-    console.log(this.props.wishList[0]);
-    return (
+function WishListView(props) {
+  React.useEffect(() => {
+    props.fetchWishList(props.user.id);
+  }, []);
+
+  console.log("state", props.wishList);
+  return (
+    <div>
+      <div> List of all WishList</div>
       <div>
-        <div>Placeholder</div>
-        {/* <div>{this.props.wishList[0].name}</div> */}
+        {props.wishList.length ? (
+          <div>
+            {props.wishList.map((item) => {
+              const name = item.name;
+              const description = item.description;
+              const key = item.id;
+              return (
+                <WishListViewB
+                  key={item.id}
+                  name={name}
+                  description={description}
+                  number={key}
+                  removeWishList={props.deleteWishList}
+                />
+              );
+            })}
+          </div>
+        ) : null}
       </div>
-    );
-  }
+      <div>button to add new list</div>
+    </div>
+  );
 }
-
-// function WishListView(props) {
-//   //   const [state, setState] = useState({});
-
-//   React.useEffect(() => {
-//     const list = props.fetchWishList(props.user.id);
-//     return () => {
-//       list();
-//     };
-//     // setState(props.wishList);
-
-//     // console.log("tissssnow", state);
-//   });
-
-//   //   console.log("sthatee", state);
-
-//   function searchResults() {
-//     const wishList = props.wishList;
-//     if (wishList) {
-//       return (
-//         <div>
-//           {wishList.map((result) => {
-//             return <div>{result.name}</div>;
-//           })}
-//         </div>
-//       );
-//     }
-//   }
-
-//   console.log("state", props.wishList);
-//   return (
-//     <div>
-//       <div> List of all WishList</div>
-//       {/* <div>
-//         {props.wishList.map((item) => {
-//           const name = item.name;
-//           const detail = item.detail;
-//           return <WishListViewB name={name} detail={detail} />;
-//         })}
-//       </div> */}
-//       {/* <div>{props.wishList[0].name}</div> */}
-//       <div>button to add new list</div>
-//       {/* <div>{searchResults()}</div> */}
-//     </div>
-//   );
-// }
 
 const mapState = (state) => ({
   wishList: state.wishList,
@@ -78,6 +46,8 @@ const mapState = (state) => ({
 
 const mapDispatch = (dispatch) => ({
   fetchWishList: (userId) => dispatch(fetchWishList(userId)),
+  deleteWishList: (wishListId) =>
+    dispatch(removeSingleWishListThunk(wishListId)),
 });
 
 export default connect(mapState, mapDispatch)(WishListView);
