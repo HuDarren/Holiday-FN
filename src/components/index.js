@@ -4,3 +4,4 @@ export { Login, Signup } from "./LoginPage/auth-form";
 export { default as UserProfileForm } from "./UserPage/user-profileForm";
 export { default as WishListForm } from "./WishListPage/wishlist-form";
 export { default as WishListView } from "./WishListPage/wishlist-view";
+export { default as WishItemHome } from "./WishItemPage/wishItem-home";

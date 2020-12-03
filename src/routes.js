@@ -10,6 +10,7 @@ import {
   UserProfileForm,
   WishListForm,
   WishListView,
+  WishItemHome,
 } from "./components/index";
 import { me } from "./store";
 
@@ -33,9 +34,10 @@ class Routes extends Component {
           <Switch>
             {/* <Route path="/:username" component={EditProfile} /> */}
             <Route path="/home" component={LandingHome} />
-            <Route path="/userprofile" component={withRouter(UserHome)} />
-            <Route path="/wishListForm" component={WishListForm} />
-            <Route path="/wishListView" component={WishListView} />
+            <Route exact path="/userprofile" component={withRouter(UserHome)} />
+            <Route exact path="/wishListForm" component={WishListForm} />
+            <Route exact path="/wishListView" component={WishListView} />
+            <Route exact path="/wishList/1" component={WishItemHome} />
           </Switch>
         )}
         <Route component={LandingHome} />

@@ -3,7 +3,7 @@ import axios from "axios";
 
 const GET_ITEM = "GET_ITEM";
 
-const defaultItem = {};
+const defaultItem = [];
 
 const getItem = (data) => ({
   type: GET_ITEM,
@@ -14,12 +14,23 @@ export const fetchItem = (userid) => {
   return async (dispatch) => {
     try {
       const res = await axios.get(`/api/items/${userid}`);
-      dispatch(getItem(res.data[0].data));
+      dispatch(getItem(res.data));
     } catch (error) {
       console.log(error);
     }
   };
 };
+
+// export const fetchItem = (userid) => {
+//   return async (dispatch) => {
+//     try {
+//       const res = await axios.get(`/api/items/${userid}`);
+//       dispatch(getItem(res.data[0].data));
+//     } catch (error) {
+//       console.log(error);
+//     }
+//   };
+// };
 
 export default function (state = defaultItem, action) {
   switch (action.type) {
@@ -29,6 +40,3 @@ export default function (state = defaultItem, action) {
       return state;
   }
 }
-
-
-

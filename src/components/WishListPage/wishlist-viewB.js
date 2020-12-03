@@ -1,4 +1,5 @@
 import React from "react";
+import WishItemHome from "../WishItemPage/wishItem-home";
 
 function WishListViewB(props) {
   const name = props.name;
