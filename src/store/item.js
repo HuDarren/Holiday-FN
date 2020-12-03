@@ -3,6 +3,7 @@ import axios from "axios";
 
 const GET_ITEM = "GET_ITEM";
 const REMOVE_SINGLE_ITEM = "REMOVE_SINGLE_ITEM";
+const ADD_ITEM = "ADD_ITEM";
 
 const defaultItem = [];
 
@@ -14,6 +15,11 @@ const getItem = (data) => ({
 const removeSingleItem = (itemId) => ({
   type: REMOVE_SINGLE_ITEM,
   itemId,
+});
+
+const addItem = (item) => ({
+  type: ADD_ITEM,
+  item,
 });
 
 export const fetchItem = (userid) => {
@@ -38,16 +44,16 @@ export const removeSingleItemThunk = (itemId) => {
   };
 };
 
-// export const fetchItem = (userid) => {
-//   return async (dispatch) => {
-//     try {
-//       const res = await axios.get(`/api/items/${userid}`);
-//       dispatch(getItem(res.data[0].data));
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   };
-// };
+export const addItemThunk = (wishListId, info) => {
+  return async (dispatch) => {
+    try {
+      const res = await axios.post(`/api/items/${wishListId}`, info);
+      dispatch(addItem(res.data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
 
 export default function (state = defaultItem, action) {
   switch (action.type) {

@@ -11,6 +11,7 @@ import {
   WishListForm,
   WishListView,
   WishItemHome,
+  WishItemForm,
 } from "./components/index";
 import { me } from "./store";
 
@@ -38,6 +39,7 @@ class Routes extends Component {
             <Route exact path="/wishListForm" component={WishListForm} />
             <Route exact path="/wishListView" component={WishListView} />
             <Route exact path="/wishList/:id" component={WishItemHome} />
+            <Route exact path="/itemForm/:id" component={WishItemForm} />
           </Switch>
         )}
         <Route component={LandingHome} />

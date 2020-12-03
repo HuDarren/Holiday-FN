@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function WishItemView(props) {
   function refreshPage() {
@@ -10,12 +11,14 @@ function WishItemView(props) {
     refreshPage();
   }
 
+  
   return (
     <div>
       <div>{props.name}</div>
       <div>{props.description}</div>
       <div>{props.number}</div>
       <button onClick={() => Click()}>REMOVE</button>
+      <Link to={`/itemForm/${props.number}`}>ADD</Link>
     </div>
   );
 }
