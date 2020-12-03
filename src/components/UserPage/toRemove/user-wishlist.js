@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import UserWishListA from "./user-wishlistA";
-import { fetchItem } from "../../store/item";
+import { fetchItem } from "../../../store/item";
 import { connect } from "react-redux";
 import axios from "axios";
 
