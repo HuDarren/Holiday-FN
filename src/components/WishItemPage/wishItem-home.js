@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchItem } from "../../store/item";
 import { fetchWishList } from "../../store/wishlist";
+import WishItemView from "./wishItem-view";
+import { removeSingleItemThunk } from "../../store/item";
 
 function WishItemHome(props) {
   React.useEffect(() => {
@@ -15,9 +17,28 @@ function WishItemHome(props) {
   return (
     <div>
       <div>List of all items</div>
-      <div>{}</div>
-      <div>{}</div>
-      <div>{}</div>
+      <div>
+        {props.item.length ? (
+          <div>
+            {props.item.map((item) => {
+              const name = item.name;
+              const description = item.description;
+              const key = item.id;
+              const image = item.image;
+              return (
+                <WishItemView
+                  key={key}
+                  number={key}
+                  name={name}
+                  description={description}
+                  image={image}
+                  deleteItem={props.deleteItem}
+                />
+              );
+            })}
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 }
@@ -31,6 +52,7 @@ const mapState = (state) => ({
 const mapDispatch = (dispatch) => ({
   fetchItem: (id) => dispatch(fetchItem(id)),
   fetchWishList: (userId) => dispatch(fetchWishList(userId)),
+  deleteItem: (itemId) => dispatch(removeSingleItemThunk(itemId)),
 });
 
 export default connect(mapState, mapDispatch)(WishItemHome);

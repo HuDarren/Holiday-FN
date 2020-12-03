@@ -21,7 +21,7 @@ function WishListView(props) {
               const key = item.id;
               return (
                 <WishListViewB
-                  key={item.id}
+                  key={key}
                   name={name}
                   description={description}
                   number={key}
