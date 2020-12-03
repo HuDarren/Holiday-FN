@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { fetchWishList } from "../../store/wishlist";
 import WishListViewB from "./wishlist-viewB";
 import { removeSingleWishListThunk } from "../../store/wishlist";
-
+import { Link } from "react-router-dom";
 
 function WishListView(props) {
   React.useEffect(() => {
@@ -11,7 +11,7 @@ function WishListView(props) {
   }, []);
 
   return (
-    <div >
+    <div>
       <div> List of all WishList</div>
 
       <div>
@@ -36,6 +36,7 @@ function WishListView(props) {
       </div>
 
       <div>button to add new list</div>
+      <Link to="/wishListForm">ADD</Link>
     </div>
   );
 }

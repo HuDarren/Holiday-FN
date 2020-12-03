@@ -4,6 +4,7 @@ import axios from "axios";
 const GET_WISHLIST = "GET_WISHLIST";
 const REMOVE_SINGLE_WISHLIST = "REMOVE_SINGLE_WISHLIST";
 const UPDATE_WISHLIST = "UPDATE_WISHLIST";
+const ADD_WISHLIST = "ADD_WISHLIST";
 
 const defaultState = [];
 
@@ -22,11 +23,27 @@ const updateWishList = (wishList) => ({
   wishList,
 });
 
+const addWishList = (wishList) => ({
+  type: ADD_WISHLIST,
+  wishList,
+});
+
 export const fetchWishList = (userid) => {
   return async (dispatch) => {
     try {
       const res = await axios.get(`/api/wishlists/${userid}`);
       dispatch(getWishList(res.data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const addWishListThunk = (userid, info) => {
+  return async (dispatch) => {
+    try {
+      const res = await axios.post(`api/wishlists/${userid}`, info);
+      dispatch(addWishList(res.data));
     } catch (error) {
       console.log(error);
     }

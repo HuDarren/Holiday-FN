@@ -37,7 +37,7 @@ class Routes extends Component {
             <Route exact path="/userprofile" component={withRouter(UserHome)} />
             <Route exact path="/wishListForm" component={WishListForm} />
             <Route exact path="/wishListView" component={WishListView} />
-            <Route exact path="/wishList/1" component={WishItemHome} />
+            <Route exact path="/wishList/:id" component={WishItemHome} />
           </Switch>
         )}
         <Route component={LandingHome} />
