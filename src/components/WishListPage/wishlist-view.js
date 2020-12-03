@@ -4,14 +4,16 @@ import { fetchWishList } from "../../store/wishlist";
 import WishListViewB from "./wishlist-viewB";
 import { removeSingleWishListThunk } from "../../store/wishlist";
 
+
 function WishListView(props) {
   React.useEffect(() => {
     props.fetchWishList(props.user.id);
   }, []);
 
   return (
-    <div>
+    <div >
       <div> List of all WishList</div>
+
       <div>
         {props.wishList.length ? (
           <div>
@@ -32,6 +34,7 @@ function WishListView(props) {
           </div>
         ) : null}
       </div>
+
       <div>button to add new list</div>
     </div>
   );

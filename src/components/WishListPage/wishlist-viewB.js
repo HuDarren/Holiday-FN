@@ -1,5 +1,5 @@
 import React from "react";
-import WishItemHome from "../WishItemPage/wishItem-home";
+import { Link } from "react-router-dom";
 
 function WishListViewB(props) {
   const name = props.name;
@@ -18,10 +18,12 @@ function WishListViewB(props) {
 
   return (
     <div>
-      <div>{name}</div>
-      <div>{description}</div>
-      <button onClick={() => Click()}>REMOVE</button>
-      <button>EDIT</button>
+      <Link to={`/wishList/${props.number}`} className="WishListView-Container">
+        <div>{name}</div>
+        <div>{description}</div>
+        <button onClick={() => Click()}>REMOVE</button>
+        <button>EDIT</button>
+      </Link>
     </div>
   );
 }

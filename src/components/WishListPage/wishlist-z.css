@@ -54,3 +54,7 @@
   justify-content: center;
   flex: 1 1;
 }
+
+.WishListView-Container {
+  text-decoration: none; /* No underlines on the link */
+}
