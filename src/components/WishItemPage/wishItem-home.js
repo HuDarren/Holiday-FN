@@ -4,6 +4,7 @@ import { fetchItem } from "../../store/item";
 import { fetchWishList } from "../../store/wishlist";
 import WishItemView from "./wishItem-view";
 import { removeSingleItemThunk } from "../../store/item";
+import { Link } from "react-router-dom";
 
 function WishItemHome(props) {
   React.useEffect(() => {
@@ -13,6 +14,10 @@ function WishItemHome(props) {
     ];
     props.fetchItem(target);
   }, []);
+
+  const target = props.history.location.pathname.split("/")[
+    props.history.location.pathname.split("/").length - 1
+  ];
 
   return (
     <div>
@@ -39,6 +44,9 @@ function WishItemHome(props) {
           </div>
         ) : null}
       </div>
+      <button>
+        <Link to={`/itemForm/${target}`}>ADD</Link>
+      </button>
     </div>
   );
 }

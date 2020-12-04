@@ -11,14 +11,12 @@ function WishItemView(props) {
     refreshPage();
   }
 
-  
   return (
     <div>
       <div>{props.name}</div>
       <div>{props.description}</div>
-      <div>{props.number}</div>
       <button onClick={() => Click()}>REMOVE</button>
-      <Link to={`/itemForm/${props.number}`}>ADD</Link>
+      <button>Edit</button>
     </div>
   );
 }
