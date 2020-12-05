@@ -73,3 +73,13 @@
 .WishListView-Container {
   text-decoration: none; /* No underlines on the link */
 }
+
+.wishviewb-container {
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 2px 4px 12px 0 rgba(0, 0, 0, 0.1);
+}

@@ -6,6 +6,7 @@ function WishListViewB(props) {
   const description = props.description;
   const number = props.number;
   const removeWishList = props.removeWishList;
+  const image = props.image;
 
   function refreshPage() {
     window.location.reload(false);
@@ -17,8 +18,9 @@ function WishListViewB(props) {
   }
 
   return (
-    <div>
+    <div className="wishviewb-container">
       <Link to={`/wishList/${props.number}`} className="WishListView-Container">
+        <img alt="text" src={image}></img>
         <div>{name}</div>
         <div>{description}</div>
         <button onClick={() => Click()}>REMOVE</button>

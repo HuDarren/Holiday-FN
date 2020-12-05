@@ -21,10 +21,12 @@ function WishListView(props) {
               const name = item.name;
               const description = item.description;
               const key = item.id;
+              const image = item.image;
               return (
                 <WishListViewB
                   key={key}
                   name={name}
+                  image={image}
                   description={description}
                   number={key}
                   removeWishList={props.deleteWishList}
