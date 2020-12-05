@@ -28,13 +28,17 @@ class Routes extends Component {
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
 
-        <Route path="/profileform" component={withRouter(UserProfileForm)} />
-        <Route path="/home" component={LandingHome} />
+        {/* <Route path="/home" component={LandingHome} /> */}
 
         {isLoggedIn && (
           <Switch>
             {/* <Route path="/:username" component={EditProfile} /> */}
-            <Route path="/home" component={LandingHome} />
+
+            <Route
+              path="/profile"
+              component={withRouter(UserProfileForm)}
+            />
+            <Route path="/home" component={UserHome} />
             <Route exact path="/userprofile" component={withRouter(UserHome)} />
             <Route exact path="/wishListForm" component={WishListForm} />
             <Route exact path="/wishListView" component={WishListView} />

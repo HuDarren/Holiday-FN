@@ -5,9 +5,8 @@ import "./user-z.css";
 function UserProfile(props) {
   return (
     <div className="user-container">
-      <div className="user-name">{props.user.name}</div>
-      <div className="user-name">{props.user.email}</div>
-      <div className="user-name">Username</div>
+      <div className="user-name">Welcome, {props.user.name}</div>
+      {/* <div className="user-name">{props.user.email}</div> */}
     </div>
   );
 }

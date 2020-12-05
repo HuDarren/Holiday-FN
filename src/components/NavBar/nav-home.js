@@ -4,26 +4,37 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { logout } from "../../store";
+import "./nav-z.css";
 
 const NavHome = ({ handleClick, isLoggedIn }) => (
-  <div>
-    <h1>Merry Christmas</h1>
+  <div className="nav-container">
     <nav>
       {isLoggedIn ? (
-        <div>
-          {/* The navbar will show these links after you log in */}
-          <Link to="/home">Home</Link>
-          <a href="#" onClick={handleClick}>
-            Logout
-          </a>
-          <Link to="/userprofile">Profile</Link>
+        <div className="nav-container2">
+          <div className="nav-title">
+            <Link className="nav-title2" to="/home">
+              Holiday
+            </Link>
+          </div>
+          <div className="nav-log">
+            <a className="nav-log2" href="#" onClick={handleClick}>
+              Logout
+            </a>
+          </div>
+          <div className="nav-profile">
+            <Link className="nav-profile3" to="/profile">
+              <img
+                className="nav-profile2"
+                alt="img"
+                src="https://res.cloudinary.com/dsi0jbonx/image/upload/v1607114436/snowman_mtdwl8.png"
+              />
+            </Link>
+          </div>
         </div>
       ) : (
         <div>
-          {/* The navbar will show these links before you log in */}
-          <Link to="/home">Home</Link>
+          <Link to="/home">Holiday</Link>
           <Link to="/login">Login</Link>
-
           <Link to="/signup">Sign Up</Link>
         </div>
       )}
