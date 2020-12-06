@@ -70,7 +70,7 @@
   color: white;
 }
 
-.WishListView-Container {
+.wishview-Container {
   text-decoration: none; /* No underlines on the link */
 }
 
@@ -82,4 +82,9 @@
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 2px 4px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+.wishviewb-image {
+  height: 40%;
+  width: 40%;
 }

@@ -8,7 +8,6 @@ function WishListHome(props) {
     <div className="container">
       <div className="container1">
         <div className="title">WishList</div>
-        {/* <div>{props.user.email}</div> */}
         <div>Count</div>
         <div className="button-container">
           <div className="button">

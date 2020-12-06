@@ -12,7 +12,7 @@ function WishListView(props) {
 
   return (
     <div>
-      <div> List of all WishList</div>
+      <div> Your Wishlists </div>
 
       <div>
         {props.wishList.length ? (
