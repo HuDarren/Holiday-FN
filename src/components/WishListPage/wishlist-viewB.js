@@ -19,13 +19,19 @@ function WishListViewB(props) {
 
   return (
     <div className="wishviewb-container">
-      <Link to={`/wishList/${props.number}`} className="wishview-Container">
-        <img className="wishviewb-image" alt="text" src={image}></img>
-        <div>{name}</div>
-        <div>{description}</div>
-        <button onClick={() => Click()}>REMOVE</button>
-        <button>EDIT</button>
-      </Link>
+      <div className="wishviewb2-container">
+        <Link to={`/wishList/${props.number}`} className="wishviewb3-container">
+          <img className="wishviewb-image" alt="text" src={image}></img>
+          <div className="wishviewb-content">
+            <div className="wishviewb-name">{name}</div>
+            <div className="wishviewb-description">{description}</div>
+          </div>
+          <div className="wishviewb-content2">
+            <button onClick={() => Click()}>REMOVE</button>
+            <button>EDIT</button>
+          </div>
+        </Link>
+      </div>
     </div>
   );
 }

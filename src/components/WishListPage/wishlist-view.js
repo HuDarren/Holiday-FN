@@ -13,30 +13,30 @@ function WishListView(props) {
   return (
     <div>
       <div> Your Wishlists </div>
-
-      <div>
-        {props.wishList.length ? (
-          <div>
-            {props.wishList.map((item) => {
-              const name = item.name;
-              const description = item.description;
-              const key = item.id;
-              const image = item.image;
-              return (
-                <WishListViewB
-                  key={key}
-                  name={name}
-                  image={image}
-                  description={description}
-                  number={key}
-                  removeWishList={props.deleteWishList}
-                />
-              );
-            })}
-          </div>
-        ) : null}
+      <div className="wishview-container">
+        <div className="wishview2-container">
+          {props.wishList.length ? (
+            <div className="wishview3-container">
+              {props.wishList.map((item) => {
+                const name = item.name;
+                const description = item.description;
+                const key = item.id;
+                const image = item.image;
+                return (
+                  <WishListViewB
+                    key={key}
+                    name={name}
+                    image={image}
+                    description={description}
+                    number={key}
+                    removeWishList={props.deleteWishList}
+                  />
+                );
+              })}
+            </div>
+          ) : null}
+        </div>
       </div>
-
       <div>button to add new list</div>
       <Link to="/wishListForm">ADD</Link>
     </div>
