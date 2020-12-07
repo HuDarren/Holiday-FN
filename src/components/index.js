@@ -9,3 +9,4 @@ export { default as WishItemForm } from './WishItemPage/wishItem-form';
 export { default as FriendView } from './FriendPage/friend-view';
 export { default as GroupHome } from './GroupPage/group-home';
 export { default as GroupView } from './GroupPage/group-view';
+export { default as GroupForm } from './GroupPage/group-form';

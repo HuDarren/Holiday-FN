@@ -2,10 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchProfile } from '../../store/index';
+import GroupViewB from '../GroupPage/group-viewb';
 
 function GroupView(props) {
   React.useEffect(() => {
-      props.fetchProfile(props.user.id)
+    props.fetchProfile(props.user.id);
     return () => {};
   }, []);
 
@@ -14,13 +15,37 @@ function GroupView(props) {
   return (
     <div>
       <div>List of ALL Groups</div>
-      <div></div>
+      <div>
+        {props.profile.length ? (
+          <div>
+            {props.profile.map((group) => {
+              const name = group.name;
+              const description = group.description;
+              const key = group.id;
+              const image = group.groupImg;
+              return (
+                <GroupViewB
+                  key={key}
+                  name={name}
+                  image={image}
+                  description={description}
+                  number={key}
+                />
+              );
+            })}
+          </div>
+        ) : null}
+      </div>
+      <button>
+        <Link to="/groupForm">Add Group</Link>
+      </button>
     </div>
   );
 }
 
 const mapState = (state) => ({
   user: state.user,
+  profile: state.profile,
 });
 
 const mapDispatch = (dispatch) => ({

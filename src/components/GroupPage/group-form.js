@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
-import {AVATAR_LIST} from './image.config'
+import { AVATAR_LIST } from './image.config';
 
 const FormContainer = styled.div`
   align-self: center;
@@ -13,7 +13,7 @@ const FormContainer = styled.div`
   border-radius: 8px;
   background-color: white;
   margin: 2%;
-`
+`;
 
 const Card = styled.div`
   align-content: center;
@@ -38,7 +38,7 @@ const FormTitle = styled.p`
   margin: 10px 0;
 `;
 
- const Form = styled.form`
+const Form = styled.form`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -71,16 +71,17 @@ const AvatarSectionContainer = styled.div`
   box-sizing: border-box;
   border-radius: 8px;
   box-shadow: none;
-`
+`;
 const Avatar = styled.img`
   width: 50px;
   height: 50px;
   border-radius: 10px;
   margin: 15px;
-  border: ${({value, avatarSelected}) => (value === avatarSelected ? '5px solid #99deb3' : 'none' )};
-`
+  border: ${({ value, avatarSelected }) =>
+    value === avatarSelected ? '5px solid #99deb3' : 'none'};
+`;
 
- const FormInput = styled.input`
+const FormInput = styled.input`
   height: 58px;
   width: 100%;
   padding-left: 20px;
@@ -100,7 +101,7 @@ const Avatar = styled.img`
   color: #868686};
   text-align: left;
 `;
- const FormTextBox = styled.textarea`
+const FormTextBox = styled.textarea`
   height: 58px;
   width: 100%;
   padding-left: 20px;
@@ -135,11 +136,11 @@ const SubmitButton = styled.button`
   height: 58px;
   width: 20%;
   outline: none;
-  background-color: rgba(0, 0, 0, 0.8)
+  background-color: rgba(0, 0, 0, 0.8);
 `;
 
 const CloseFormButton = styled.button`
-  border: 1px solid #D8A29A;
+  border: 1px solid #d8a29a;
   background-color: white;
   border-radius: 8px;
   cursor: pointer;
@@ -149,12 +150,12 @@ const CloseFormButton = styled.button`
 
 const CloseFormButtonContainer = styled.div`
   width: 80%;
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-self: center;
   margin-top: 3%;
-`
+`;
 
 const ButtonText = styled.p`
   font-family: Georgia;
@@ -173,9 +174,8 @@ const CloseButtonText = styled.p`
   font-size: 16px;
   line-height: 110%;
   letter-spacing: 0.02em;
-  color: rgba(0, 0, 0, 0.8)
-`
-
+  color: rgba(0, 0, 0, 0.8);
+`;
 
 class GroupForm extends Component {
 
@@ -265,6 +265,7 @@ class GroupForm extends Component {
     )
   }
 }
+
 
 
 export default GroupForm;
