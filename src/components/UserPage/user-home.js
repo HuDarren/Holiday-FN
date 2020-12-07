@@ -7,6 +7,13 @@ import FriendHome from "../FriendPage/friend-home";
 function UserHome() {
   return (
     <div>
+      <div>
+        <img
+          className="userhome-image"
+          alt=""
+          src="https://res.cloudinary.com/dsi0jbonx/image/upload/v1607294166/snowbg_hmx40h.jpg"
+        ></img>
+      </div>
       <UserProfile />
       <WishListHome />
       <GroupHome />
