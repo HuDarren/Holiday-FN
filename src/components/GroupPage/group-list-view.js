@@ -1,11 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Modal from 'react-responsive-modal';
 import GroupForm from './group-form';
-
-const Page = styled.div`
-width: 100vw;
-`
 
 const HeaderContainer = styled.div`
 width: 97%
