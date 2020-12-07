@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './group-z.css';
 
-class GroupListView extends React.Component {
+class GroupHome extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -38,4 +38,4 @@ class GroupListView extends React.Component {
   }
 }
 
-export default GroupListView;
+export default GroupHome;

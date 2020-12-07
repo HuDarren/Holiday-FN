@@ -16,6 +16,7 @@ import {
   GroupHome,
   GroupView,
   GroupForm,
+  GroupViewC,
 } from './components/index';
 import { me } from './store';
 
@@ -32,7 +33,7 @@ class Routes extends Component {
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/profileform" component={withRouter(UserProfileForm)} />
-        <Route path="/group" component={GroupHome} />
+        {/* <Route path="/group" component={GroupHome} /> */}
 
         {isLoggedIn && (
           <Switch>
@@ -48,6 +49,7 @@ class Routes extends Component {
             <Route exact path="/friends" component={FriendView} />
             <Route exact path="/groups" component={GroupView} />
             <Route exact path="/groupForm" component={GroupForm} />
+            <Route exact path="/group/:id" component={GroupViewC} />
           </Switch>
         )}
         <Route component={LandingHome} />
