@@ -13,6 +13,7 @@ import {
   WishItemHome,
   WishItemForm,
   FriendView,
+  GroupHome
 } from "./components/index";
 import { me } from "./store";
 
@@ -28,8 +29,8 @@ class Routes extends Component {
       <Switch>
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
-
-        {/* <Route path="/home" component={LandingHome} /> */}
+        <Route path="/profileform" component={withRouter(UserProfileForm)} />
+        <Route path="/group" component={GroupHome}/>
 
         {isLoggedIn && (
           <Switch>
