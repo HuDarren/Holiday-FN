@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { withRouter, Route, Switch } from "react-router-dom";
-import PropTypes from "prop-types";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { withRouter, Route, Switch } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import {
   Login,
   Signup,
@@ -13,9 +13,10 @@ import {
   WishItemHome,
   WishItemForm,
   FriendView,
-  GroupHome
-} from "./components/index";
-import { me } from "./store";
+  GroupHome,
+  GroupView,
+} from './components/index';
+import { me } from './store';
 
 class Routes extends Component {
   componentDidMount() {
@@ -30,7 +31,7 @@ class Routes extends Component {
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/profileform" component={withRouter(UserProfileForm)} />
-        <Route path="/group" component={GroupHome}/>
+        <Route path="/group" component={GroupHome} />
 
         {isLoggedIn && (
           <Switch>
@@ -44,6 +45,7 @@ class Routes extends Component {
             <Route exact path="/wishList/:id" component={WishItemHome} />
             <Route exact path="/itemForm/:id" component={WishItemForm} />
             <Route exact path="/friends" component={FriendView} />
+            <Route exact path="/groups" component={GroupView} />
           </Switch>
         )}
         <Route component={LandingHome} />
