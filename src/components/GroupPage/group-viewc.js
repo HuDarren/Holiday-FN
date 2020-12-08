@@ -11,29 +11,25 @@ function GroupViewC(props) {
     props.fetchGroup(target);
   }, []);
 
-//   console.log(Array.isArray(props.group.users));
-
   return (
     <div>
       <div>Groups</div>
       <div>{props.group.name}</div>
       <div>{props.group.description}</div>
-      <div>{props.group.id}</div>
-      {/* <div>{props.group.users.length}</div> */}
       <div>
         {props.group && props.group.users && props.group.users.length ? (
           <div>
             {props.group.users.map((group) => {
               const name = group.name;
-              const description = group.description;
-              const image = group.groupImg;
+              const email = group.email
+              const image = group.profileImage;
               const key = group.id;
               return (
                 <GroupViewD
                   number={key}
                   name={name}
                   image={image}
-                  description={description}
+                  email = {email}
                 />
               );
             })}

@@ -7,8 +7,16 @@ import item from './item';
 import wishList from './wishlist';
 import group from './group';
 import profile from './profile';
+import friend from './friend';
 
-const reducer = combineReducers({ user, item, wishList, group, profile });
+const reducer = combineReducers({
+  user,
+  item,
+  wishList,
+  group,
+  profile,
+  friend,
+});
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({ collapsed: true }))
 );
@@ -20,3 +28,4 @@ export * from './item';
 export * from './wishlist';
 export * from './group';
 export * from './profile';
+export * from './friend';

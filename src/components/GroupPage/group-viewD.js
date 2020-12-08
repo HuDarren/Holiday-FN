@@ -1,9 +1,11 @@
-import React from "react"
+import React from 'react';
 
-function GroupViewD() {
-    return <div>
-        <div>person</div>
+function GroupViewD(props) {
+  return (
+    <div>
+      <div>{props.name}</div>
     </div>
+  );
 }
 
-export default GroupViewD
+export default GroupViewD;
