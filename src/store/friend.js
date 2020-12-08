@@ -5,7 +5,9 @@ const GET_FOLLOW = 'GET_FOLLOW';
 
 const GET_FOLLOWER = 'GET_FOLLOWER';
 
-const defaultFriend = { follow: [], follower: [] };
+const SEARCH = 'SEARCH';
+
+const defaultFriend = { follow: [], follower: [], search: [] };
 
 const getFollow = (data) => ({
   type: GET_FOLLOW,
@@ -17,11 +19,27 @@ const getFollower = (data) => ({
   data,
 });
 
+const search = (data) => ({
+  type: SEARCH,
+  data,
+});
+
 export const fetchFollow = (id) => {
   return async (dispatch) => {
     try {
       const res = await axios.get(`/api/friends/follow/${id}`);
       dispatch(getFollow(res.data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const fetchSearch = (id) => {
+  return async (dispatch) => {
+    try {
+      const res = await axios.get(`/api/users/search/${id}`);
+      dispatch(search(res.data));
     } catch (error) {
       console.log(error);
     }
@@ -45,6 +63,8 @@ export default function (state = defaultFriend, action) {
       return { ...state, follow: action.data };
     case GET_FOLLOWER:
       return { ...state, follower: action.data };
+    case SEARCH:
+      return { ...state, search: action.data };
     default:
       return state;
   }

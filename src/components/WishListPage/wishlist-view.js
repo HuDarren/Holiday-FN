@@ -1,14 +1,16 @@
-import React from "react";
-import { connect } from "react-redux";
-import { fetchWishList } from "../../store/wishlist";
-import WishListViewB from "./wishlist-viewB";
-import { removeSingleWishListThunk } from "../../store/wishlist";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { connect } from 'react-redux';
+import { fetchWishList } from '../../store/wishlist';
+import WishListViewB from './wishlist-viewB';
+import { removeSingleWishListThunk } from '../../store/wishlist';
+import { Link } from 'react-router-dom';
 
 function WishListView(props) {
   React.useEffect(() => {
-    props.fetchWishList(props.user.id);
+    props.fetchWishList(props.match.params.id);
   }, []);
+
+  console.log('props', props);
 
   return (
     <div>
@@ -30,6 +32,8 @@ function WishListView(props) {
                     description={description}
                     number={key}
                     removeWishList={props.deleteWishList}
+                    isLoggedIn={props.isLoggedIn}
+                    userId = {props.user.id}
                   />
                 );
               })}
@@ -37,8 +41,16 @@ function WishListView(props) {
           ) : null}
         </div>
       </div>
-      <div>button to add new list</div>
-      <Link to="/wishListForm">ADD</Link>
+
+      <div>
+        {props.isLoggedIn && props.wishList.length ? (
+          <div>
+            {props.user.id === props.wishList[0].userId ? (
+              <Link to="/wishListForm">ADD</Link>
+            ) : null}
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 }
@@ -46,6 +58,7 @@ function WishListView(props) {
 const mapState = (state) => ({
   wishList: state.wishList,
   user: state.user,
+  isLoggedIn: !!state.user.id,
 });
 
 const mapDispatch = (dispatch) => ({

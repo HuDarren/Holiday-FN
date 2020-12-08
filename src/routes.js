@@ -33,6 +33,7 @@ class Routes extends Component {
         <Route path="/login" component={Login} />
         <Route path="/signup" component={Signup} />
         <Route path="/profileform" component={withRouter(UserProfileForm)} />
+        <Route exact path="/wishListView/:id" component={WishListView} />
         {/* <Route path="/group" component={GroupHome} /> */}
 
         {isLoggedIn && (
@@ -43,7 +44,7 @@ class Routes extends Component {
             <Route path="/home" component={UserHome} />
             <Route exact path="/userprofile" component={withRouter(UserHome)} />
             <Route exact path="/wishListForm" component={WishListForm} />
-            <Route exact path="/wishListView" component={WishListView} />
+            <Route exact path="/wishListView/:id" component={WishListView} />
             <Route exact path="/wishList/:id" component={WishItemHome} />
             <Route exact path="/itemForm/:id" component={WishItemForm} />
             <Route exact path="/friends" component={FriendView} />

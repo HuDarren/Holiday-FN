@@ -1,7 +1,7 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import "./wishlist-z.css";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import './wishlist-z.css';
 
 function WishListHome(props) {
   return (
@@ -11,7 +11,7 @@ function WishListHome(props) {
         <div>Count</div>
         <div className="button-container">
           <div className="button">
-            <Link className="button2" to="/wishListView">
+            <Link className="button2" to={`/wishListView/${props.user.id}`}>
               Add To WishList
             </Link>
           </div>

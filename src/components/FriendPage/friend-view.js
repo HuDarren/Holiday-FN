@@ -1,7 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchFollow, fetchFollower } from '../../store';
-import FriendViewB from './friend-viewdB';
+import FriendSearch from './friend-search';
+import FriendViewB from './friend-viewB';
+import FriendViewC from './friend-viewC';
 
 function FriendView(props) {
   React.useEffect(() => {
@@ -11,7 +13,7 @@ function FriendView(props) {
 
   return (
     <div>
-      <div>Your Friends</div>
+      <FriendSearch />
       <div>Following</div>
       <div>
         {props.friend.follow &&
@@ -47,7 +49,7 @@ function FriendView(props) {
               const profileImage = following.profileImage;
               const email = following.email;
               return (
-                <FriendViewB
+                <FriendViewC
                   followerName={name}
                   followerId={id}
                   followerProfileImage={profileImage}

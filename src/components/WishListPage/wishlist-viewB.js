@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function WishListViewB(props) {
   const name = props.name;
@@ -26,9 +26,17 @@ function WishListViewB(props) {
             <div className="wishviewb-name">{name}</div>
             <div className="wishviewb-description">{description}</div>
           </div>
-          <div className="wishviewb-content2">
-            <button onClick={() => Click()}>REMOVE</button>
-            <button>EDIT</button>
+          <div>
+            {props.isLoggedIn ? (
+              <div>
+                {props.userId === props.number ? (
+                  <div className="wishviewb-content2">
+                    <button onClick={() => Click()}>REMOVE</button>
+                    <button>EDIT</button>
+                  </div>
+                ) : null}
+              </div>
+            ) : null}
           </div>
         </Link>
       </div>

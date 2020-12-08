@@ -1,9 +1,9 @@
 import React from 'react';
 
-function FriendViewB() {
+function FriendViewB(props) {
   return (
     <div>
-      <div>Hello</div>
+      <div>{props.followName}</div>
     </div>
   );
 }
