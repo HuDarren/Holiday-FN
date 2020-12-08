@@ -1,9 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function FriendViewB(props) {
   return (
     <div>
-      <div>{props.followName}</div>
+      <Link to={`/wishListView/${props.followId}`}>
+        <div>{props.followName}</div>
+      </Link>
     </div>
   );
 }

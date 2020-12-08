@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 function WishItemView(props) {
   function refreshPage() {
@@ -15,8 +15,18 @@ function WishItemView(props) {
     <div>
       <div>{props.name}</div>
       <div>{props.description}</div>
-      <button onClick={() => Click()}>REMOVE</button>
-      <button>Edit</button>
+      <div>
+        {props.isLoggedIn ? (
+          <div>
+            {props.userId === props.wishListId ? (
+              <div>
+                <button onClick={() => Click()}>REMOVE</button>
+                <button>Edit</button>
+              </div>
+            ) : null}
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 }
