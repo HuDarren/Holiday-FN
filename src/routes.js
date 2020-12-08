@@ -13,7 +13,7 @@ import {
   WishItemHome,
   WishItemForm,
   FriendView,
-  GroupHome,
+  // GroupHome,
   GroupView,
   GroupForm,
   GroupViewC,

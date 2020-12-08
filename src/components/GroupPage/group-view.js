@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchProfile } from '../../store/index';
-import GroupViewB from '../GroupPage/group-viewb';
+import GroupViewB from "./group-viewB";
 
 function GroupView(props) {
   React.useEffect(() => {

@@ -13,7 +13,7 @@ const getGroup = (data) => ({
 export const fetchGroup = (userid) => {
   return async (dispatch) => {
     try {
-      const res = await axios.get();
+      const res = await axios.get(`/api/groups/${userid}`);
       dispatch(getGroup(res.data));
     } catch (error) {
       console.log(error);
