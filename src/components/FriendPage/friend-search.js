@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchSearch } from '../../store/index';
+import { Link } from 'react-router-dom';
 
 function FriendSearch(props) {
   const [state, setstate] = React.useState({
@@ -41,7 +42,11 @@ function FriendSearch(props) {
           {props.friend && props.friend.search.length ? (
             <div>
               {props.friend.search.map((friend) => {
-                return <div>{friend.name}</div>;
+                return (
+                  <Link to={`/wishListView/${friend.id}`}>
+                    <div>{friend.name}</div>
+                  </Link>
+                );
               })}
             </div>
           ) : (

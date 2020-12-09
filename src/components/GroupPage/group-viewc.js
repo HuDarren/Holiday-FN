@@ -19,17 +19,17 @@ function GroupViewC(props) {
       <div>
         {props.group && props.group.users && props.group.users.length ? (
           <div>
-            {props.group.users.map((group) => {
-              const name = group.name;
-              const email = group.email
-              const image = group.profileImage;
-              const key = group.id;
+            {props.group.users.map((user) => {
+              const name = user.name;
+              const email = user.email;
+              const image = user.profileImage;
+              const key = user.id;
               return (
                 <GroupViewD
                   number={key}
                   name={name}
                   image={image}
-                  email = {email}
+                  email={email}
                 />
               );
             })}

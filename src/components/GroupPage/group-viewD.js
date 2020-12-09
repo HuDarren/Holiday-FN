@@ -1,9 +1,13 @@
 import React from 'react';
+import {Link} from "react-router-dom"
 
 function GroupViewD(props) {
   return (
     <div>
-      <div>{props.name}</div>
+      <Link to={`/wishListView/${props.number}`}>
+ 
+        <div>{props.name}</div>
+      </Link>
     </div>
   );
 }
