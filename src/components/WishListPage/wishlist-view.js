@@ -4,6 +4,7 @@ import { fetchWishList } from '../../store/wishlist';
 import WishListViewB from './wishlist-viewB';
 import { removeSingleWishListThunk } from '../../store/wishlist';
 import { Link } from 'react-router-dom';
+import WishListFollow from './wishlist-follow';
 
 function WishListView(props) {
   React.useEffect(() => {
@@ -12,8 +13,10 @@ function WishListView(props) {
 
   console.log('props', props);
 
+
   return (
     <div>
+      <WishListFollow />
       <div> Your Wishlists </div>
       <div className="wishview-container">
         <div className="wishview2-container">
@@ -33,7 +36,7 @@ function WishListView(props) {
                     number={key}
                     removeWishList={props.deleteWishList}
                     isLoggedIn={props.isLoggedIn}
-                    userId = {props.user.id}
+                    userId={props.user.id}
                   />
                 );
               })}
@@ -43,9 +46,9 @@ function WishListView(props) {
       </div>
 
       <div>
-        {props.isLoggedIn && props.wishList.length ? (
+        {props.isLoggedIn ? (
           <div>
-            {props.user.id === props.wishList[0].userId ? (
+            {props.user.id === Number(props.match.params.id) ? (
               <Link to="/wishListForm">ADD</Link>
             ) : null}
           </div>
