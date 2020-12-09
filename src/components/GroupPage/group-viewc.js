@@ -1,9 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchGroup } from '../../store/index';
+import { fetchGroup, unSubToGroup, subToGroup } from '../../store/index';
 import GroupViewD from './group-viewD';
 import GroupFollow from './group-follow';
-import { subToGroup } from '../../store/index';
 
 function GroupViewC(props) {
   React.useEffect(() => {
@@ -17,6 +16,7 @@ function GroupViewC(props) {
     <div>
       <div>Groups</div>
       <GroupFollow
+        unSubToGroup={props.unSubToGroup}
         subToGroup={props.subToGroup}
         group={props.group}
         userId={props.user.id}
@@ -55,6 +55,7 @@ const mapState = (state) => ({
 const mapDispatch = (dispatch) => ({
   fetchGroup: (id) => dispatch(fetchGroup(id)),
   subToGroup: (groupId, userId) => dispatch(subToGroup(groupId, userId)),
+  unSubToGroup: (groupId, userId) => dispatch(unSubToGroup(groupId, userId)),
 });
 
 export default connect(mapState, mapDispatch)(GroupViewC);

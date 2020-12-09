@@ -32,6 +32,19 @@ export const subToGroup = (groupId, userId) => {
   };
 };
 
+export const unSubToGroup = (groupId, userId) => {
+  return async (dispatch) => {
+    try {
+      const res = await axios.delete(
+        `/api/groups/${groupId}/add-user/${userId}`
+      );
+      dispatch(getGroup(res.data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
 export default function (state = defaultGroup, action) {
   switch (action.type) {
     case GET_GROUP:

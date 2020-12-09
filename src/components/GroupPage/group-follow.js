@@ -5,8 +5,13 @@ function GroupFollow(props) {
     window.location.reload(false);
   }
 
-  function Click() {
+  function Click1() {
     props.subToGroup(props.group.id, props.userId);
+    refreshPage();
+  }
+
+  function Click2() {
+    props.unSubToGroup(props.group.id, props.userId);
     refreshPage();
   }
 
@@ -26,18 +31,17 @@ function GroupFollow(props) {
     if (!result) {
       return (
         <div>
-          <button onClick={() => Click()}>Join</button>
+          <button onClick={() => Click1()}>Love to Join</button>
         </div>
       );
     } else {
       return (
         <div>
-          <button>UnJoin</button>
+          <button onClick={() => Click2()}>Change My Mind</button>
         </div>
       );
     }
   }
-
 
   return (
     <div>
