@@ -31,8 +31,15 @@ function WishListViewB(props) {
               <div>
                 {props.userId === props.number ? (
                   <div className="wishviewb-content2">
-                    <button onClick={() => Click()}>REMOVE</button>
-                    <button>EDIT</button>
+                    <button
+                      className="wishviewb-button"
+                      onClick={() => Click()}
+                    >
+                      <span className="wishviewb-content3">REMOVE</span>
+                    </button>
+                    <button className="wishviewb-button">
+                      <span className="wishviewb-content3"> EDIT</span>
+                    </button>
                   </div>
                 ) : null}
               </div>

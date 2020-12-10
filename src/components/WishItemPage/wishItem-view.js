@@ -11,21 +11,35 @@ function WishItemView(props) {
     refreshPage();
   }
 
+  // console.log(props.userId);
+  // console.log(props.wishListId);
+
   return (
-    <div>
-      <div>{props.name}</div>
-      <div>{props.description}</div>
-      <div>
-        {props.isLoggedIn ? (
+    <div className="view-container1">
+      <div className="view-container2">
+        <div className="view-container3">
+          <img className="view-image" alt="text" src={props.image}></img>
+          <div className="view-content">
+            <div className="view-name">{props.name}</div>
+            <div className="view-description">{props.description}</div>
+          </div>
           <div>
-            {props.userId === props.wishListId ? (
+            {props.isLoggedIn ? (
               <div>
-                <button onClick={() => Click()}>REMOVE</button>
-                <button>Edit</button>
+                {props.userId === props.wishListId ? (
+                  <div className="view-content2">
+                    <button className="view-button" onClick={() => Click()}>
+                      <span className="view-content3">REMOVE</span>
+                    </button>
+                    <button className="view-button">
+                      <span className="view-content3"> EDIT</span>
+                    </button>
+                  </div>
+                ) : null}
               </div>
             ) : null}
           </div>
-        ) : null}
+        </div>
       </div>
     </div>
   );

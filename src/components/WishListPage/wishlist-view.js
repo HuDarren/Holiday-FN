@@ -14,6 +14,8 @@ import {
 } from '../../store';
 
 function WishListView(props) {
+  // let id = props.user.id;
+
   React.useEffect(() => {
     props.fetchWishList(props.match.params.id);
     // fix line below - can only be manually inputed and not use props
@@ -32,7 +34,7 @@ function WishListView(props) {
         friend={props.friend}
         target={props.match.params.id}
       />
-      <div> Your Wishlists </div>
+      <div> {props.user.name} Wishlists </div>
       <div className="wishview-container">
         <div className="wishview2-container">
           {props.wishList.length ? (
@@ -59,15 +61,17 @@ function WishListView(props) {
           ) : null}
         </div>
       </div>
-
       <div>
-        {props.isLoggedIn ? (
-          <div>
-            {props.user.id === Number(props.match.params.id) ? (
-              <Link to="/wishListForm">ADD</Link>
-            ) : null}
-          </div>
-        ) : null}
+        <div className="wishview-addButton">
+          {props.isLoggedIn &&
+          props.user.id === Number(props.match.params.id) ? (
+            <button className="wishview-addButton2">
+              <Link className="wishview-addButton3" to="/wishListForm">
+                ADD
+              </Link>
+            </button>
+          ) : null}
+        </div>
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import { fetchWishList } from '../../store/wishlist';
 import WishItemView from './wishItem-view';
 import { removeSingleItemThunk } from '../../store/item';
 import { Link } from 'react-router-dom';
+import './wishItem-z.css';
 
 function WishItemHome(props) {
   React.useEffect(() => {
@@ -19,41 +20,47 @@ function WishItemHome(props) {
     props.history.location.pathname.split('/').length - 1
   ];
 
+  console.log(props.wishList.userId);
+
   return (
     <div>
       <div>List of all items</div>
-
-      <div>
-        {props.item.length ? (
-          <div>
-            {props.item.map((item) => {
-              const name = item.name;
-              const description = item.description;
-              const key = item.id;
-              const image = item.image;
-              return (
-                <WishItemView
-                  key={key}
-                  number={key}
-                  name={name}
-                  description={description}
-                  image={image}
-                  deleteItem={props.deleteItem}
-                  isLoggedIn={props.isLoggedIn}
-                  userId={props.user.id}
-                  wishListId={props.wishList.userId}
-                />
-              );
-            })}
-          </div>
-        ) : null}
+      <div className="home-container1">
+        <div className="home-container2">
+          {props.item.length ? (
+            <div className="home-container3">
+              {props.item.map((item) => {
+                const name = item.name;
+                const description = item.description;
+                const key = item.id;
+                const image = item.Image;
+                return (
+                  <WishItemView
+                    key={key}
+                    number={key}
+                    name={name}
+                    description={description}
+                    image={image}
+                    deleteItem={props.deleteItem}
+                    isLoggedIn={props.isLoggedIn}
+                    userId={props.user.id}
+                    wishListId={props.wishList[0].userId}
+                  />
+                );
+              })}
+            </div>
+          ) : null}
+        </div>
       </div>
-      <div>
+
+      <div className="home-button3">
         {props.isLoggedIn && props.wishList.length ? (
           <div>
             {props.user.id === props.wishList[0].userId ? (
-              <button>
-                <Link to={`/itemForm/${target}`}>ADD</Link>
+              <button className="home-button1">
+                <Link className="home-button2" to={`/itemForm/${target}`}>
+                  ADD
+                </Link>
               </button>
             ) : null}
           </div>
