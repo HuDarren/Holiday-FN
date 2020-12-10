@@ -42,7 +42,7 @@ function WishListView(props) {
               {props.wishList.map((item) => {
                 const name = item.name;
                 const description = item.description;
-                const key = item.id;
+                const key = item.userId;
                 const image = item.image;
                 return (
                   <WishListViewB
