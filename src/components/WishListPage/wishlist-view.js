@@ -46,7 +46,6 @@ function WishListView(props) {
                 const image = item.image;
                 return (
                   <WishListViewB
-                    key={key}
                     name={name}
                     image={image}
                     description={description}
