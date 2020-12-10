@@ -1,22 +1,37 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchWishList } from '../../store/wishlist';
+// import { fetchWishList } from '../../store/wishlist';
 import WishListViewB from './wishlist-viewB';
-import { removeSingleWishListThunk } from '../../store/wishlist';
+// import { removeSingleWishListThunk } from '../../store/wishlist';
 import { Link } from 'react-router-dom';
 import WishListFollow from './wishlist-follow';
+import {
+  subToFriend,
+  unSubToFriend,
+  fetchWishList,
+  removeSingleWishListThunk,
+  fetchFollow,
+} from '../../store';
 
 function WishListView(props) {
   React.useEffect(() => {
     props.fetchWishList(props.match.params.id);
+    // fix line below - can only be manually inputed and not use props
+    props.fetchFollow(1);
   }, []);
 
+  console.log('user', props.user.id);
   console.log('props', props);
-
 
   return (
     <div>
-      <WishListFollow />
+      <WishListFollow
+        subToFriend={props.subToFriend}
+        unSubToFriend={props.unSubToFriend}
+        userId={props.user.id}
+        friend={props.friend}
+        target={props.match.params.id}
+      />
       <div> Your Wishlists </div>
       <div className="wishview-container">
         <div className="wishview2-container">
@@ -62,12 +77,17 @@ const mapState = (state) => ({
   wishList: state.wishList,
   user: state.user,
   isLoggedIn: !!state.user.id,
+  friend: state.friend,
 });
 
 const mapDispatch = (dispatch) => ({
   fetchWishList: (userId) => dispatch(fetchWishList(userId)),
   deleteWishList: (wishListId) =>
     dispatch(removeSingleWishListThunk(wishListId)),
+  subToFriend: (friendId, userId) => dispatch(subToFriend(friendId, userId)),
+  unSubToFriend: (friendId, userId) =>
+    dispatch(unSubToFriend(friendId, userId)),
+  fetchFollow: (id) => dispatch(fetchFollow(id)),
 });
 
 export default connect(mapState, mapDispatch)(WishListView);

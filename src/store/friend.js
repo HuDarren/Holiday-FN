@@ -57,6 +57,28 @@ export const fetchFollower = (id) => {
   };
 };
 
+export const subToFriend = (friendId, userId) => {
+  return async (dispatch) => {
+    try {
+      const res = await axios.post(`/api/friends/${friendId}/user/${userId}`);
+      dispatch(getFollow(res.data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const unSubToFriend = (friendId, userId) => {
+  return async (dispatch) => {
+    try {
+      const res = await axios.delete(`/api/friends/${friendId}/user/${userId}`);
+      dispatch(getFollow(res.data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
 export default function (state = defaultFriend, action) {
   switch (action.type) {
     case GET_FOLLOW:
