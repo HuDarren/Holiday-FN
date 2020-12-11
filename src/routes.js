@@ -13,6 +13,7 @@ import {
   WishListView,
   WishItemHome,
   WishItemForm,
+  WishItemFormB,
   FriendView,
   // GroupHome,
   GroupView,
@@ -49,6 +50,7 @@ class Routes extends Component {
             <Route exact path="/wishListView/:id" component={WishListView} />
             <Route exact path="/wishList/:id" component={WishItemHome} />
             <Route exact path="/itemForm/:id" component={WishItemForm} />
+            <Route exact path="/itemFormB/:id/:id" component={WishItemFormB} />
             <Route exact path="/friends" component={FriendView} />
             <Route exact path="/groups" component={GroupView} />
             <Route exact path="/groupForm" component={GroupForm} />

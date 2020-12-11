@@ -32,7 +32,11 @@ function WishItemView(props) {
                       <span className="view-content3">REMOVE</span>
                     </button>
                     <button className="view-button">
-                      <span className="view-content3"> EDIT</span>
+                      <span className="view-content3">
+                        <Link to={`/itemFormB/${props.wishId}/${props.number}`}>
+                          EDIT
+                        </Link>
+                      </span>
                     </button>
                   </div>
                 ) : null}

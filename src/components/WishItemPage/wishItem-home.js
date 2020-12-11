@@ -34,6 +34,7 @@ function WishItemHome(props) {
                 const description = item.description;
                 const key = item.id;
                 const image = item.Image;
+                const wishId = item.wishlistId;
                 return (
                   <WishItemView
                     key={key}
@@ -44,6 +45,7 @@ function WishItemHome(props) {
                     deleteItem={props.deleteItem}
                     isLoggedIn={props.isLoggedIn}
                     userId={props.user.id}
+                    wishId={wishId}
                     wishListId={props.wishList[0].userId}
                   />
                 );
