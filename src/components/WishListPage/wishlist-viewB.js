@@ -38,7 +38,9 @@ function WishListViewB(props) {
                       <span className="wishviewb-content3">REMOVE</span>
                     </button>
                     <button className="wishviewb-button">
-                      <span className="wishviewb-content3"> EDIT</span>
+                      <span className="wishviewb-content3">
+                        <Link to={`/wishListFormB/${props.id}`}>EDIT</Link>
+                      </span>
                     </button>
                   </div>
                 ) : null}

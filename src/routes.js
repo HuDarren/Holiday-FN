@@ -9,6 +9,7 @@ import {
   LandingHome,
   UserProfileForm,
   WishListForm,
+  WishListFormB,
   WishListView,
   WishItemHome,
   WishItemForm,
@@ -44,6 +45,7 @@ class Routes extends Component {
             <Route path="/home" component={UserHome} />
             <Route exact path="/userprofile" component={withRouter(UserHome)} />
             <Route exact path="/wishListForm" component={WishListForm} />
+            <Route exact path="/wishListFormB/:id" component={WishListFormB} />
             <Route exact path="/wishListView/:id" component={WishListView} />
             <Route exact path="/wishList/:id" component={WishItemHome} />
             <Route exact path="/itemForm/:id" component={WishItemForm} />

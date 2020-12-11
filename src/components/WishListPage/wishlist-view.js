@@ -14,13 +14,12 @@ import {
 } from '../../store';
 
 function WishListView(props) {
-  // let id = props.user.id;
+  const { id } = props.user;
 
   React.useEffect(() => {
     props.fetchWishList(props.match.params.id);
-    // fix line below - can only be manually inputed and not use props
-    props.fetchFollow(1);
-  }, []);
+    props.fetchFollow(id);
+  }, [id]);
 
   console.log('user', props.user.id);
   console.log('props', props);
@@ -44,10 +43,12 @@ function WishListView(props) {
                 const description = item.description;
                 const key = item.userId;
                 const image = item.image;
+                const id = item.id
                 return (
                   <WishListViewB
                     name={name}
                     image={image}
+                    id = {id}
                     description={description}
                     number={key}
                     removeWishList={props.deleteWishList}

@@ -3,6 +3,7 @@ export { default as LandingHome } from './LandingPage/landing-home';
 export { Login, Signup } from './LoginPage/auth-form';
 export { default as UserProfileForm } from './UserPage/user-profileForm';
 export { default as WishListForm } from './WishListPage/wishlist-form';
+export { default as WishListFormB } from './WishListPage/wishlist-formB';
 export { default as WishListView } from './WishListPage/wishlist-view';
 export { default as WishItemHome } from './WishItemPage/wishItem-home';
 export { default as WishItemForm } from './WishItemPage/wishItem-form';

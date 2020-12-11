@@ -1,10 +1,10 @@
 /* eslint-disable import/no-anonymous-default-export */
-import axios from "axios";
+import axios from 'axios';
 
-const GET_WISHLIST = "GET_WISHLIST";
-const REMOVE_SINGLE_WISHLIST = "REMOVE_SINGLE_WISHLIST";
-const UPDATE_WISHLIST = "UPDATE_WISHLIST";
-const ADD_WISHLIST = "ADD_WISHLIST";
+const GET_WISHLIST = 'GET_WISHLIST';
+const REMOVE_SINGLE_WISHLIST = 'REMOVE_SINGLE_WISHLIST';
+const UPDATE_WISHLIST = 'UPDATE_WISHLIST';
+const ADD_WISHLIST = 'ADD_WISHLIST';
 
 const defaultState = [];
 
@@ -50,6 +50,17 @@ export const addWishListThunk = (userid, info) => {
   };
 };
 
+export const updateWishListThunk = (userid, wishid, info) => {
+  return async (dispatch) => {
+    try {
+      const res = await axios.put(`/api/wishlists/${userid}/${wishid}`, info);
+      dispatch(updateWishList(res.data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
 export const removeSingleWishListThunk = (wishListId) => {
   return async (dispatch) => {
     try {
@@ -68,7 +79,7 @@ export default function (state = defaultState, action) {
 
     case UPDATE_WISHLIST:
       const updated = state.wishList.map((list) => {
-        if (list.id !== action.wishListId) {
+        if (list.id !== action.id) {
           return action.item;
         } else {
           return list;
