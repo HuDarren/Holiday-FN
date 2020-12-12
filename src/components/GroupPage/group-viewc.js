@@ -8,6 +8,7 @@ import {
 } from '../../store/index';
 import GroupViewD from './group-viewD';
 import GroupFollow from './group-follow';
+import GroupFormB from './group-formB';
 
 function GroupViewC(props) {
   React.useEffect(() => {
@@ -17,9 +18,6 @@ function GroupViewC(props) {
     props.fetchGroup(target);
   }, []);
 
-  // fix this area .
-
-  // pass the logic down to delete and edit
 
   return (
     <div>
@@ -32,7 +30,8 @@ function GroupViewC(props) {
       />
       <div>{props.group.name}</div>
       <div>{props.group.description}</div>
-
+      <div>form below</div>
+      <GroupFormB group={props.group} />
       <div>Put the buttons here. </div>
       <button onClick={() => props.removeGroup(props.group.id)}>Delete</button>
       <button>Update</button>

@@ -61,10 +61,10 @@ export const removeGroupThunk = (groupid) => {
   };
 };
 
-export const updateGroupThunk = (groupid, info) => {
+export const updateGroupThunk = (groupId, userId, info) => {
   return async (dispatch) => {
     try {
-      const res = await axios.put(`/api/groups/${groupid}`, info);
+      const res = await axios.put(`/api/groups/${groupId}/${userId}`, info);
       dispatch(updateGroup(res.data));
     } catch (error) {
       console.log(error);
@@ -105,6 +105,8 @@ export default function (state = defaultGroup, action) {
         return group.id !== action.id;
       });
       return { ...state, group: removed };
+    case UPDATE_GROUP:
+      return action.data;
     default:
       return state;
   }
