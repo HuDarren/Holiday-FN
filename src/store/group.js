@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const GET_GROUP = 'GET_GROUP';
-const ADD_GROUP = 'ADD_GROP';
+const ADD_GROUP = 'ADD_GROUP';
 const REMOVE_GROUP = 'REMOVE_GROUP';
 const UPDATE_GROUP = 'UDDATE_GROUP';
 
@@ -100,6 +100,11 @@ export default function (state = defaultGroup, action) {
   switch (action.type) {
     case GET_GROUP:
       return action.data;
+    case REMOVE_GROUP:
+      const removed = state.filter((group) => {
+        return group.id !== action.id;
+      });
+      return { ...state, group: removed };
     default:
       return state;
   }

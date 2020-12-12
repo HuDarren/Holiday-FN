@@ -1,19 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { fetchProfile } from '../../store/index';
+import { fetchProfile, fetchGroup } from '../../store';
 import GroupViewB from './group-viewB';
+import GroupViewE from './group-viewE';
 
 function GroupView(props) {
   React.useEffect(() => {
     props.fetchProfile(props.user.id);
-    return () => {};
+    props.fetchGroup(props.user.id);
   }, []);
 
   return (
     <div>
       <div>List of ALL Groups Created </div>
-      <div>Groups</div>
+      <GroupViewE />
       <div>List of ALL Groups Following </div>
       <div>
         {props.profile.length ? (
@@ -49,10 +50,12 @@ function GroupView(props) {
 const mapState = (state) => ({
   user: state.user,
   profile: state.profile,
+  group: state.group,
 });
 
 const mapDispatch = (dispatch) => ({
   fetchProfile: (id) => dispatch(fetchProfile(id)),
+  fetchGroup: (id) => dispatch(fetchGroup(id)),
 });
 
 export default connect(mapState, mapDispatch)(GroupView);

@@ -1,6 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchGroup, unSubToGroup, subToGroup } from '../../store/index';
+import {
+  fetchGroup,
+  unSubToGroup,
+  subToGroup,
+  removeGroupThunk,
+} from '../../store/index';
 import GroupViewD from './group-viewD';
 import GroupFollow from './group-follow';
 
@@ -11,6 +16,10 @@ function GroupViewC(props) {
     ];
     props.fetchGroup(target);
   }, []);
+
+  // fix this area .
+
+  // pass the logic down to delete and edit
 
   return (
     <div>
@@ -23,6 +32,10 @@ function GroupViewC(props) {
       />
       <div>{props.group.name}</div>
       <div>{props.group.description}</div>
+
+      <div>Put the buttons here. </div>
+      <button onClick={() => props.removeGroup(props.group.id)}>Delete</button>
+      <button>Update</button>
       <div>
         {props.group && props.group.users && props.group.users.length ? (
           <div>
@@ -56,6 +69,7 @@ const mapDispatch = (dispatch) => ({
   fetchGroup: (id) => dispatch(fetchGroup(id)),
   subToGroup: (groupId, userId) => dispatch(subToGroup(groupId, userId)),
   unSubToGroup: (groupId, userId) => dispatch(unSubToGroup(groupId, userId)),
+  removeGroup: (groupId) => dispatch(removeGroupThunk(groupId)),
 });
 
 export default connect(mapState, mapDispatch)(GroupViewC);

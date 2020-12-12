@@ -15,19 +15,33 @@ function GroupFollow(props) {
     refreshPage();
   }
 
-  function displayButton(member, user) {
+  function displayButton(group, user) {
     let result = false;
+    let owner = false;
 
-    if (member.users && member.users.length) {
-      for (let i = 0; i < member.users.length; i++) {
-        if (member.users[i].id === user) {
-          console.log('props result', member.users[i].id);
+    if (group.userId === user) {
+      owner = true;
+    }
+
+    if (group.users && group.users.length) {
+      for (let i = 0; i < group.users.length; i++) {
+        if (group.users[i].id === user) {
+          console.log('props result', group.users[i].id);
           result = true;
           break;
         }
       }
     }
     console.log('result', result);
+
+    if (owner) {
+      return (
+        <div>
+          <button>I am owner</button>
+        </div>
+      );
+    }
+
     if (!result) {
       return (
         <div>
@@ -47,6 +61,7 @@ function GroupFollow(props) {
     <div>
       <div>follow this group</div>
       <div>{displayButton(props.group, props.userId)}</div>
+      <div></div>
     </div>
   );
 }
