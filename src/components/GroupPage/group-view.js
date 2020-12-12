@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchProfile } from '../../store/index';
-import GroupViewB from "./group-viewB";
+import GroupViewB from './group-viewB';
 
 function GroupView(props) {
   React.useEffect(() => {
@@ -10,11 +10,11 @@ function GroupView(props) {
     return () => {};
   }, []);
 
-  console.log(props.user);
-
   return (
     <div>
-      <div>List of ALL Groups</div>
+      <div>List of ALL Groups Created </div>
+      <div>Groups</div>
+      <div>List of ALL Groups Following </div>
       <div>
         {props.profile.length ? (
           <div>
@@ -23,6 +23,7 @@ function GroupView(props) {
               const description = group.description;
               const key = group.id;
               const image = group.groupImg;
+              const profileid = group.userId;
               return (
                 <GroupViewB
                   key={key}
@@ -30,6 +31,8 @@ function GroupView(props) {
                   image={image}
                   description={description}
                   number={key}
+                  profileid={profileid}
+                  userid={props.user.id}
                 />
               );
             })}
@@ -37,7 +40,7 @@ function GroupView(props) {
         ) : null}
       </div>
       <button>
-        <Link to="/groupForm">Add Group</Link>
+        <Link to={`/groupForm`}>Add Group</Link>
       </button>
     </div>
   );

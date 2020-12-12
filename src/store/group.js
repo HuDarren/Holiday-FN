@@ -2,6 +2,9 @@
 import axios from 'axios';
 
 const GET_GROUP = 'GET_GROUP';
+const ADD_GROUP = 'ADD_GROP';
+const REMOVE_GROUP = 'REMOVE_GROUP';
+const UPDATE_GROUP = 'UDDATE_GROUP';
 
 const defaultGroup = [];
 
@@ -10,11 +13,59 @@ const getGroup = (data) => ({
   data,
 });
 
+const addGroup = (data) => ({
+  type: ADD_GROUP,
+  data,
+});
+
+const removeGroup = (data) => ({
+  type: REMOVE_GROUP,
+  data,
+});
+
+const updateGroup = (data) => ({
+  type: UPDATE_GROUP,
+  data,
+});
+
 export const fetchGroup = (userid) => {
   return async (dispatch) => {
     try {
       const res = await axios.get(`/api/groups/${userid}`);
       dispatch(getGroup(res.data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const addGroupThunk = (userid, info) => {
+  return async (dispatch) => {
+    try {
+      const res = await axios.post(`/api/groups/${userid}`, info);
+      dispatch(addGroup(res.data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const removeGroupThunk = (groupid) => {
+  return async (dispatch) => {
+    try {
+      const res = await axios.delete(`/api/groups/${groupid}`);
+      dispatch(removeGroup(res.data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};
+
+export const updateGroupThunk = (groupid, info) => {
+  return async (dispatch) => {
+    try {
+      const res = await axios.put(`/api/groups/${groupid}`, info);
+      dispatch(updateGroup(res.data));
     } catch (error) {
       console.log(error);
     }

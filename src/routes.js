@@ -17,7 +17,7 @@ import {
   FriendView,
   // GroupHome,
   GroupView,
-  GroupForm,
+  GroupFormA,
   GroupViewC,
 } from './components/index';
 import { me } from './store';
@@ -53,7 +53,7 @@ class Routes extends Component {
             <Route exact path="/itemFormB/:id/:id" component={WishItemFormB} />
             <Route exact path="/friends" component={FriendView} />
             <Route exact path="/groups" component={GroupView} />
-            <Route exact path="/groupForm" component={GroupForm} />
+            <Route exact path="/groupForm/" component={GroupFormA} />
             <Route exact path="/group/:id" component={GroupViewC} />
           </Switch>
         )}

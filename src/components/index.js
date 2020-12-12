@@ -11,5 +11,5 @@ export { default as WishItemFormB } from './WishItemPage/wishItem-formB';
 export { default as FriendView } from './FriendPage/friend-view';
 export { default as GroupHome } from './GroupPage/group-home';
 export { default as GroupView } from './GroupPage/group-view';
-export { default as GroupForm } from './GroupPage/group-form';
+export { default as GroupFormA } from './GroupPage/group-formA';
 export { default as GroupViewC } from './GroupPage/group-viewC';
