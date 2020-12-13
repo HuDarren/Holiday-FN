@@ -15,7 +15,7 @@
 .friendview-container2 {
   display: flex;
   border-bottom: 1px solid #d0d2d3;
-  margin-top: 10%;
+  margin-top: 8%;
 }
 
 .friendview-container3 {
@@ -65,6 +65,10 @@
 }
 
 .friendview-container3 {
+  width: 100%;
+}
+.friendview-container4 {
+  width: 100%;
 }
 
 .search-container {
@@ -97,5 +101,52 @@
   font-size: 20px;
 }
 
-.search-button2 {
+.friendviewb-container1 {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.friendviewb-button1 {
+  display: block;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  border: 2px solid #f5f5f5;
+  border-radius: 50%;
+  color: #f5f5f5;
+  text-align: center;
+  text-decoration: none;
+  background: #555777;
+  /* box-shadow: 0 0 3px grey; */
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 15%;
+  margin-left: 15%;
+}
+
+.friendviewb-link {
+  text-decoration: none;
+}
+
+.friendviewb-content {
+  color: white;
+}
+
+.friendviewb-container3 {
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+.friendviewb-button2 {
+  text-decoration: none;
+  color: inherit;
+  border-color: transparent;
+  background: none;
+  display: inline-block;
+}
+
+.friendviewb-content2 {
+  font-family: emoji;
+  color: black;
+  font-size: 20px;
 }

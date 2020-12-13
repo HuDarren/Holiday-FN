@@ -56,7 +56,7 @@ function FriendView(props) {
       </div>
       <div>
         <div className="friendview-container3">
-          <div>
+          <div className="friendview-container4">
             {state.following &&
             props.friend.follow &&
             props.friend.follow.follower &&
