@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { fetchSearch } from '../../store/index';
 import { Link } from 'react-router-dom';
+import './friend-z.css';
 
 function FriendSearch(props) {
   const [state, setstate] = React.useState({
@@ -24,19 +25,25 @@ function FriendSearch(props) {
 
   return (
     <div>
-      <div></div>
-      <form>
-        <label>Search</label>
-        <input
-          name="search"
-          type="text"
-          value={state.search}
-          onChange={handleChange}
-        ></input>
-      </form>
-      <button type="submit" onClick={handleSubmit}>
-        Search
-      </button>
+      <div className="friend-container1">
+        <form className="search-container">
+          <input
+            className="search-form"
+            name="search"
+            type="text"
+            value={state.search}
+            onChange={handleChange}
+            placeholder="Search for Friends"
+          ></input>
+          <button
+            className="search-button"
+            type="submit"
+            onClick={handleSubmit}
+          >
+            <span className="search-button2"> Search</span>
+          </button>
+        </form>
+      </div>
       <div>
         <div>
           {props.friend && props.friend.search.length ? (
@@ -56,7 +63,6 @@ function FriendSearch(props) {
           )}
         </div>
       </div>
-      <div>testing</div>
     </div>
   );
 }
