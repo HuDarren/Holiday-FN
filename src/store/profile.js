@@ -14,7 +14,7 @@ export const fetchProfile = (userid) => {
   return async (dispatch) => {
     try {
       const res = await axios.get(`/api/users/${userid}`);
-      dispatch(getProfile(res.data.groups));
+      dispatch(getProfile(res.data.UserFollow));
     } catch (error) {
       console.log(error);
     }

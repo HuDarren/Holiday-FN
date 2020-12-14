@@ -41,16 +41,16 @@ function WishListView(props) {
               {props.wishList.map((item) => {
                 const name = item.name;
                 const description = item.description;
-                const key = item.userId;
+                const itemUserId = item.userId;
                 const image = item.image;
-                const id = item.id
+                const id = item.id;
                 return (
                   <WishListViewB
                     name={name}
                     image={image}
-                    id = {id}
+                    id={id}
                     description={description}
-                    number={key}
+                    itemUserId={itemUserId}
                     removeWishList={props.deleteWishList}
                     isLoggedIn={props.isLoggedIn}
                     userId={props.user.id}

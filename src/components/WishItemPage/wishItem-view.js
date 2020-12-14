@@ -19,21 +19,26 @@ function WishItemView(props) {
       <div className="view-container2">
         <div className="view-container3">
           <img className="view-image" alt="text" src={props.image}></img>
+        </div>
+        <div className="view-container4">
           <div className="view-content">
             <div className="view-name">{props.name}</div>
-            <div className="view-description">{props.description}</div>
+            {/* <div className="view-description">{props.description}</div> */}
           </div>
-          <div>
+          <div className="view-content2">
             {props.isLoggedIn ? (
               <div>
-                {props.userId === props.wishListId ? (
-                  <div className="view-content2">
+                {props.userId ? (
+                  <div className="view-content4">
                     <button className="view-button" onClick={() => Click()}>
                       <span className="view-content3">REMOVE</span>
                     </button>
                     <button className="view-button">
                       <span className="view-content3">
-                        <Link to={`/itemFormB/${props.wishId}/${props.number}`}>
+                        <Link
+                          className="view-content3"
+                          to={`/itemFormB/${props.wishId}/${props.number}`}
+                        >
                           EDIT
                         </Link>
                       </span>
