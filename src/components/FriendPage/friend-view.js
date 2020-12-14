@@ -39,7 +39,7 @@ function FriendView(props) {
   return (
     <div className="friendview-container1">
       <div>
-        <div>Friends</div>
+        <div className="friendview-title">Friends</div>
         <FriendSearch />
       </div>
       <div className="friendview-container2">

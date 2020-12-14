@@ -23,6 +23,12 @@ function FriendSearch(props) {
     setstate({ ...state, [event.target.name]: event.target.value });
   }
 
+  console.log(
+    props.friend.search.length
+      ? props.friend.search[0].name.toLowerCase()
+      : null
+  );
+
   return (
     <div>
       <div className="friend-container1">
@@ -50,15 +56,43 @@ function FriendSearch(props) {
             <div>
               {props.friend.search.map((friend) => {
                 return (
-                  <Link to={`/wishListView/${friend.id}`}>
-                    <div>{friend.name}</div>
-                  </Link>
+                  <div className="friendviewb-container1">
+                    <div className="friendviewb-container2">
+                      <button className="friendviewb-button1">
+                        <Link
+                          className="friendviewb-link"
+                          to={`/wishListView/${friend.id}`}
+                        >
+                          <div className="friendviewb-content">
+                            {friend.name[0]}
+                          </div>
+                        </Link>
+                      </button>
+                    </div>
+                    <div className="friendviewb-container3">
+                      <button className="friendviewb-button2">
+                        <Link
+                          className="friendviewb-link"
+                          to={`/wishListView/${friend.id}`}
+                        >
+                          <div className="friendviewb-content2">
+                            {friend.name}
+                          </div>
+                        </Link>
+                      </button>
+                    </div>
+                  </div>
                 );
               })}
             </div>
           ) : (
             <div>
-              {state.showResult ? <div>No Result </div> : <div>Pending </div>}
+              {
+                state.showResult ? (
+                  <div className="friendsearch-content">No Result </div>
+                ) : null
+                // <div className="friendsearch-content">Connect with Friends</div>
+              }
             </div>
           )}
         </div>

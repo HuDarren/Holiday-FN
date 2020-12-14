@@ -150,3 +150,16 @@
   color: black;
   font-size: 20px;
 }
+
+.friendsearch-content {
+  margin-top: 5%;
+  font-size: 20px;
+  font-family: emoji;
+  margin-left: 5%;
+}
+
+.friendview-title {
+  font-size: 30px;
+  font-family: emoji;
+  margin-left: 5%;
+}
