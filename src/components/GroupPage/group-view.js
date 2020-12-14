@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchProfile, fetchGroup } from '../../store';
 import GroupViewB from './group-viewB';
-import GroupViewE from './group-viewE';
+// import GroupViewE from './group-viewE';
 
 function GroupView(props) {
   React.useEffect(() => {
@@ -13,9 +13,9 @@ function GroupView(props) {
 
   return (
     <div>
-      <div>List of ALL Groups Created </div>
-      <GroupViewE />
-      <div>List of ALL Groups Following </div>
+      {/* <div>List of ALL Groups Created </div>
+      <GroupViewE /> */}
+      <div>List of ALL Groups </div>
       <div>
         {props.profile.length ? (
           <div>

@@ -5,29 +5,16 @@ function GroupViewB(props) {
   return (
     <div>
       <div>
-        {props.profileid === props.userid ? (
-          <div>
-            {
-              <div>
-                <Link to={`/group/${props.number}`}>
-                  {/* <img alt="im" src={props.image}></img> */}
-                  <div>{props.name}</div>
-                </Link>
-              </div>
-            }
-          </div>
-        ) : (
-          <div>
-            {
-              <div>
-                <Link to={`/group/${props.number}`}>
-                  {/* <img alt="im" src={props.image}></img> */}
-                  <div>{props.name}</div>
-                </Link>
-              </div>
-            }
-          </div>
-        )}
+        <div>
+          {
+            <div>
+              <Link to={`/group/${props.number}`}>
+                {/* <img alt="im" src={props.image}></img> */}
+                <div>{props.name}</div>
+              </Link>
+            </div>
+          }
+        </div>
       </div>
     </div>
   );

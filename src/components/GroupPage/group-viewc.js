@@ -18,7 +18,6 @@ function GroupViewC(props) {
     props.fetchGroup(target);
   }, []);
 
-
   return (
     <div>
       <div>Groups</div>
@@ -36,9 +35,11 @@ function GroupViewC(props) {
       <button onClick={() => props.removeGroup(props.group.id)}>Delete</button>
       <button>Update</button>
       <div>
-        {props.group && props.group.users && props.group.users.length ? (
+        {props.group &&
+        props.group.GroupFollow &&
+        props.group.GroupFollow.length ? (
           <div>
-            {props.group.users.map((user) => {
+            {props.group.GroupFollow.map((user) => {
               const name = user.name;
               const email = user.email;
               const image = user.profileImage;
