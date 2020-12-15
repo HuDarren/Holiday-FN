@@ -12,7 +12,7 @@ function WishListHome(props) {
         <div className="button-container">
           <div className="button">
             <Link className="button2" to={`/wishListView/${props.user.id}`}>
-              Add To WishList
+              Add WishList
             </Link>
           </div>
         </div>

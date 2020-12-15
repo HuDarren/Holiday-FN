@@ -1,22 +1,22 @@
-import React from "react";
-import { connect } from "react-redux";
-import { addItemThunk } from "../../store/item";
+import React from 'react';
+import { connect } from 'react-redux';
+import { addItemThunk } from '../../store/item';
 
 function WishItemForm(props) {
   const [state, setState] = React.useState({
-    name: "",
-    description: "",
+    name: '',
+    description: '',
   });
 
   function handleSubmit(event) {
     event.preventDefault();
-    const target = props.history.location.pathname.split("/")[
-      props.history.location.pathname.split("/").length - 1
+    const target = props.history.location.pathname.split('/')[
+      props.history.location.pathname.split('/').length - 1
     ];
     props.addItem(target, state);
     setState({
-      name: "",
-      description: "",
+      name: '',
+      description: '',
     });
   }
 
@@ -25,28 +25,34 @@ function WishItemForm(props) {
   }
 
   return (
-    <div>
-      <div>Add New Item </div>
+    <div className="itemform-container">
+      <div className="itemform-content">Add New Item </div>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Title</label>
+          {/* <label>Title</label> */}
           <input
+            className="itemform-input"
             name="name"
             type="text"
+            placeholder="Item"
             value={state.name}
             onChange={handleChange}
           ></input>
         </div>
         <div>
-          <label>Description</label>
+          {/* <label>Description</label> */}
           <input
+            className="itemform-input"
             name="description"
             value={state.description}
             type="text"
+            placeholder="Description"
             onChange={handleChange}
           ></input>
         </div>
-        <button type="submit">ADD</button>
+        <button 
+        className="itemform-submit"
+        type="submit">ADD</button>
       </form>
     </div>
   );
