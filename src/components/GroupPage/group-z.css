@@ -1,0 +1,100 @@
+.groupview-container1 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.groupview-addButton1 {
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 35px 35px 0 35px;
+}
+.groupview-addButton2 {
+  text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  line-height: 1.5;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+  padding: 0.5em 1em;
+  outline: 0;
+  border-radius: 20px !important;
+  color: #fff;
+  background-color: rgb(218, 102, 102);
+  border-color: rgb(218, 102, 102);
+  font-size: 1.6rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1;
+}
+
+.groupview-addButton2:hover {
+  background-color: rgb(134, 52, 22);
+}
+
+.groupview-addButton3 {
+  text-decoration: none;
+  color: white;
+}
+
+.groupviewB-container1 {
+  padding: 1rem;
+  @media (min-width: 40rem) {
+    width: 50%;
+  }
+  @media (min-width: 56rem) {
+    width: 33.3333%;
+  }
+}
+
+.groupviewB-container2 {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 280px;
+  height: 300px;
+  margin-top: 10%;
+}
+
+.groupviewB-container3 {
+  text-decoration: none;
+}
+
+.groupviewB-image {
+  display: flex;
+  object-fit: cover;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  width: 100%;
+  height: auto;
+
+  overflow: hidden;
+  position: relative;
+  transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+
+  @media (min-width: 40rem) {
+    &::before {
+      padding-top: 66.6%;
+    }
+  }
+}
+
+.groupviewB-content {
+  color: black;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
