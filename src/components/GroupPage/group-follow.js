@@ -36,22 +36,28 @@ function GroupFollow(props) {
 
     if (owner) {
       return (
-        <div>
-          <button>I am owner</button>
+        <div className="groupviewC-content2">
+          <button className="groupviewC-button">
+            <span className="groupviewC-content3">I am owner</span>
+          </button>
         </div>
       );
     }
 
     if (!result) {
       return (
-        <div>
-          <button onClick={() => Click1()}>Love to Join</button>
+        <div className="groupviewC-content2">
+          <button className="groupviewC-button" onClick={() => Click1()}>
+            <span className="groupviewC-content3">Love to Join</span>
+          </button>
         </div>
       );
     } else {
       return (
-        <div>
-          <button onClick={() => Click2()}>Change My Mind</button>
+        <div className="groupviewC-content2">
+          <button className="groupviewC-button" onClick={() => Click2()}>
+            <span className="groupviewC-content3">Change my Mind</span>
+          </button>
         </div>
       );
     }
@@ -59,7 +65,6 @@ function GroupFollow(props) {
 
   return (
     <div>
-      <div>follow this group</div>
       <div>{displayButton(props.group, props.userId)}</div>
       <div></div>
     </div>

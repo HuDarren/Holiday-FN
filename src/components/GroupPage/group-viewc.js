@@ -34,41 +34,46 @@ function GroupViewC(props) {
     <div>
       <div>Groups</div>
       {/* Group Information  */}
-      <div>
-        <div className="groupviewC-container1">
-          <div className="groupviewC-container2">
-            <img
-              className="groupviewC-image"
-              alt="img"
-              src={props.group.groupImg}
-            ></img>
+      <div className="groupviewC-container3" >
+      <div className="groupviewC-container1">
+        <div className="groupviewC-container2">
+          <img
+            className="groupviewC-image"
+            alt="img"
+            src={props.group.groupImg}
+          ></img>
 
-            {/* Follow component, Button to Join the group or unJoin or if you are the creator of the group  */}
+          {/* Follow component, Button to Join the group or unJoin or if you are the creator of the group  */}
 
-            <GroupFollow
-              unSubToGroup={props.unSubToGroup}
-              subToGroup={props.subToGroup}
-              group={props.group}
-              userId={props.user.id}
-            />
+          <GroupFollow
+            unSubToGroup={props.unSubToGroup}
+            subToGroup={props.subToGroup}
+            group={props.group}
+            userId={props.user.id}
+          />
 
-            {/* Buttons to edit and delete  */}
-            <div>
-              <button onClick={edit}>Edit</button>
-              <button onClick={() => props.removeGroup(props.group.id)}>
-                Delete
-              </button>
-            </div>
+          {/* Buttons to edit and delete  */}
+          <div className="groupviewC-content2">
+            <button className="groupviewC-button" onClick={edit}>
+              <span className="groupviewC-content3">Edit</span>
+            </button>
+            <button
+              className="groupviewC-button"
+              onClick={() => props.removeGroup(props.group.id)}
+            >
+              <span className="groupviewC-content3">Delete</span>
+            </button>
           </div>
-          {state.showForm ? (
-            <div className="groupviewC-content">
-              <div className="groupviewC-name">{props.group.name}</div>
-              <div className="groupviewC-detail">{props.group.description}</div>
-            </div>
-          ) : (
-            <GroupFormB group={props.group} />
-          )}
         </div>
+        {state.showForm ? (
+          <div className="groupviewC-content">
+            <div className="groupviewC-name">{props.group.name}</div>
+            <div className="groupviewC-detail">{props.group.description}</div>
+          </div>
+        ) : (
+          <GroupFormB group={props.group} />
+        )}
+      </div>
       </div>
 
       {/* Form component , to edit if you are the owner  */}
