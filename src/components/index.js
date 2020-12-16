@@ -13,3 +13,4 @@ export { default as GroupHome } from './GroupPage/group-home';
 export { default as GroupView } from './GroupPage/group-view';
 export { default as GroupFormA } from './GroupPage/group-formA';
 export { default as GroupViewC } from './GroupPage/group-viewC';
+export {default as UserProfile} from "./UserPage//user-view";
