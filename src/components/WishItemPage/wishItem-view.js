@@ -36,6 +36,7 @@ function WishItemView(props) {
                     <button className="view-button">
                       <span className="view-content3">
                         <Link
+                        
                           className="view-content3"
                           to={`/itemFormB/${props.wishId}/${props.number}`}
                         >

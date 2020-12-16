@@ -41,3 +41,123 @@
   margin-inline-end: 0px;
   font-weight: bold;
 }
+
+.userview-container1 {
+  /* display: flex;
+  flex-wrap: wrap;
+  flex-direction: column; */
+
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+.userview-container2 {
+  background-color: white;
+  /* border-radius: 0.25rem; */
+  /* box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25); */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 280px;
+  height: 300px;
+}
+
+.userview-image {
+  display: flex;
+  object-fit: cover;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  position: relative;
+  transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+
+  @media (min-width: 40rem) {
+    &::before {
+      padding-top: 66.6%;
+    }
+  }
+}
+
+.userview-content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.userview-name {
+  color: black;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.userview-email {
+  color: black;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.userview-button {
+  text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  line-height: 1.5;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+  /* padding: 0.5em 1em; */
+  outline: 0;
+  border-radius: 20px !important;
+  color: #fff;
+  background-color: teal;
+  border-color: teal;
+  padding: 0.1em 0.9em;
+  margin-right: 30%;
+  margin-left: 30%;
+  margin-top: 10%;
+  margin-bottom: 15%;
+}
+
+.userview-edit {
+  text-align: center;
+  line-height: 1.5;
+  color: #fff;
+  text-decoration: none;
+}
+
+.profile-button-container {
+  display: flex;
+}
+
+.profile-button {
+  text-align: center;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  line-height: 1.5;
+  transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+  /* padding: 0.5em 1em; */
+  /* outline: 0; */
+  border-radius: 20px !important;
+  color: #fff;
+  background-color: teal;
+  border-color: teal;
+  padding: 0.1em 0.9em;
+  margin-right: 10%;
+  /* margin-left: 20%; */
+  margin-top: 10%;
+  margin-bottom: 15%;
+}
