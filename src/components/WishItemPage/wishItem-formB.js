@@ -12,7 +12,7 @@ function WishItemFormB(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    props.updateItem(1, 2, state);
+    props.updateItem(target[2], target[3], state);
     setState({
       name: '',
       description: '',
@@ -26,12 +26,12 @@ function WishItemFormB(props) {
   console.log(props);
 
   return (
-    <div>
-      <div>WishItemFormB</div>
+    <div className="itemform-container">
+      <div className="itemform-content">Edit Item</div>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Name</label>
           <input
+            className="itemform-input"
             name="name"
             type="text"
             value={state.name}
@@ -39,15 +39,17 @@ function WishItemFormB(props) {
           ></input>
         </div>
         <div>
-          <label>Description</label>
           <input
+            className="itemform-input"
             name="description"
             type="text"
             value={state.description}
             onChange={handleChange}
           ></input>
         </div>
-        <button type="submit">Submit</button>
+        <button className="itemform-submit" type="submit">
+          Submit
+        </button>
       </form>
     </div>
   );
