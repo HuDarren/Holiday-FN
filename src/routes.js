@@ -15,6 +15,7 @@ import {
   WishItemForm,
   WishItemFormB,
   FriendView,
+  UserProfile,
   // GroupHome,
   GroupView,
   GroupFormA,
@@ -42,7 +43,7 @@ class Routes extends Component {
           <Switch>
             {/* <Route path="/:username" component={EditProfile} /> */}
 
-            <Route path="/profile" component={withRouter(UserProfileForm)} />
+            <Route path="/profile" component={withRouter(UserProfile)} />
             <Route path="/home" component={UserHome} />
             <Route exact path="/userprofile" component={withRouter(UserHome)} />
             <Route exact path="/wishListForm" component={WishListForm} />

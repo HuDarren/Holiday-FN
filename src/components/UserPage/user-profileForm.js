@@ -1,25 +1,32 @@
-import React, { useState } from "react";
-import { connect } from "react-redux";
-import { updateUserThunk } from "../../store";
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { updateUserThunk } from '../../store';
 
 function UserProfileForm(props) {
   const [state, setState] = useState({
-    name: "",
-    email: "",
-    password: "",
+    name: '',
+    email: '',
+    password: '',
   });
 
-  const { updateUser } = props;
+  React.useEffect(() => {
+    setState(props.user);
+  }, []);
+
+  // const { updateUser } = props;
+
+  // console.log(props.edit);
 
   function handleSubmit(event) {
     event.preventDefault();
     const { user } = props;
-    updateUser(user.id, state);
-    setState({
-      name: "",
-      email: "",
-      password: "",
-    });
+    props.updateUser(user.id, state);
+    props.edit();
+    // setState({
+    //   name: "",
+    //   email: "",
+    //   password: "",
+    // });
   }
 
   function handleChange(event) {
@@ -28,10 +35,11 @@ function UserProfileForm(props) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className="profileview-content" onSubmit={handleSubmit}>
         <div>
-          <label>Name</label>
+          {/* <label>Name</label> */}
           <input
+            className="groupviewC-name-input"
             name="name"
             type="text"
             value={state.name}
@@ -50,8 +58,9 @@ function UserProfileForm(props) {
           ></input>
         </div> */}
         <div>
-          <label>Email</label>
+          {/* <label>Email</label> */}
           <input
+            className="groupviewC-name-input"
             name="email"
             type="email"
             value={state.email}
@@ -59,7 +68,7 @@ function UserProfileForm(props) {
             onChange={handleChange}
           ></input>
         </div>
-        <div>
+        {/* <div>
           <label>Password</label>
           <input
             name="password"
@@ -68,8 +77,15 @@ function UserProfileForm(props) {
             placeholder="Change Email"
             onChange={handleChange}
           ></input>
+        </div> */}
+        <div className="profile-button-container">
+          <button className="profile-button" type="submit">
+            Submit
+          </button>
+          <button className="profile-button" onClick={props.edit}>
+            Cancel
+          </button>
         </div>
-        <button type="submit">Submit</button>
       </form>
     </div>
   );
