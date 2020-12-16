@@ -23,10 +23,10 @@ function GroupFollow(props) {
       owner = true;
     }
 
-    if (group.users && group.users.length) {
-      for (let i = 0; i < group.users.length; i++) {
-        if (group.users[i].id === user) {
-          console.log('props result', group.users[i].id);
+    if (group.GroupFollow && group.GroupFollow.length) {
+      for (let i = 0; i < group.GroupFollow.length; i++) {
+        if (group.GroupFollow[i].id === user) {
+          console.log('props result', group.GroupFollow[i].id);
           result = true;
           break;
         }

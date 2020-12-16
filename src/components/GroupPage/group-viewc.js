@@ -28,7 +28,7 @@ function GroupViewC(props) {
     });
   }
 
-  console.log('state', state.showForm);
+  // console.log('state', state.showForm);
 
   return (
     <div>
