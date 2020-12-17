@@ -131,7 +131,7 @@
 }
 
 .groupviewC-name {
-  margin-bottom: 15%;
+  margin-bottom: 5%;
   width: 100%;
 }
 
@@ -187,4 +187,14 @@
   line-height: 1.5;
   color: #fff;
   text-decoration: none;
+}
+
+.groupviewC-content4 {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5%;
+}
+
+.groupviewC-content5 {
+  margin-right: 10%;
 }
