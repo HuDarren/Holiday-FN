@@ -87,6 +87,11 @@ export default function (state = defaultState, action) {
       });
       return { ...state, wishlist: updated };
 
+
+
+
+
+      
     case REMOVE_SINGLE_WISHLIST:
       const removed = state.filter((list) => {
         return list.id !== action.id;

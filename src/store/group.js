@@ -4,7 +4,7 @@ import axios from 'axios';
 const GET_GROUP = 'GET_GROUP';
 const ADD_GROUP = 'ADD_GROUP';
 const REMOVE_GROUP = 'REMOVE_GROUP';
-const UPDATE_GROUP = 'UDDATE_GROUP';
+const UPDATE_GROUP = 'UPDATE_GROUP';
 
 const defaultGroup = [];
 
@@ -28,10 +28,10 @@ const updateGroup = (data) => ({
   data,
 });
 
-export const fetchGroup = (userid) => {
+export const fetchGroup = (groupid) => {
   return async (dispatch) => {
     try {
-      const res = await axios.get(`/api/groups/${userid}`);
+      const res = await axios.get(`/api/groups/${groupid}`);
       dispatch(getGroup(res.data));
     } catch (error) {
       console.log(error);
@@ -100,13 +100,27 @@ export default function (state = defaultGroup, action) {
   switch (action.type) {
     case GET_GROUP:
       return action.data;
+
+    // revisit this function
+    case UPDATE_GROUP:
+      const updated = action.data.match;
+
+      // map((group) => {
+      //   if (group.id === action.id) {
+      //     return action.id;
+      //   } else {
+      //     return group;
+      //   }
+      // });
+
+      return { ...state, match: updated };
+
     case REMOVE_GROUP:
       const removed = state.filter((group) => {
         return group.id !== action.id;
       });
       return { ...state, group: removed };
-    case UPDATE_GROUP:
-      return action.data;
+
     default:
       return state;
   }
