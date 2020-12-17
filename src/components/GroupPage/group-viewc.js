@@ -11,11 +11,14 @@ import GroupFollow from './group-follow';
 import GroupFormB from './group-formB';
 import SpinnerHome from '../SpinnerPage/spinner-home';
 import SpinnerView from '../SpinnerPage/spinner-view';
-// import SpinnerView from "../SpinnerPage/spinner-view"
 
 function GroupViewC(props) {
   const [state, setState] = React.useState({
     showForm: true,
+  });
+
+  const [select, setSelect] = React.useState({
+    participants: true,
   });
 
   React.useEffect(() => {
@@ -28,6 +31,18 @@ function GroupViewC(props) {
   function edit() {
     setState({
       showForm: !state.showForm,
+    });
+  }
+
+  function view1() {
+    setSelect({
+      participants: true,
+    });
+  }
+
+  function view2() {
+    setSelect({
+      participants: false,
     });
   }
 
@@ -115,39 +130,49 @@ function GroupViewC(props) {
       </div>
 
       {/* User Joined Component, List of all the users who joined the group  */}
-
       <div>
         <div>
-          <div>Participants</div>
-          {props.group &&
-          props.group.GroupFollow &&
-          props.group.GroupFollow.length ? (
-            <div>
-              {props.group.GroupFollow.map((user) => {
-                const name = user.name;
-                const email = user.email;
-                const image = user.profileImage;
-                const key = user.id;
-                return (
-                  <GroupViewD
-                    number={key}
-                    name={name}
-                    image={image}
-                    email={email}
-                  />
-                );
-              })}
-            </div>
-          ) : null}
+          <button onClick={view1}>
+            <div>Participants</div>
+          </button>
+          <button onClick={view2}>
+            <div>Your Match</div>
+          </button>
         </div>
-
-        {/* Participant selected pair */}
-        <div>Your Match</div>
-        <SpinnerView
-          match={props.group.match}
-          group={props.group}
-          userId={props.user.id}
-        />
+        <div>
+          {select.participants ? (
+            <div>
+              {props.group &&
+              props.group.GroupFollow &&
+              props.group.GroupFollow.length ? (
+                <div>
+                  {props.group.GroupFollow.map((user) => {
+                    const name = user.name;
+                    const email = user.email;
+                    const image = user.profileImage;
+                    const key = user.id;
+                    return (
+                      <GroupViewD
+                        number={key}
+                        name={name}
+                        image={image}
+                        email={email}
+                      />
+                    );
+                  })}
+                </div>
+              ) : null}
+            </div>
+          ) : (
+            <div>
+              <SpinnerView
+                match={props.group.match}
+                group={props.group}
+                userId={props.user.id}
+              />
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
