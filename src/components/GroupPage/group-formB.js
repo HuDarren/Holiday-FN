@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { updateGroupThunk } from '../../store';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 function GroupFormB(props) {
   const name = props.group.name;
@@ -9,7 +11,10 @@ function GroupFormB(props) {
   const [state, setState] = React.useState({
     name: '',
     description: '',
+    budget: '',
   });
+
+  const [startDate, setStartDate] = React.useState(new Date());
 
   React.useEffect(() => {
     setState(props.group);
@@ -20,13 +25,10 @@ function GroupFormB(props) {
   }
   function handleSubmit(event) {
     event.preventDefault();
-    props.updateGroup(props.group.id, props.user.id, state);
-
+    let info = { ...state, exchangeDate: startDate };
+    props.updateGroup(props.group.id, props.user.id, info);
     refreshPage();
   }
-
-  // console.log(state.name);
-  // console.log(props);
 
   function handleChange(event) {
     setState({ ...state, [event.target.name]: event.target.value });
@@ -52,9 +54,21 @@ function GroupFormB(props) {
           value={state.description}
           onChange={handleChange}
         ></input>
-
-        {/* <label>Description</label> */}
       </div>
+      <div>
+        <input
+          className="groupviewC-detail-input"
+          name="budget"
+          type="text"
+          value={state.budget}
+          onChange={handleChange}
+        ></input>
+      </div>
+      <DatePicker
+        selected={startDate}
+        onChange={(date) => setStartDate(date)}
+        dateFormat="yyyy/MM/dd"
+      />
       <button type="submit">Edit</button>
     </form>
   );
