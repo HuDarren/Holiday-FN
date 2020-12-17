@@ -1,31 +1,58 @@
-import React from "react";
+import React from 'react';
+import { connect } from 'react-redux';
+import { updateGroupThunk } from '../../store';
 
-function SpinnerHome() {
-  const [state, setState] = React.useState({
-    clicked: "No",
-  });
+function SpinnerHome(props) {
+  function refreshPage() {
+    window.location.reload(false);
+  }
 
-  // post 
+  let selections = {};
 
-   /*
+  function pair() {
+    if (props.groups && props.groups.length) {
+      let pool = [];
+      for (let i = 0; i < props.groups.length; i++) {
+        pool.push(props.groups[i].id);
+      }
+      pool.sort(() => Math.random() - 0.5);
+      if (pool.length < 3) {
+        pool.push(pool[0]);
+      }
+      for (let i = 0; i < pool.length - 1; i++) {
+        selections[pool[i]] = pool[i + 1];
+      }
+    }
+  }
 
-   each user in the group will have group id and will have the selected person id next to it 
-
-  group follower
-group id , followerid , selected id 
-  1             1            4
-  1             2            1
-  
-
-
-   */
+  function handleSubmit(event) {
+    event.preventDefault();
+    let info = { match: selections };
+    pair();
+    props.updateGroup(props.groupid, props.userid, info);
+    refreshPage();
+  }
 
   return (
     <div>
-      <div> List of all usernames</div>
-      <div></div>
+      {!props.match ? (
+        <button className="groupviewC-button" onClick={handleSubmit}>
+          Draw Names
+        </button>
+      ) : (
+        <button>Matched</button>
+      )}
     </div>
   );
 }
 
-export default SpinnerHome;
+const mapState = (state) => ({
+  user: state.user,
+});
+
+const mapDispatch = (dispatch) => ({
+  updateGroup: (groupId, userId, info) =>
+    dispatch(updateGroupThunk(groupId, userId, info)),
+});
+
+export default connect(mapState, mapDispatch)(SpinnerHome);
