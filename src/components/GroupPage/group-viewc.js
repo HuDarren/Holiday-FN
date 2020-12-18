@@ -19,6 +19,8 @@ function GroupViewC(props) {
 
   const [select, setSelect] = React.useState({
     participants: true,
+    draw: false,
+    form: false,
   });
 
   React.useEffect(() => {
@@ -34,15 +36,26 @@ function GroupViewC(props) {
     });
   }
 
-  function view1() {
+  function viewP() {
     setSelect({
       participants: true,
+      draw: false,
+      form: false,
     });
   }
 
-  function view2() {
+  function viewD() {
     setSelect({
       participants: false,
+      draw: true,
+      form: false,
+    });
+  }
+  function viewF() {
+    setSelect({
+      participants: false,
+      draw: false,
+      form: true,
     });
   }
 
@@ -61,121 +74,144 @@ function GroupViewC(props) {
 
   return (
     <div>
-      <div>Groups</div>
+      {/* <div>Groups</div> */}
       {/* Group Information  */}
       <div className="groupviewC-container3">
-        <div className="groupviewC-container1">
-          <div className="groupviewC-container2">
+        <div className="groupviewC-container4">
+          <div className="groupviewC-name-container">
+            <div className="groupviewC-name">{props.group.name}</div>
+          </div>
+          <div className="groupviewC-image-container">
             <img
               className="groupviewC-image"
               alt="img"
               src={props.group.groupImg}
             ></img>
+          </div>
+          <div className="groupviewC-content-container">
+            <div className="groupviewC-date-budget1">
+              <div className="groupviewC-date-budget2">Exchange On </div>
+              <div className="groupviewC-date-budget3">
+                {props.group.exchangeDate}
+              </div>
+            </div>
 
-            {/* Follow component, Button to Join the group or unJoin or if you are the creator of the group  */}
-
-            <GroupFollow
-              unSubToGroup={props.unSubToGroup}
-              subToGroup={props.subToGroup}
-              group={props.group}
-              userId={props.user.id}
-            />
-
-            {/* Button to draw the names and generate pair */}
-
-            <SpinnerHome
-              groups={props.group.GroupFollow}
-              groupid={props.group.id}
-              userid={props.user.id}
-              match={props.group.match}
-            />
-
-            {/* Buttons to edit and delete  */}
-            <div className="groupviewC-content2">
-              <button className="groupviewC-button" onClick={edit}>
-                <span className="groupviewC-content3">Edit</span>
-              </button>
-              <button
-                className="groupviewC-button"
-                onClick={() => props.removeGroup(props.group.id)}
-              >
-                <span className="groupviewC-content3">Delete</span>
-              </button>
+            <div className="groupviewC-date-budget1">
+              <div className="groupviewC-date-budget2">Budget</div>
+              <div className="groupviewC-date-budget3">
+                ${props.group.budget}
+              </div>
             </div>
           </div>
-          {state.showForm ? (
-            <div className="groupviewC-content">
-              <div className="groupviewC-name">{props.group.name}</div>
-              <div className="groupviewC-content4">
-                <div className="groupviewC-content5">
-                  <div>Exchange Date </div>
-                  <div>{props.group.exchangeDate}</div>
-                </div>
-                <div className="groupviewC-content5">
-                  <div>Budget</div>
-                  <div>${props.group.budget}</div>
-                </div>
-              </div>
-
-              <div className="groupviewC-detail">{props.group.description}</div>
-              <div>
-                <div>Organizer</div>
-                <div>{Owner()}</div>
-              </div>
+          <div className="groupviewC-org-container">
+            <div className="groupviewC-org1">
+              <span className="groupviewC-org2">Organizer</span>
             </div>
-          ) : (
-            <GroupFormB group={props.group} />
-          )}
+            <div className="groupviewC-org1">
+              <div className="groupviewC-org3">{Owner()}</div>
+            </div>
+            <div></div>
+          </div>
+          <div className="groupviewC-detail-container">
+            <div className="groupviewC-detail2">{props.group.description}</div>
+          </div>
         </div>
       </div>
 
-      {/* User Joined Component, List of all the users who joined the group  */}
+      {/* All buttons , participants, update and match  */}
       <div>
         <div className="friendview-container2">
           <div className="friendview-button2">
-            <button className="friendview-button3" onClick={view1}>
+            <button className="friendview-button3" onClick={viewP}>
               <div className="friendview-button4">Participants</div>
             </button>
           </div>
           <div className="friendview-button2">
-            <button className="friendview-button3" onClick={view2}>
+            <button className="friendview-button3" onClick={viewD}>
               <div className="friendview-button4">Your Match</div>
+            </button>
+          </div>
+          <div className="friendview-button2">
+            <button className="friendview-button3" onClick={viewF}>
+              <div className="friendview-button4">Update</div>
             </button>
           </div>
         </div>
         <div>
-          {select.participants ? (
-            <div>
-              {props.group &&
-              props.group.GroupFollow &&
-              props.group.GroupFollow.length ? (
+          <div>
+            {select.participants ? (
+              <div>
                 <div>
-                  {props.group.GroupFollow.map((user) => {
-                    const name = user.name;
-                    const email = user.email;
-                    const image = user.profileImage;
-                    const key = user.id;
-                    return (
-                      <GroupViewD
-                        number={key}
-                        name={name}
-                        image={image}
-                        email={email}
-                      />
-                    );
-                  })}
+                  <GroupFollow
+                    unSubToGroup={props.unSubToGroup}
+                    subToGroup={props.subToGroup}
+                    group={props.group}
+                    userId={props.user.id}
+                  />
                 </div>
-              ) : null}
-            </div>
-          ) : (
-            <div>
-              <SpinnerView
-                match={props.group.match}
-                group={props.group}
-                userId={props.user.id}
-              />
-            </div>
-          )}
+                {props.group &&
+                props.group.GroupFollow &&
+                props.group.GroupFollow.length ? (
+                  <div className="groupviewC-viewD-container">
+                    {props.group.GroupFollow.map((user) => {
+                      const name = user.name;
+                      const email = user.email;
+                      const image = user.profileImage;
+                      const key = user.id;
+                      return (
+                        <GroupViewD
+                          number={key}
+                          name={name}
+                          image={image}
+                          email={email}
+                        />
+                      );
+                    })}
+                  </div>
+                ) : null}
+              </div>
+            ) : null}
+          </div>
+          <div>
+            {select.draw ? (
+              <div>
+                <div>
+                  <SpinnerHome
+                    groups={props.group.GroupFollow}
+                    groupid={props.group.id}
+                    userid={props.user.id}
+                    match={props.group.match}
+                  />
+                  <SpinnerView
+                    match={props.group.match}
+                    group={props.group}
+                    userId={props.user.id}
+                  />
+                </div>
+              </div>
+            ) : null}
+          </div>
+          <div>
+            {select.form ? (
+              <div>
+                {/* Buttons to edit and delete  */}
+                <div className="groupviewC-content2">
+                  {/* <button className="groupviewC-button" onClick={edit}>
+                    <span className="groupviewC-content3">Edit</span>
+                  </button> */}
+                  <button
+                    className="groupviewC-button"
+                    onClick={() => props.removeGroup(props.group.id)}
+                  >
+                    <span className="groupviewC-content3">Delete</span>
+                  </button>
+                </div>
+                <div className="groupviewC-viewForm-container">
+                  <GroupFormB group={props.group} />
+                </div>
+              </div>
+            ) : null}
+          </div>
         </div>
       </div>
     </div>
