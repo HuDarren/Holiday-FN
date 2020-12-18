@@ -32,7 +32,7 @@ function GroupFollow(props) {
         }
       }
     }
-    console.log('result', result);
+
 
     if (owner) {
       return (
