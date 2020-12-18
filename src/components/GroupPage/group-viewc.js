@@ -131,13 +131,17 @@ function GroupViewC(props) {
 
       {/* User Joined Component, List of all the users who joined the group  */}
       <div>
-        <div>
-          <button onClick={view1}>
-            <div>Participants</div>
-          </button>
-          <button onClick={view2}>
-            <div>Your Match</div>
-          </button>
+        <div className="friendview-container2">
+          <div className="friendview-button2">
+            <button className="friendview-button3" onClick={view1}>
+              <div className="friendview-button4">Participants</div>
+            </button>
+          </div>
+          <div className="friendview-button2">
+            <button className="friendview-button3" onClick={view2}>
+              <div className="friendview-button4">Your Match</div>
+            </button>
+          </div>
         </div>
         <div>
           {select.participants ? (

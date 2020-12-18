@@ -38,7 +38,7 @@ function GroupFollow(props) {
       return (
         <div className="groupviewC-content2">
           <button className="groupviewC-button">
-            <span className="groupviewC-content3">I am owner</span>
+            <span className="groupviewC-content3">Organizer</span>
           </button>
         </div>
       );
