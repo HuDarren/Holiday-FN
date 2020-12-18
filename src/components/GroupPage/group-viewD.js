@@ -5,7 +5,7 @@ function GroupViewD(props) {
   return (
     <div className="friendviewb-container1">
       <div className="friendviewb-container2">
-        <button className="friendviewb-button1">
+        <button className="groupviewC-button1">
           <Link
             className="friendviewb-link"
             to={`/wishListView/${props.number}`}
@@ -25,13 +25,6 @@ function GroupViewD(props) {
         </button>
       </div>
     </div>
-
-    // <div>
-    //   <Link to={`/wishListView/${props.number}`}>
-
-    //     <div>{props.name}</div>
-    //   </Link>
-    // </div>
   );
 }
 
