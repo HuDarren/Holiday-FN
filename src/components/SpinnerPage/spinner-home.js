@@ -16,7 +16,7 @@ function SpinnerHome(props) {
         pool.push(props.groups[i].id);
       }
       pool.sort(() => Math.random() - 0.5);
-      if (pool.length < 3) {
+      if (pool.length > 2) {
         pool.push(pool[0]);
       }
       for (let i = 0; i < pool.length - 1; i++) {
@@ -36,11 +36,17 @@ function SpinnerHome(props) {
   return (
     <div>
       {!props.match ? (
-        <button className="groupviewC-button" onClick={handleSubmit}>
-          Draw Names
-        </button>
+        <div className="groupviewC-content2">
+          <button className="groupviewC-button" onClick={handleSubmit}>
+            <span className="groupviewC-content3">Draw Names</span>
+          </button>
+        </div>
       ) : (
-        <button>Matched</button>
+        <div className="groupviewC-content2">
+          <button className="groupviewC-button">
+            <span className="groupviewC-content3">Matched</span>
+          </button>
+        </div>
       )}
     </div>
   );
