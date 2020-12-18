@@ -2,10 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function SpinnerView(props) {
-  //   const [state, setstate] = React.useState({
-  //     name: '',
-  //     matchId: '',
-  //   });
+
 
   let matchName = '';
   let selectedId = 0;
@@ -27,24 +24,16 @@ function SpinnerView(props) {
 
   match();
 
-  //   React.useEffect(() => {
-  //     match();
-  //     setstate({
-  //       name: matchName,
-  //       matchId: id,
-  //     });
-  //   }, [props.state]);
-  //   console.log(state);
 
   return (
     <div>
       {props.match ? (
-        <div>
+        <div className="groupviewC-Spview-container">
           {/* <button onClick={match}>Pair</button>
           <div>Your Match</div> */}
           <div className="friendviewb-container1">
             <div className="friendviewb-container2">
-              <button className="friendviewb-button1">
+              <button className="groupviewC-button1">
                 <Link
                   className="friendviewb-link"
                   to={`/wishListView/${Number(selectedId)}`}
