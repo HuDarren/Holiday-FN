@@ -37,7 +37,7 @@ function GroupFormB(props) {
   return (
     <form className="groupviewC-content" onSubmit={handleSubmit}>
       <div>
-        {/* <label>Title</label> */}
+        <label className="groupviewC-label">Title</label>
         <input
           className="groupviewC-name-input"
           name="name"
@@ -47,15 +47,7 @@ function GroupFormB(props) {
         ></input>
       </div>
       <div>
-        <input
-          className="groupviewC-detail-input"
-          name="description"
-          type="text"
-          value={state.description}
-          onChange={handleChange}
-        ></input>
-      </div>
-      <div>
+        <label className="groupviewC-label">Budget</label>
         <input
           className="groupviewC-detail-input"
           name="budget"
@@ -64,12 +56,28 @@ function GroupFormB(props) {
           onChange={handleChange}
         ></input>
       </div>
+      <div>
+        <label className="groupviewC-label">Description</label>
+        <textarea
+          className="groupviewC-detail-textarea"
+          name="description"
+          type="text"
+          value={state.description}
+          onChange={handleChange}
+        ></textarea>
+      </div>
+      <label className="groupviewC-label">Time</label>
       <DatePicker
+        className="groupviewC-detail-input"
         selected={startDate}
         onChange={(date) => setStartDate(date)}
         dateFormat="yyyy/MM/dd"
       />
-      <button type="submit">Edit</button>
+      <div className="groupviewC-viewForm-button1">
+        <button className="groupviewC-viewForm-button2" type="submit">
+          Edit
+        </button>
+      </div>
     </form>
   );
 }
