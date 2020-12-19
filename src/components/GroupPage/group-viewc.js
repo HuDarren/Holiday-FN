@@ -12,6 +12,7 @@ import GroupFormB from './group-formB';
 import SpinnerHome from '../SpinnerPage/spinner-home';
 import SpinnerView from '../SpinnerPage/spinner-view';
 
+
 function GroupViewC(props) {
   const [state, setState] = React.useState({
     showForm: true,
@@ -76,6 +77,7 @@ function GroupViewC(props) {
     <div>
       {/* <div>Groups</div> */}
       {/* Group Information  */}
+
       <div className="groupviewC-container3">
         <div className="groupviewC-container4">
           <div className="groupviewC-name-container">
@@ -92,7 +94,7 @@ function GroupViewC(props) {
             <div className="groupviewC-date-budget1">
               <div className="groupviewC-date-budget2">Exchange On </div>
               <div className="groupviewC-date-budget3">
-                {props.group.exchangeDate}
+                {String(props.group.exchangeDate).slice(0,10)}
               </div>
             </div>
 
