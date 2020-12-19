@@ -4,10 +4,8 @@ import { updateGroupThunk } from '../../store';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
-function GroupFormB(props) {
-  const name = props.group.name;
-  console.log(name);
 
+function GroupFormB(props) {
   const [state, setState] = React.useState({
     name: '',
     description: '',
@@ -15,6 +13,7 @@ function GroupFormB(props) {
   });
 
   const [startDate, setStartDate] = React.useState(new Date());
+  const [image, setImage] = React.useState('');
 
   React.useEffect(() => {
     setState(props.group);
@@ -25,7 +24,7 @@ function GroupFormB(props) {
   }
   function handleSubmit(event) {
     event.preventDefault();
-    let info = { ...state, exchangeDate: startDate };
+    let info = { ...state, exchangeDate: startDate , groupImg: image};
     props.updateGroup(props.group.id, props.user.id, info);
     refreshPage();
   }
@@ -34,8 +33,37 @@ function GroupFormB(props) {
     setState({ ...state, [event.target.name]: event.target.value });
   }
 
+  async function uploadImage(e) {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append('file', files[0]);
+    data.append('upload_preset', 'uploadx');
+  
+
+    const res = await fetch(
+      'https://api.cloudinary.com/v1_1/dsi0jbonx/image/upload',
+      {
+        method: 'Post',
+        body: data,
+      }
+    );
+
+    const file = await res.json();
+    setImage(file.secure_url);
+
+  }
+
   return (
     <form className="groupviewC-content" onSubmit={handleSubmit}>
+      <div>
+        <label className="groupviewC-label">Import Photo</label>
+        <input
+          className="groupviewC-name-input"
+          name="image"
+          type="file"
+          onChange={uploadImage}
+        ></input>
+      </div>
       <div>
         <label className="groupviewC-label">Title</label>
         <input
@@ -71,7 +99,7 @@ function GroupFormB(props) {
         className="groupviewC-detail-input"
         selected={startDate}
         onChange={(date) => setStartDate(date)}
-        dateFormat="yyyy/MM/dd"
+        dateFormat="MM/dd/yyyy"
       />
       <div className="groupviewC-viewForm-button1">
         <button className="groupviewC-viewForm-button2" type="submit">
