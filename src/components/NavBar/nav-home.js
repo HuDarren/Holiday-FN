@@ -1,10 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import { logout } from "../../store";
-import "./nav-z.css";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { logout } from '../../store';
+import './nav-z.css';
 
 const NavHome = ({ handleClick, isLoggedIn }) => (
   <div className="nav-container">
@@ -32,10 +32,24 @@ const NavHome = ({ handleClick, isLoggedIn }) => (
           </div>
         </div>
       ) : (
-        <div>
-          <Link to="/home">Holiday</Link>
-          <Link to="/login">Login</Link>
-          <Link to="/signup">Sign Up</Link>
+        <div className="nav-container2">
+          <div className="nav-title">
+            <Link className="nav-title2" to="/home">
+              Holiday
+            </Link>
+          </div>
+          <div className="nav-content">
+            <div className="nav-login">
+              <Link className="nav-login2" to="/login">
+                Login
+              </Link>
+            </div>
+            <div className="nav-signup">
+              <Link className="nav-signup2" to="/signup">
+                SignUp
+              </Link>
+            </div>
+          </div>
         </div>
       )}
     </nav>

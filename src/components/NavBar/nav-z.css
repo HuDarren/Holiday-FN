@@ -10,7 +10,7 @@
 }
 
 .nav-title {
-  margin-right: 65%;
+  margin-right: 50%;
   margin-left: 5%;
 }
 
@@ -53,4 +53,36 @@
   display: flex;
   flex-direction: row-reverse;
   /* margin-right: 20%; */
+}
+
+.nav-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.nav-login {
+  display: flex;
+  width: 100%;
+}
+
+.nav-login2 {
+  text-decoration: none;
+  height: 100%;
+  font-family: sans-serif;
+  color: white;
+  margin-top: 40%;
+}
+
+.nav-signup {
+  display: flex;
+  width: 100%;
+}
+
+.nav-signup2 {
+  text-decoration: none;
+  height: 100%;
+  font-family: sans-serif;
+  color: white;
+  margin-top: 40%;
 }
