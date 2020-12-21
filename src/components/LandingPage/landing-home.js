@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import MessageHome from '../Message/message-home';
 import './landing-z.css';
 
@@ -9,11 +10,12 @@ function LandingHome() {
         <div className="landingI-contentA">
           <div className="landingI-content1">
             <div className="landingI-text1">
-              The Best App To Celebrate with Friends and Family{' '}
+              The Best App To Celebrate with Friends and Family
             </div>
           </div>
           <div className="landingI-content2">
             <button className="landingI-button1">
+              <Link className="landingI-button2" to={'/'}></Link>
               <span className="landingI-buttontext">Sign up today </span>
             </button>
           </div>
@@ -68,7 +70,7 @@ function LandingHome() {
       </div>
       <div className="landing-container3">
         <div>
-          <div>Sign up Now</div>
+          <div>Sign up today for free. No purchase needed</div>
         </div>
         <div>
           <div>Or Demo Now </div>
