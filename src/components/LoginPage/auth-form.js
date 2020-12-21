@@ -2,31 +2,55 @@ import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { auth } from "../../store/index";
+import "./auth-z.css"
 
 const AuthForm = (props) => {
   const { name, displayName, handleSubmit, error } = props;
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} name={name}>
-        <div>
-          <label htmlFor="email">
+    <div 
+    className="form-container"
+    >
+      <div
+      className="form-contentA"
+      >
+      <form 
+       className="form-content"
+      onSubmit={handleSubmit} name={name}>
+        <div  
+        className="form-email"
+        >
+          <label 
+          className="form-label"
+          htmlFor="email">
             <small>Email</small>
           </label>
-          <input name="email" type="text" />
+          <input 
+          className="form-input"
+          name="email" type="text" />
         </div>
-        <div>
-          <label htmlFor="password">
+        <div
+        className="form-password"
+        >
+          <label 
+          className="form-label"
+          htmlFor="password">
             <small>Password</small>
           </label>
-          <input name="password" type="password" />
+          <input 
+          className="form-input"
+          name="password" type="password" />
         </div>
         <div>
-          <button type="submit">{displayName}</button>
+          <button 
+          
+          className="form-button"
+          type="submit">{displayName}</button>
         </div>
         {error && error.response && <div> {error.response.data} </div>}
       </form>
-      <a href="/auth/google">{displayName} with Google</a>
+      {/* <a href="/auth/google">{displayName} with Google</a> */}
+    </div>
     </div>
   );
 };
