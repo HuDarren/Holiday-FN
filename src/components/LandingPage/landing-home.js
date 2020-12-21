@@ -1,15 +1,23 @@
 import React from 'react';
+import MessageHome from '../Message/message-home';
 import './landing-z.css';
 
 function LandingHome() {
   return (
     <div>
       <div className="landing-image-container">
-        <img
-          alt="img"
-          className="landing-image"
-          src="https://res.cloudinary.com/dsi0jbonx/image/upload/v1608421349/christmasgift_oezpn2.jpg"
-        />
+        <div className="landingI-contentA">
+          <div className="landingI-content1">
+            <div className="landingI-text1">
+              The Best App To Celebrate with Friends and Family{' '}
+            </div>
+          </div>
+          <div className="landingI-content2">
+            <button className="landingI-button1">
+              <span className="landingI-buttontext">Sign up today </span>
+            </button>
+          </div>
+        </div>
       </div>
       <div className="landing-container1">
         <div className="landing-content1">
@@ -68,8 +76,7 @@ function LandingHome() {
       </div>
 
       <div className="landing-container4">
-        <div 
-        className="landing4-contentA">
+        <div className="landing4-contentA">
           <div className="landing4-content">
             <img
               className="landing4-image"
@@ -98,11 +105,25 @@ function LandingHome() {
       </div>
 
       <div className="landing-container5">
-        <div>About the Creator </div>
-        <div>
-          Hi, i m the creator of Holiday. file a complaint here. Contact Me
+        <div className="landing5-contentA">
+          <div className="landing5-content">
+            <div className="landing5-text1"> About </div>
+            <img
+              className="landing5-image"
+              alt="img"
+              src={
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmCI3398aPuuZJRmds58sIyLzqKH_ezkotXQ&usqp=CAU'
+              }
+            ></img>
+            <div className="landing5-text2">Founder : Darren Hu</div>
+            <div className="landing5-text3">
+              Got questions? Got a complaint? Dont wait! Email me now!
+            </div>
+          </div>
+          <div className="landing5-content">
+            <MessageHome />
+          </div>
         </div>
-        <div>contact form here</div>
       </div>
     </div>
   );
