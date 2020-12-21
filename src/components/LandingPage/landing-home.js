@@ -22,7 +22,10 @@ function LandingHome() {
         </div>
       </div>
       <div className="landing-container1">
-        <div className="landing-content1">
+        <div
+        className="landing1-contentA"
+        
+        >        <div className="landing-content1">
           <img
             className="landing-image1"
             alt="img"
@@ -30,7 +33,9 @@ function LandingHome() {
               'https://res.cloudinary.com/dsi0jbonx/image/upload/v1608494908/green-check-transparent-3_cbpynn.png'
             }
           ></img>
-          <div>Set up a WishList</div>
+          <div
+          className="landing1-text"
+          >Set up a WishList</div>
         </div>
         <div className="landing-content1">
           <img
@@ -40,7 +45,9 @@ function LandingHome() {
               'https://res.cloudinary.com/dsi0jbonx/image/upload/v1608494908/green-check-transparent-3_cbpynn.png'
             }
           ></img>
-          <div>Create an Event</div>
+          <div
+          className="landing1-text"
+          >Create an Event</div>
         </div>
         <div className="landing-content1">
           <img
@@ -50,8 +57,11 @@ function LandingHome() {
               'https://res.cloudinary.com/dsi0jbonx/image/upload/v1608494908/green-check-transparent-3_cbpynn.png'
             }
           ></img>
-          <div>Celebrate the Holiday</div>
-        </div>
+          <div
+          className="landing1-text"
+          >Celebrate the Holiday</div>
+        </div></div>
+
       </div>
       <div className="landing-container2">
         <div className="landing2-content1">
