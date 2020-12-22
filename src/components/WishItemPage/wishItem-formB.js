@@ -8,14 +8,18 @@ function WishItemFormB(props) {
     description: '',
   });
 
+    const [imagex, setImage] = React.useState('');
+
   const target = props.match.url.split('/');
 
   function handleSubmit(event) {
     event.preventDefault();
-    props.updateItem(target[2], target[3], state);
+    let info = { ...state,  Image: imagex};
+    props.updateItem(target[2], target[3], info);
     setState({
       name: '',
       description: '',
+      Image: ""
     });
   }
 
@@ -23,13 +27,46 @@ function WishItemFormB(props) {
     setState({ ...state, [event.target.name]: event.target.value });
   }
 
-  console.log(props);
+
+    async function uploadImage(e) {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append('file', files[0]);
+    data.append('upload_preset', 'uploadx');
+  
+
+    const res = await fetch(
+      'https://api.cloudinary.com/v1_1/dsi0jbonx/image/upload',
+      {
+        method: 'Post',
+        body: data,
+      }
+    );
+
+    const file = await res.json();
+    setImage(file.secure_url);
+
+  }
+
+
 
   return (
     <div className="itemform-container">
-      <div className="itemform-content">Edit Item</div>
-      <form onSubmit={handleSubmit}>
+      <div className="itemform-contentA">
+      <form
+      className="itemform-content"
+      onSubmit={handleSubmit}>
+      <div>
+        <label className="itemform-label">Import Photo</label>
+        <input
+          className="itemform-input"
+          name="image"
+          type="file"
+          onChange={uploadImage}
+        ></input>
+      </div>
         <div>
+                 <label className="itemform-label">Title</label>
           <input
             className="itemform-input"
             name="name"
@@ -39,18 +76,20 @@ function WishItemFormB(props) {
           ></input>
         </div>
         <div>
-          <input
-            className="itemform-input"
+                 <label className="itemform-label">Description</label>
+          <textarea
+            className="itemform-textarea"
             name="description"
             type="text"
             value={state.description}
             onChange={handleChange}
-          ></input>
+          ></textarea>
         </div>
-        <button className="itemform-submit" type="submit">
+        <button className="itemform-button" type="submit">
           Submit
         </button>
       </form>
+      </div>
     </div>
   );
 }
