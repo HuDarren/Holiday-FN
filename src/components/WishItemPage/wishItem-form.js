@@ -48,7 +48,6 @@ function WishItemForm(props) {
       console.log(imagex)
   }
 
-console.log(imagex)
 
   return (
     <div className="itemform-container">
