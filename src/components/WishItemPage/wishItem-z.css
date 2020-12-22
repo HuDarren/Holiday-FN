@@ -177,55 +177,76 @@
 }
 
 .itemform-container {
+  display: flex;
+  justify-content: center;
+}
+
+.itemform-contentA {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 380px;
+  height: 450px;
   margin-top: 10%;
-  font: 95% Arial, Helvetica, sans-serif;
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 16px;
-  background: #f7f7f7;
+  margin-bottom: 10%;
 }
 
 .itemform-content {
-  background-color: rgb(154, 214, 154);
-  padding: 20px 0;
-  font-size: 140%;
-  font-weight: 300;
-  text-align: center;
-  color: #fff;
-  margin: -16px -16px 16px -16px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  margin-top: 5%;
+}
+
+.itemform-label {
+  font-weight: 600;
 }
 
 .itemform-input {
-  outline: none;
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+  margin-bottom: 15%;
   width: 100%;
-  background: #fff;
-  margin-bottom: 4%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
   border: 1px solid #ccc;
-  padding: 3%;
-  color: #555;
-  font: 95% Arial, Helvetica, sans-serif;
-  box-shadow: 0 0 5px rgb(154, 214, 154);
-  padding: 3%;
-  border: 1px solid rgb(154, 214, 154);
+  border-radius: 4px;
   box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
 }
 
-.itemform-input :hover {
-  background-color: rgb(154, 214, 154);
-}
-
-.itemform-submit {
+.itemform-textarea {
   width: 100%;
-  padding: 3%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font: -webkit-mini-control;
+  resize: none;
+  min-height: 100px;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+/* .itemform-input :hover {
   background-color: rgb(154, 214, 154);
-  border-bottom: 2px solid #30c29e;
-  border-top-style: none;
-  border-right-style: none;
-  border-left-style: none;
-  color: #fff;
+} */
+
+.itemform-button {
+  margin-bottom: 15%;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: rgb(218, 102, 102);
+  color: white;
+  font-weight: 700;
 }
