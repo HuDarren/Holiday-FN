@@ -31,6 +31,9 @@
 }
 
 .nav-log {
+  margin-right: 2%;
+  margin-left: 2%;
+  width: 80px;
 }
 
 .nav-log2 {
@@ -39,12 +42,13 @@
   font-family: sans-serif;
   color: white;
   margin-top: 40%;
+  font-weight: 600;
 }
 
 .nav-profile {
-  width: 90%;
-  height: 90%;
-  vertical-align: middle;
+  margin-right: 2%;
+  margin-left: 2%;
+  width: 80px;
 }
 
 .nav-profile2 {
@@ -58,9 +62,12 @@
 }
 
 .nav-profile3 {
-  display: flex;
-  flex-direction: row-reverse;
-  /* margin-right: 20%; */
+  text-decoration: none;
+  height: 100%;
+  font-family: sans-serif;
+  color: white;
+  margin-top: 40%;
+  font-weight: 600;
 }
 
 .nav-content {
