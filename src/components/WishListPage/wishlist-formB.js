@@ -8,12 +8,16 @@ function WishListFormB(props) {
     description: '',
   });
 
+  const [imagex, setImage] = React.useState('');
+
   function handleSubmit(event) {
     event.preventDefault();
-    props.updateWishList(props.user.id, props.match.params.id, state);
+    let info = { ...state,  image: imagex};
+    props.updateWishList(props.user.id, props.match.params.id, info);
     setState({
       name: '',
       description: '',
+      image:""
     });
   }
 
@@ -21,15 +25,52 @@ function WishListFormB(props) {
     setState({ ...state, [event.target.name]: event.target.value });
   }
 
-  console.log('look', props);
+    async function uploadImage(e) {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append('file', files[0]);
+    data.append('upload_preset', 'uploadx');
+  
+
+    const res = await fetch(
+      'https://api.cloudinary.com/v1_1/dsi0jbonx/image/upload',
+      {
+        method: 'Post',
+        body: data,
+      }
+    );
+
+    const file = await res.json();
+    setImage(file.secure_url);
+      console.log(imagex)
+  }
+
+console.log(imagex)
 
   return (
-    <div>
-      <div>update form </div>
-      <form onSubmit={handleSubmit}>
+    <div 
+    className="wishlist-form-container"
+    >
+ 
+      <div 
+      className="wishlist-form-contentA"
+      >
+           <div>Update WishList</div>
+      <form
+      className="wishlist-form-content"  onSubmit={handleSubmit}>
+      <div>
+        <label className="wishlist-form-label">Import Photo</label>
+        <input
+          className="wishlist-form-input"
+          name="image"
+          type="file"
+          onChange={uploadImage}
+        ></input>
+      </div>
         <div>
-          <label>Title</label>
+          <label className="wishlist-form-label">Title</label>
           <input
+           className="wishlist-form-input"
             name="name"
             type="text"
             value={state.name}
@@ -37,16 +78,20 @@ function WishListFormB(props) {
           ></input>
         </div>
         <div>
-          <label>Description</label>
-          <input
+          <label className="wishlist-form-label">Description</label>
+          <textarea
+           className="wishlist-form-textarea"
             name="description"
             type="text"
             value={state.description}
             onChange={handleChange}
-          ></input>
+          ></textarea>
         </div>
-        <button type="submit">Submit</button>
+        <button 
+        className="wishlist-form-button"
+        type="submit">Submit</button>
       </form>
+      </div>
     </div>
   );
 }
