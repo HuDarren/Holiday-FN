@@ -8,7 +8,9 @@ import './nav-z.css';
 
 const NavHome = ({ handleClick, isLoggedIn }) => (
   <div className="nav-container">
-    <nav>
+    <nav 
+    className="nav-container1"
+    >
       {isLoggedIn ? (
         <div className="nav-container2">
           <div className="nav-title">
@@ -38,7 +40,6 @@ const NavHome = ({ handleClick, isLoggedIn }) => (
               Holiday
             </Link>
           </div>
-          <div className="nav-content">
             <div className="nav-login">
               <Link className="nav-login2" to="/login">
                 Login
@@ -49,11 +50,10 @@ const NavHome = ({ handleClick, isLoggedIn }) => (
                 SignUp
               </Link>
             </div>
-          </div>
         </div>
       )}
     </nav>
-    <hr />
+   
   </div>
 );
 
