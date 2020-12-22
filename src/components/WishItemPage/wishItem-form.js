@@ -8,15 +8,19 @@ function WishItemForm(props) {
     description: '',
   });
 
+    const [imagex, setImage] = React.useState('');
+
   function handleSubmit(event) {
     event.preventDefault();
+      let info = { ...state,  Image: imagex};
     const target = props.history.location.pathname.split('/')[
       props.history.location.pathname.split('/').length - 1
     ];
-    props.addItem(target, state);
+    props.addItem(target, info);
     setState({
       name: '',
       description: '',
+      Image: ""
     });
   }
 
@@ -24,36 +28,68 @@ function WishItemForm(props) {
     setState({ ...state, [event.target.name]: event.target.value });
   }
 
+   async function uploadImage(e) {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append('file', files[0]);
+    data.append('upload_preset', 'uploadx');
+  
+
+    const res = await fetch(
+      'https://api.cloudinary.com/v1_1/dsi0jbonx/image/upload',
+      {
+        method: 'Post',
+        body: data,
+      }
+    );
+
+    const file = await res.json();
+    setImage(file.secure_url);
+      console.log(imagex)
+  }
+
+console.log(imagex)
+
   return (
     <div className="itemform-container">
-      <div className="itemform-content">Add New Item </div>
-      <form onSubmit={handleSubmit}>
+      <div className="itemform-contentA">
+      <form
+      className="itemform-content"
+      onSubmit={handleSubmit}>
+      <div>
+        <label className="itemform-label">Import Photo</label>
+        <input
+          className="itemform-input"
+          name="image"
+          type="file"
+          onChange={uploadImage}
+        ></input>
+      </div>
         <div>
-          {/* <label>Title</label> */}
+                 <label className="itemform-label">Title</label>
           <input
             className="itemform-input"
             name="name"
             type="text"
-            placeholder="Item"
             value={state.name}
             onChange={handleChange}
           ></input>
         </div>
         <div>
-          {/* <label>Description</label> */}
-          <input
-            className="itemform-input"
+                 <label className="itemform-label">Description</label>
+          <textarea
+            className="itemform-textarea"
             name="description"
-            value={state.description}
             type="text"
-            placeholder="Description"
+            value={state.description}
             onChange={handleChange}
-          ></input>
+          ></textarea>
         </div>
-        <button 
-        className="itemform-submit"
-        type="submit">ADD</button>
+        <button className="itemform-button" type="submit">
+          Submit
+        </button>
       </form>
+      </div>
     </div>
   );
 }
