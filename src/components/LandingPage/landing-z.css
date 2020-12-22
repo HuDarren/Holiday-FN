@@ -158,6 +158,19 @@
   color: white;
 }
 
+.landing3-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10%;
+  font-size: large;
+  text-align: center;
+  font-weight: 700;
+}
+
+.landing3-text {
+  margin-bottom: 5%;
+}
+
 .landing-container4 {
   display: flex;
   min-height: 200px;

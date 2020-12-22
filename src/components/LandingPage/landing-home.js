@@ -79,11 +79,15 @@ function LandingHome() {
         </div>
       </div>
       <div className="landing-container3">
-        <div>
-          <div>Sign up today for free. No purchase needed</div>
+        <div className="landing3-content">
+        <div 
+        className="landing3-text"
+        >
+          <div>Sign Up Today For Free</div>
         </div>
         <div>
-          <div>Or Demo Now </div>
+          <div>Or See Demo Now </div>
+        </div>
         </div>
       </div>
 
