@@ -24,7 +24,7 @@ function WishItemHome(props) {
 
   return (
     <div>
-      <div className="home-container1"> Your Items</div>
+      <div className="home-containerT"> Your Items</div>
       <div className="home-container1">
         <div className="home-container2">
           {props.item.length ? (

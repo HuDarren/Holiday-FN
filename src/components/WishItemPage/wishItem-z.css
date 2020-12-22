@@ -1,3 +1,12 @@
+.home-containerT {
+  font-size: 25px;
+  margin-bottom: 5%;
+  font-family: revert;
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+}
+
 .home-container1 {
   font-size: 25px;
   margin-bottom: 5%;
@@ -56,6 +65,7 @@
   flex-direction: column;
   align-items: center;
   padding: 35px 35px 0 35px;
+  margin-bottom: 5%;
 }
 
 .view-container1 {
@@ -106,11 +116,12 @@
   flex: 1 1 auto;
   justify-content: flex-start;
   padding: 1rem;
+  width: 20%;
 }
 
 .view-name {
   color: black;
-  font-size: 30px;
+  font-size: medium;
   font-weight: 300;
   letter-spacing: 2px;
   display: flex;
