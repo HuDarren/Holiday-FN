@@ -167,10 +167,10 @@
   justify-content: center;
   align-items: center;
   background-color: black;
-  width: 75%;
-  height: auto;
+  width: 40%;
+  height: 40%;
   margin-top: 10%;
-  margin-left: 10%;
+  margin-left: 30%;
 
   overflow: hidden;
   position: relative;
@@ -188,6 +188,7 @@
   flex: 1 1 auto;
   flex-direction: column;
   padding: 1rem;
+  height: 20%;
 }
 
 .wishviewb-name {
@@ -256,6 +257,7 @@
   width: 380px;
   height: 450px;
   margin-top: 10%;
+  margin-bottom: 10%;
 }
 
 .wishlist-form-content {
