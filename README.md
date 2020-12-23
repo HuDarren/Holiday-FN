@@ -2,7 +2,7 @@
 
 Holiday is a gift exchange application designed to help users set up holiday events and purchase the perfect gift for others.
 
-![](https://res.cloudinary.com/dsi0jbonx/image/upload/v1608755159/Cover_Page_krh2m3.png)
+<img src="https://res.cloudinary.com/dsi0jbonx/image/upload/v1608755159/Cover_Page_krh2m3.png" width="200" >
 
 ![](https://res.cloudinary.com/dsi0jbonx/image/upload/v1608754964/login_sdnbyy.png)
 
@@ -36,10 +36,9 @@ Install backend package https://github.com/HuDarren/Holiday-BE
 
 npm install
 npm start
-npm seed 
+npm seed
 
 ```
-
 
 ## Tech Stack
 
