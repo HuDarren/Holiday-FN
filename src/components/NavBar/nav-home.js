@@ -24,12 +24,12 @@ const NavHome = ({ handleClick, isLoggedIn }) => (
             </a>
           </div>
           <div className="nav-profile">
-            <Link className="nav-profile3" to="/profile">
-              <img
+            <Link className="nav-profile3" to="/profile"> Profile
+              {/* <img
                 className="nav-profile2"
                 alt="img"
                 src="https://res.cloudinary.com/dsi0jbonx/image/upload/v1607114436/snowman_mtdwl8.png"
-              />
+              /> */}
             </Link>
           </div>
         </div>
