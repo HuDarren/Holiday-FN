@@ -102,7 +102,7 @@ function LandingHome() {
               }
             ></img>
             <div className="landing4-text1">I cant believe its that easy!</div>
-            <div className="landing4-text2">Got this but now this. </div>
+            <div className="landing4-text2">Cant have another christmas exchange without this! </div>
             <div className="landing4-text3">-George Wu</div>
           </div>
           <div className="landing4-content">
@@ -113,8 +113,8 @@ function LandingHome() {
                 'https://res.cloudinary.com/dsi0jbonx/image/upload/v1608500217/5stars_ibukmb.png'
               }
             ></img>
-            <div className="landing4-text1">I cant believe its that easy!</div>
-            <div className="landing4-text2">Got this but now this. </div>
+            <div className="landing4-text1">Wow! This is Great!</div>
+            <div className="landing4-text2">Easy to create and share my lists with friends</div>
             <div className="landing4-text3">-Nancy Naomi</div>
           </div>
         </div>
