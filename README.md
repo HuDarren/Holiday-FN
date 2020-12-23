@@ -40,12 +40,12 @@ npm seed
 
 ## Tech Stack
 
--HTML / CSS
--React / Redux
--Sequelize
--NodeJS
--Express
--PostgreSQL
+- HTML / CSS
+- React / Redux
+- Sequelize
+- NodeJS
+- Express
+- PostgreSQL
 
 ## License
 
