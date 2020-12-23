@@ -7,7 +7,7 @@ function GroupHome() {
     <div className="container">
       <div className="container1">
         <div className="title">Groups</div>
-        <div>Add Groups</div>
+   
         <div className="button-container">
           <div className="button">
             <Link className="button2" to="/groups">

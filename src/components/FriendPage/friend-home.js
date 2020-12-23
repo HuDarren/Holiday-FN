@@ -7,7 +7,7 @@ function FriendHome(props) {
     <div className="container">
       <div className="container1">
         <div className="title">Friends</div>
-        <div>Add Friends</div>
+      
         <div className="button-container">
           <div className="button">
             <Link className="button2" to="/friends">

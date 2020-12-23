@@ -8,7 +8,7 @@ function WishListHome(props) {
     <div className="container">
       <div className="container1">
         <div className="title">WishList</div>
-        <div>Count</div>
+
         <div className="button-container">
           <div className="button">
             <Link className="button2" to={`/wishListView/${props.user.id}`}>
