@@ -11,8 +11,7 @@ function WishItemView(props) {
     refreshPage();
   }
 
-  // console.log(props.userId);
-  // console.log(props.wishListId);
+
 
   return (
     <div className="view-container1">
