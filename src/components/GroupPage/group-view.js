@@ -13,9 +13,10 @@ function GroupView(props) {
 
   return (
     <div>
-      {/* <div>List of ALL Groups Created </div>
-      <GroupViewE /> */}
-      <div>List of ALL Groups </div>
+
+      <div
+      className="groupview-title"
+      >All Events</div>
       <div>
         {props.profile.length ? (
           <div className="groupview-container1">
@@ -43,7 +44,7 @@ function GroupView(props) {
       <div className="groupview-addButton1">
         <button className="groupview-addButton2">
           <Link className="groupview-addButton3" to={`/groupForm`}>
-            Add Group
+            Add Event
           </Link>
         </button>
       </div>

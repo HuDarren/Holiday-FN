@@ -14,9 +14,6 @@ import SpinnerView from '../SpinnerPage/spinner-view';
 
 
 function GroupViewC(props) {
-  const [state, setState] = React.useState({
-    showForm: true,
-  });
 
   const [select, setSelect] = React.useState({
     participants: true,
@@ -31,11 +28,7 @@ function GroupViewC(props) {
     props.fetchGroup(target);
   }, []);
 
-  function edit() {
-    setState({
-      showForm: !state.showForm,
-    });
-  }
+
 
   function viewP() {
     setSelect({
@@ -75,8 +68,6 @@ function GroupViewC(props) {
 
   return (
     <div>
-      {/* <div>Groups</div> */}
-      {/* Group Information  */}
 
       <div className="groupviewC-container3">
         <div className="groupviewC-container4">
