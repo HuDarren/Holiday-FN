@@ -42,10 +42,9 @@ function WishListFormB(props) {
 
     const file = await res.json();
     setImage(file.secure_url);
-      console.log(imagex)
+  
   }
 
-console.log(imagex)
 
   return (
     <div 
@@ -55,7 +54,10 @@ console.log(imagex)
       <div 
       className="wishlist-form-contentA"
       >
-           <div>Update WishList</div>
+           <div
+           className="wishlist-title"
+           
+           >Update WishList</div>
       <form
       className="wishlist-form-content"  onSubmit={handleSubmit}>
       <div>

@@ -363,3 +363,17 @@
 .groupviewC-label {
   font-weight: 600;
 }
+
+.groupview-title {
+  font-size: larger;
+  font-weight: 800;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.groupview-selections {
+  min-height: 200px;
+  text-align: -webkit-center;
+  font-size: medium;
+  font-weight: 800;
+}

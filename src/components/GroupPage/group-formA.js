@@ -52,7 +52,9 @@ function GroupFormA(props) {
 
   return (
     <div>
-      <div>Create new Group</div>
+      <div
+      className="groupview-title"
+      >Create new Group</div>
           <form className="groupviewC-content" onSubmit={handleSubmit}>
       <div>
         <label className="groupviewC-label">Import Photo</label>

@@ -311,3 +311,11 @@
   color: white;
   font-weight: 700;
 }
+
+
+.wishlist-title {
+      font-size: larger;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 5%;
+}

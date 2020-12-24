@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addWishListThunk } from "../../store/wishlist";
+// import {useHistory} from "react-router-dom"
 
 function WishListForm(props) {
   const [state, setState] = React.useState({
@@ -9,6 +10,10 @@ function WishListForm(props) {
   });
 
    const [imagex, setImage] = React.useState('');
+
+  //  let history = useHistory()
+
+
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -19,6 +24,7 @@ function WishListForm(props) {
       description: "",
       image:""
     });
+    // history.push(`/home`)
   }
 
   function handleChange(event) {
@@ -42,8 +48,10 @@ function WishListForm(props) {
 
     const file = await res.json();
     setImage(file.secure_url);
-      console.log(imagex)
+
   }
+
+
 
   return (
 
@@ -54,7 +62,10 @@ function WishListForm(props) {
       <div 
       className="wishlist-form-contentA"
       >
-           <div>Add New WishList</div>
+           <div
+           className="wishlist-title"
+           
+           >Add New WishList</div>
       <form
       className="wishlist-form-content"  onSubmit={handleSubmit}>
       <div>
