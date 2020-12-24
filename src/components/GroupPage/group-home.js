@@ -6,12 +6,12 @@ function GroupHome() {
   return (
     <div className="container">
       <div className="container1">
-        <div className="title">Groups</div>
+        <div className="title">Events</div>
    
         <div className="button-container">
           <div className="button">
             <Link className="button2" to="/groups">
-              Add Group
+              Add Event
             </Link>
           </div>
         </div>

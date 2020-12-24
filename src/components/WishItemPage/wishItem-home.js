@@ -10,21 +10,18 @@ import './wishItem-z.css';
 function WishItemHome(props) {
   React.useEffect(() => {
     props.fetchWishList(props.match.params.id);
-    const target = props.history.location.pathname.split('/')[
-      props.history.location.pathname.split('/').length - 1
-    ];
+    const target = props.match.params.id
+    ;
     props.fetchItem(target);
   }, []);
 
-  const target = props.history.location.pathname.split('/')[
-    props.history.location.pathname.split('/').length - 1
-  ];
+  const target = props.match.params.id
 
-  console.log(props.wishList.userId);
+ 
 
   return (
     <div>
-      <div className="home-containerT"> Your Items</div>
+      <div className="home-containerT"> Items</div>
       <div className="home-container1">
         <div className="home-container2">
           {props.item.length ? (
@@ -46,7 +43,7 @@ function WishItemHome(props) {
                     isLoggedIn={props.isLoggedIn}
                     userId={props.user.id}
                     wishId={wishId}
-                    wishListId={props.wishList[0].userId}
+                    // wishListId={props.wishList[0].userId}
                   />
                 );
               })}
