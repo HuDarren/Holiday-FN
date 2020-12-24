@@ -15,8 +15,8 @@ function LandingHome() {
           </div>
           <div className="landingI-content2">
             <button className="landingI-button1">
-              <Link className="landingI-button2" to={'/'}></Link>
-              <span className="landingI-buttontext">Sign up today </span>
+              <Link className="landingI-button2" to="/login"><span className="landingI-buttontext">Sign up today </span></Link>
+              
             </button>
           </div>
         </div>
@@ -114,7 +114,7 @@ function LandingHome() {
               }
             ></img>
             <div className="landing4-text1">Wow! This is Great!</div>
-            <div className="landing4-text2">Easy to create and share my lists with friends</div>
+            <div className="landing4-text2">Created a wishlist and shared it with friends. So easy a Cave-Woman can do it!</div>
             <div className="landing4-text3">-Nancy Naomi</div>
           </div>
         </div>
