@@ -8,7 +8,7 @@ function SpinnerView(props) {
   let selectedId = 0;
 
   function match() {
-    if (props.match && props.userId) {
+    if (props.match) {
       let userId = props.userId;
       let matchId = props.match[userId];
       let group = props.group.GroupFollow;
@@ -29,8 +29,6 @@ function SpinnerView(props) {
     <div>
       {props.match ? (
         <div className="groupviewC-Spview-container">
-          {/* <button onClick={match}>Pair</button>
-          <div>Your Match</div> */}
           <div className="friendviewb-container1">
             <div className="friendviewb-container2">
               <button className="groupviewC-button1">
@@ -55,7 +53,9 @@ function SpinnerView(props) {
           </div>
         </div>
       ) : (
-        <div>Check Back Soon</div>
+        <div
+        className= "groupview-selections"
+        >Check Back Soon, Require atleast 3 participants</div>
       )}
     </div>
   );
