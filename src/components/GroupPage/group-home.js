@@ -11,7 +11,7 @@ function GroupHome() {
         <div className="button-container">
           <div className="button">
             <Link className="button2" to="/groups">
-              Add Event
+              View Event
             </Link>
           </div>
         </div>

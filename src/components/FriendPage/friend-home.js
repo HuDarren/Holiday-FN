@@ -11,7 +11,7 @@ function FriendHome(props) {
         <div className="button-container">
           <div className="button">
             <Link className="button2" to="/friends">
-              Add Friends
+              View Friends
             </Link>
           </div>
         </div>

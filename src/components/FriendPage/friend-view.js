@@ -34,7 +34,7 @@ function FriendView(props) {
     });
   }
 
-  console.log(state);
+
 
   return (
     <div className="friendview-container1">
