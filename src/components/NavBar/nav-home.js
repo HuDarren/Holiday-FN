@@ -18,7 +18,10 @@ const NavHome = ({ handleClick, isLoggedIn }) => (
               Holiday
             </Link>
           </div>
-          <div className="nav-log">
+          <div
+          className="nav-log-container"
+          >
+              <div className="nav-log">
             <a className="nav-log2" href="#" onClick={handleClick}>
               Logout
             </a>
@@ -32,6 +35,8 @@ const NavHome = ({ handleClick, isLoggedIn }) => (
               /> */}
             </Link>
           </div>
+          </div>
+  
         </div>
       ) : (
         <div className="nav-container2">
@@ -40,7 +45,10 @@ const NavHome = ({ handleClick, isLoggedIn }) => (
               Holiday
             </Link>
           </div>
-            <div className="nav-login">
+          <div
+          className="nav-log-container"
+          >
+              <div className="nav-login">
               <Link className="nav-login2" to="/login">
                 Login
               </Link>
@@ -50,6 +58,8 @@ const NavHome = ({ handleClick, isLoggedIn }) => (
                 SignUp
               </Link>
             </div>
+          </div>
+
         </div>
       )}
     </nav>

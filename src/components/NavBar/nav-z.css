@@ -6,17 +6,17 @@
 
 .nav-container1 {
   display: flex;
-  justify-content: space-between;
 }
 
 .nav-container2 {
   display: flex;
   height: 80px;
   width: 100%;
+  justify-content: space-between;
 }
 
 .nav-title {
-  margin-right: 60%;
+  /* margin-right: 60%; */
   margin-left: 5%;
 }
 
@@ -28,6 +28,12 @@
   margin-top: 40%;
   font-size: larger;
   font-weight: 600;
+}
+
+.nav-log-container {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
 }
 
 .nav-log {
@@ -43,6 +49,7 @@
   color: white;
   margin-top: 40%;
   font-weight: 600;
+  font-size: larger;
 }
 
 .nav-profile {
@@ -68,6 +75,7 @@
   color: white;
   margin-top: 40%;
   font-weight: 600;
+  font-size: larger;
 }
 
 .nav-content {
@@ -89,6 +97,7 @@
   color: white;
   margin-top: 40%;
   font-weight: 600;
+  font-size: larger;
 }
 
 .nav-signup {
@@ -104,4 +113,5 @@
   color: white;
   margin-top: 40%;
   font-weight: 600;
+  font-size: larger;
 }
