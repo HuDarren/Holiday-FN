@@ -1,0 +1,70 @@
+.landingA-container {
+  background-color: #fdebd2;
+}
+
+.landingA-title {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.landingA-titleA {
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 32px;
+  line-height: 36px;
+  font-family: 'Graphik Webfont', -apple-system, BlinkMacSystemFont, 'Roboto',
+    'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  margin-top: 2%;
+}
+
+.landingA-titleB {
+  /* display: flex; */
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 20px;
+  line-height: 36px;
+  /* text-align: center; */
+  font-family: 'Graphik Webfont', -apple-system, BlinkMacSystemFont, 'Roboto',
+    'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.landingA-image {
+  margin-top: 5%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.landingA-text {
+  margin-top: 5%;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  overflow: hidden;
+  padding: 4rem 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.center {
+  text-align: center;
+  margin: auto;
+}
+
+/* Small Screens */
+@media (max-width: 560px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
