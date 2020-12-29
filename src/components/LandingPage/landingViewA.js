@@ -18,7 +18,7 @@ function landingViewA(){
         </div>
 
 
-    <div class="container grid center">
+    <div class="containerA gridA centerA">
       <div>
         <img alt="img" src={"https://res.cloudinary.com/dsi0jbonx/image/upload/v1609270728/pet_supplies_gebu5n.png"} className="landingA-image"></img>
         <div

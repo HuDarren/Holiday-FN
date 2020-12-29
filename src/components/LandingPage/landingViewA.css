@@ -20,11 +20,9 @@
 }
 
 .landingA-titleB {
-  /* display: flex; */
   padding: 1rem 1rem 1rem 1rem;
   font-size: 20px;
   line-height: 36px;
-  /* text-align: center; */
   font-family: 'Graphik Webfont', -apple-system, BlinkMacSystemFont, 'Roboto',
     'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
   font-weight: 700;
@@ -44,22 +42,30 @@
   font-weight: 500;
 }
 
-.container {
-  max-width: 960px;
+.containerA {
+  max-width: 90%;
   margin: auto;
   overflow: hidden;
   padding: 4rem 1rem;
 }
 
-.grid {
+.gridA {
+
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
 }
 
-.center {
+.centerA {
   text-align: center;
   margin: auto;
+}
+
+/* Small Screens */
+@media (max-width: 860px) {
+  .grid {
+  grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 /* Small Screens */
