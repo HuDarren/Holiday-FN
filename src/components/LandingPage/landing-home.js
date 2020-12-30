@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import MessageHome from '../Message/message-home';
+import LandingViewA from "./landingViewA"
+import LandingViewB from "./landingViewB"
+
 import './landing-z.css';
+import LandingViewC from './landingViewC';
 
 function LandingHome() {
   return (
@@ -21,6 +25,10 @@ function LandingHome() {
           </div>
         </div>
       </div>
+      <LandingViewA/>
+      <LandingViewB/>
+      <LandingViewC/>
+      
       <div className="landing-container1">
         <div
         className="landing1-contentA"
