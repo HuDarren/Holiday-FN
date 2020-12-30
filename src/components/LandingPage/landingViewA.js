@@ -19,39 +19,49 @@ function landingViewA(){
 
 
     <div class="containerA gridA centerA">
-      <div>
+      <div
+      className="landingA-content"
+      >
         <img alt="img" src={"https://res.cloudinary.com/dsi0jbonx/image/upload/v1609270728/pet_supplies_gebu5n.png"} className="landingA-image"></img>
         <div
         className="landingA-text"
         >Pet Supplies</div>
 
       </div>
-      <div>
+      <div
+         className="landingA-content"
+      >
          <img alt="img" src={"https://res.cloudinary.com/dsi0jbonx/image/upload/v1609270728/bedding_kmymjv.jpg"} className="landingA-image"></img>
         <div
          className="landingA-text"
         >Beddings</div>
 
       </div>
-      <div>
+      <div
+         className="landingA-content"
+      >
         <img alt="img" src={"https://res.cloudinary.com/dsi0jbonx/image/upload/v1609270728/clothes_ctnj98.jpg"} className="landingA-image"></img>
         <div
          className="landingA-text"
         >Clothes</div>
       </div>
-            <div>
+            <div
+               className="landingA-content"
+            >
         <img alt="img" src={"https://res.cloudinary.com/dsi0jbonx/image/upload/v1609270912/games_wqvt3z.jpg"} className="landingA-image"></img>
         <div
          className="landingA-text"
         >Games</div>
       </div>
-            <div>
+        <div
+        className="landingA-content">
         <img alt="img" src={"https://res.cloudinary.com/dsi0jbonx/image/upload/v1609270912/books_volleq.jpg"} className="landingA-image"></img>
         <div
          className="landingA-text"
         >Books</div>
       </div>
-            <div>
+              <div
+        className="landingA-content">
         <img alt="img" src={"https://res.cloudinary.com/dsi0jbonx/image/upload/v1609270728/decor_qwdjxf.jpg"} className="landingA-image"></img>
         <div
          className="landingA-text"
