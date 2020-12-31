@@ -24,8 +24,6 @@ function MessageHome() {
         console.log('FAILED...', err);
       }
     );
-    console.log('okay, this worked');
-    console.log(state);
     setstate({ name: '', email: '', message: '' });
   }
 
@@ -34,7 +32,7 @@ function MessageHome() {
       <div>
         <input
           className="message-input"
-          placeholder="Name"
+          placeholder="Enter Your Name"
           name="name"
           type="text"
           value={state.name}
@@ -44,7 +42,7 @@ function MessageHome() {
       <div>
         <input
           className="message-input"
-          placeholder="Email"
+          placeholder="Enter Your Email"
           name="email"
           type="text"
           value={state.email}
@@ -54,7 +52,7 @@ function MessageHome() {
       <div>
         <textarea
           className="message-detail"
-          placeholder="Message"
+          placeholder="Enter Your Message"
           name="message"
           type="text"
           rows="5"
