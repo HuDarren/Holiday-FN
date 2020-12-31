@@ -1,0 +1,39 @@
+.landingD-container {
+  background: #fdebd2;
+}
+
+.landingD-container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.landingD-content {
+  /* width: 300px;
+  height: 300px; */
+  text-align: center;
+}
+.landingD-titleA {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: inherit;
+}
+
+.landingD-title {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 25px;
+  font-weight: 250;
+  font-family: inherit;
+}
+
+.landingD-detail {
+  margin-top: 0.5rem;
+  font-size: 15px;
+  font-weight: 250;
+  font-family: inherit;
+}
