@@ -13,20 +13,18 @@ function landingViewA(){
             <div
             className="landingA-titleB"
             
-            >  Grant a wish today </div>
+            >  Popular Wishes </div>
            
         </div>
-
 
     <div class="containerA gridA centerA">
       <div
       className="landingA-content"
       >
-        <img alt="img" src={"https://res.cloudinary.com/dsi0jbonx/image/upload/v1609270728/pet_supplies_gebu5n.png"} className="landingA-image"></img>
+        <img alt="img" src={"https://res.cloudinary.com/dsi0jbonx/image/upload/v1609452416/clean_z0xiif.jpg"} className="landingA-image"></img>
         <div
         className="landingA-text"
-        >Pet Supplies</div>
-
+        >Appliances</div>
       </div>
       <div
          className="landingA-content"

@@ -31,12 +31,12 @@
 }
 
 .landingA-content {
-    width: 15%;
-    height: 20%;
-    min-width: 150px;
-    min-height: 200px;
-    max-width: 180px;
-    padding: 1rem;
+  width: 15%;
+  height: 20%;
+  min-width: 150px;
+  min-height: 200px;
+  max-width: 180px;
+  padding: 1rem;
 }
 
 .landingA-image {
@@ -58,14 +58,14 @@
   max-width: 90%;
   margin: auto;
   overflow: hidden;
-  padding: 4rem 1rem;
+  padding: 1rem 1rem;
 }
 
 .gridA {
- display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .centerA {
