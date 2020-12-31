@@ -28,8 +28,8 @@
 
 .landingB-image {
   margin-top: 5%;
-  width: 230px;
-  height: 200px;
+  width: 180px;
+  height: 160px;
   border-radius: 6px;
 }
 
@@ -46,7 +46,7 @@
 .containerB {
   margin: auto;
   overflow: hidden;
-  padding: 4rem 1rem;
+  padding: 1rem 1rem;
 }
 
 .gridB {
