@@ -8,7 +8,7 @@
     "@testing-library/user-event": "^12.2.2",
     "axios": "^0.21.0",
     "emailjs-com": "^2.6.4",
-    "history": "4.1.0",
+    "history": "^4.7.2",
     "nodemon": "^2.0.6",
     "react": "^17.0.1",
     "react-beautiful-dnd": "^13.0.0",
