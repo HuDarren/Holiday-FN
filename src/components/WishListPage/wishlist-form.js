@@ -2,6 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { addWishListThunk } from "../../store/wishlist";
 // import {useHistory} from "react-router-dom"
+import history from "../../history"
 
 function WishListForm(props) {
   const [state, setState] = React.useState({
@@ -10,9 +11,6 @@ function WishListForm(props) {
   });
 
    const [imagex, setImage] = React.useState('');
-
-  //  let history = useHistory()
-
 
 
   function handleSubmit(event) {
@@ -24,7 +22,7 @@ function WishListForm(props) {
       description: "",
       image:""
     });
-    // history.push(`/home`)
+    history.push(`/wishListView/${props.user.id}`)
   }
 
   function handleChange(event) {
