@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { addGroupThunk } from '../../store';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import history from "../../history"
 
 function GroupFormA(props) {
   const [state, setState] = React.useState({
@@ -21,8 +22,8 @@ function GroupFormA(props) {
       name: '',
       description: '',
     });
+    history.push(`/groups/${props.user.id}`)
   }
-
 
 
   function handleChange(event) {
