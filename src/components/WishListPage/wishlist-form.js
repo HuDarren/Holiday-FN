@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addWishListThunk } from "../../store/wishlist";
-// import {useHistory} from "react-router-dom"
 import history from "../../history"
 
 function WishListForm(props) {
@@ -15,7 +14,7 @@ function WishListForm(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-      let info = { ...state,  image: imagex};
+    let info = { ...state,  image: imagex};
     props.addWishList(props.user.id, info);
     setState({
       name: "",
@@ -29,7 +28,7 @@ function WishListForm(props) {
     setState({ ...state, [event.target.name]: event.target.value });
   }
 
-      async function uploadImage(e) {
+    async function uploadImage(e) {
     const files = e.target.files;
     const data = new FormData();
     data.append('file', files[0]);
