@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { updateItemThunk } from '../../store';
+import history from "../../history"
 
 function WishItemFormB(props) {
   const [state, setState] = React.useState({
@@ -21,8 +22,10 @@ function WishItemFormB(props) {
       description: '',
       Image: ""
     });
+    history.push(`/wishList/${target[2]}`)
   }
 
+  
   function handleChange(event) {
     setState({ ...state, [event.target.name]: event.target.value });
   }
