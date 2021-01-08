@@ -16,10 +16,10 @@ import {
   WishItemFormB,
   FriendView,
   UserProfile,
-  // GroupHome,
   GroupView,
   GroupFormA,
   GroupViewC,
+  GShopHome
 } from './components/index';
 import { me } from './store';
 
@@ -37,7 +37,8 @@ class Routes extends Component {
         <Route path="/signup" component={Signup} />
         <Route path="/profileform" component={withRouter(UserProfileForm)} />
         <Route exact path="/wishListView/:id" component={WishListView} />
-        {/* <Route path="/group" component={GroupHome} /> */}
+        <Route exact path="/games" component={GShopHome}/>
+
 
         {isLoggedIn && (
           <Switch>
