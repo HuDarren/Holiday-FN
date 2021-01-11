@@ -1,4 +1,6 @@
 import React from "react"
+import GameKey from "../../secrets"
+import GShopSearchA from "./gshop-searchA"
 
 function GShopSearch() {
 
@@ -8,10 +10,11 @@ function GShopSearch() {
     })
 
     async function getGame() {
-        let response = await fetch("")
-        let data = response.json()
+        let response = await fetch(`https://api.boardgameatlas.com/api/search?name=${state.search}&client_id=${GameKey}&limit=10`)
+        let data = await response.json()
         setState({
-            info: data 
+            info: data ,
+            search: ""
         })
     }
 
@@ -22,6 +25,7 @@ function GShopSearch() {
     function handleSubmit(event){
         event.preventDefault()
         getGame()
+        console.log(state)
     }
 
     return <div>
@@ -41,6 +45,21 @@ function GShopSearch() {
             type="submit"
             >Search</button>
         </form>
+        <div>
+            {state.info ? (
+        <div>{state.info.games.map((item) => {
+            return (
+               <GShopSearchA
+               key = {item.id}
+               name ={item.name}
+               price ={item.price}
+               image ={item.medium}
+               rulesUrl={item.rulesUrl}
+               officialUrl={item.officialUrl}
+               />
+            )
+        })}</div> ): null}
+        </div>
     </div>
 }
 
