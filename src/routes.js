@@ -57,6 +57,7 @@ class Routes extends Component {
             <Route exact path="/groups" component={GroupView} />
             <Route exact path="/groupForm/" component={GroupFormA} />
             <Route exact path="/group/:id" component={GroupViewC} />
+            <Route exact path="/wishList/:id/games" component={GShopHome}/>
           </Switch>
         )}
         <Route component={LandingHome} />
