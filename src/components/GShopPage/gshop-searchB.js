@@ -1,40 +1,29 @@
 import React from "react"
+import {connect} from "react-redux"
 import GameKey from "../../secrets"
+import {addItemThunk} from "../../store"
 
-
-function GShopSearchB () {
-
+function GShopSearchB (props) {
     const [state,setState] = React.useState ({
-        name: "" ,
-        description: "",
-        photo : "",
-        info: ""
+        data: ""
     })
 
     React.useEffect(()=>{
-     getInfo()
+     getData()
     },[])
     
-    async function getInfo() {
-        let response = await fetch(`https://api.boardgameatlas.com/api/search?client_id=${GameKey}&order_by=popularity&limit=10`)
+    async function getData() {
+        let response = await fetch(`https://api.boardgameatlas.com/api/search?client_id=${GameKey}&order_by=popularity&limit=5`)
         let data = await response.json()
         setState({
-            info: data 
+            data: data 
         })
     }
 
-    function clickWish(){
-
-    }
-
-
-
-console.log(state)
-
     return <div>
         <div>Popular Games</div>
-        <div>{ state.info ? 
-        <div>{state.info.games.map((item)=>{
+        <div>{ state.data ? 
+        <div>{state.data.games.map((item)=>{
             return (
                 <div>
                 <img alt="img" src={item.images.medium}></img>
@@ -42,7 +31,13 @@ console.log(state)
                 <div>${item.price}</div>
                 <div>
                 <button
-                onClick={clickWish}
+                onClick={
+                    function(){
+                        let info = { name : item.name, Image: item.images.medium,
+                        }
+                        props.addItem(props.wishListId,info)
+                    }
+                }
                 >Wish</button>
                 <button
                   type="button"
@@ -60,4 +55,13 @@ console.log(state)
 }
 
 
-export default GShopSearchB
+const mapState = (state)=>({
+    user:state.user
+})
+
+const mapDispatch =(dispatch)=>({
+    addItem: (wishListId,info)=> dispatch(addItemThunk(wishListId,info))
+})
+
+
+export default connect(mapState,mapDispatch)(GShopSearchB)
