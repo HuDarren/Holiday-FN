@@ -2,6 +2,7 @@ import React from "react"
 import {connect} from "react-redux"
 import GameKey from "../../secrets"
 import {addItemThunk} from "../../store"
+import "./gshop-searchB.css"
 
 function GShopSearchB (props) {
     const [state,setState] = React.useState ({
@@ -20,17 +21,56 @@ function GShopSearchB (props) {
         })
     }
 
-    return <div>
-        <div>Popular Games</div>
-        <div>{ state.data ? 
-        <div>{state.data.games.map((item)=>{
+    return <div
+    className="gshopB-container"
+    >
+        <div
+        className="gshopB-title"
+        >
+            <div
+            className="gshopB-titleB"
+            >Popular Games</div>
+        </div>
+
+        <div
+        className="gshopB-content-container1"
+        >{ state.data ? 
+        <div
+        className="gshopB-content-container2"
+        >{state.data.games.map((item)=>{
             return (
-                <div>
-                <img alt="img" src={item.images.medium}></img>
-                <div>{item.name}</div>
-                <div>${item.price}</div>
-                <div>
+                <div 
+                className="gshopB-content-container3"
+                >
+                <div
+                className="gshopB-content-container4"
+                >
+                <div
+                className="gshopB-image-container"
+                >
+                <img alt="img" className="gshopB-image" src={item.images.medium}></img>
+                </div>
+                <div
+                className="gshopB-text-container"
+                >
+                <div
+                className="gshopB-text"
+                >{item.name}</div>
+                </div>
+                <div
+                  className="gshopB-text-container"
+                >
+                <div
+                className="gshopB-text"
+                >${item.price}</div>
+                </div>
+                <div 
+                className="gshopB-button-container"
+                >
+                    <div 
+                    className="gshopB-button-containerA">
                 <button
+                className="gshopB-button"
                 onClick={
                     function(){
                         let info = { name : item.name, Image: item.images.medium,
@@ -38,14 +78,26 @@ function GShopSearchB (props) {
                         props.addItem(props.wishListId,info)
                     }
                 }
-                >Wish</button>
+                >
+                    <span
+                    className="gshopB-button-text"
+                    >Wish</span>
+                    </button>
+                    </div>
+                             <div 
+                    className="gshopB-button-containerA">
                 <button
+                className="gshopB-button"
                   type="button"
                      onClick={(e) => {
                      e.preventDefault();
                     window.location.href= item.official_url;
                      }}
-                >Buy</button>
+                >      <span
+                    className="gshopB-button-text"
+                    >View</span></button>
+                    </div>
+                </div>
                 </div>
                 </div>
             )
