@@ -1,0 +1,145 @@
+.gshopA-container {
+  /* background-color: #fdebd2; */
+}
+
+.gshopA-title {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.gshopA-titleA {
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 32px;
+  line-height: 36px;
+  font-family: 'Graphik Webfont', -apple-system, BlinkMacSystemFont, 'Roboto',
+    'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  margin-top: 2%;
+}
+
+.gshopA-titleB {
+  padding: 1rem 1rem 1rem 1rem;
+  font-size: 20px;
+  line-height: 36px;
+  font-family: 'Graphik Webfont', -apple-system, BlinkMacSystemFont, 'Roboto',
+    'Droid Sans', 'Segoe UI', 'Helvetica', Arial, sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.gshopA-content-container1 {
+  display: flex;
+  min-width: 100%;
+  flex-grow: 1;
+  position: relative;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin-top: -1px;
+}
+
+.gshopA-content-container2 {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+.gshopA-content-container3 {
+  padding: 1rem;
+  @media (min-width: 40rem) {
+    width: 50%;
+  }
+  @media (min-width: 56rem) {
+    width: 33.3333%;
+  }
+}
+
+.gshopA-content-container4 {
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 200px;
+  height: 250px;
+  margin-top: 10%;
+  border-radius: 5%;
+}
+
+.gshopA-image-container {
+  display: flex;
+  object-fit: cover;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 50%;
+  margin-top: 10%;
+  margin-left: 20%;
+  overflow: hidden;
+  position: relative;
+  transition: filter 0.5s cubic-bezier(0.43, 0.41, 0.22, 0.91);
+  @media (min-width: 40rem) {
+    &::before {
+      padding-top: 66.6%;
+    }
+  }
+}
+
+.gshopA-image {
+  max-width: 100%;
+  max-height: 100%;
+  vertical-align: top;
+  height: auto;
+}
+
+.gshop-text-container {
+}
+
+.gshopA-text {
+  margin-top: 5%;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.gshopA-button-container {
+  display: flex;
+  margin-top: 8%;
+  justify-content: space-evenly;
+}
+
+.gshopA-button-containerA {
+}
+
+.gshopA-button {
+  text-decoration: none;
+  color: inherit;
+  border-color: transparent;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  background: rgb(218, 102, 102);
+  border-radius: 5%;
+}
+
+.gshopA-button:hover {
+  background-color: rgb(134, 52, 22);
+}
+
+.gshopA-button:focus {
+  background-color: rgb(134, 52, 22);
+}
+
+.gshopA-button-text {
+  font: bold;
+  font-size: 20px;
+  font-family: emoji;
+  color: white;
+}

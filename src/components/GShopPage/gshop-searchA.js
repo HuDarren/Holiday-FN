@@ -1,30 +1,82 @@
 import React from "react"
 import {connect} from "react-redux"
 import {addItemThunk} from "../../store"
+import "./gshop-searchA.css"
 
 
 function GShopSearchA(props) {
-    return <div>
-        <img alt="img" src={props.image}></img>
-        <div>{props.name}</div>
-        <div>{props.price}</div>
-        <div>
-        <button
-        onClick={
-        function(){
-        let info = { name : props.name, Image: props.image }
-        props.addItem(props.wishListId,info)}
-                }
-                >Wish</button>
+
+    return (
+    <div
+     className="gshopA-container"
+    >
+    <div>
+    <div>
+    <div
+                
+                className="gshopA-content-container3"
+                >
+                <div
+                className="gshopA-content-container4"
+                >
+                <div
+                className="gshopA-image-container"
+                >
+                <img alt="img" className="gshopA-image" src={props.image}></img>
+                </div>
+                <div
+                className="gshopA-text-container"
+                >
+                <div
+                className="gshopA-text"
+                >{props.name}</div>
+                </div>
+                <div
+                  className="gshopA-text-container"
+                >
+                <div
+                className="gshopA-text"
+                >${props.price}</div>
+                </div>
+                <div 
+                className="gshopA-button-container"
+                >
+                    <div 
+                    className="gshopA-button-containerA">
                 <button
+                className="gshopA-button"
+                onClick={
+                    function(){
+                        let info = { name : props.name, Image: props.image }
+                        props.addItem(props.wishListId,info)
+                    }
+                }
+                >
+                    <span
+                    className="gshopA-button-text"
+                    >Wish</span>
+                    </button>
+                    </div>
+                             <div 
+                    className="gshopA-button-containerA">
+                <button
+                className="gshopA-button"
                   type="button"
                      onClick={(e) => {
                      e.preventDefault();
-                    window.location.href= props.official_url;
+                    window.location.href= props.officialUrl;
                      }}
-         >Buy</button>
-        </div>
+                >      <span
+                    className="gshopA-button-text"
+                    >View</span></button>
+                    </div>
+                </div>
+                </div>
     </div>
+    </div>
+    </div>
+    </div>
+    )
 }
 
 const mapState = (state)=>({
