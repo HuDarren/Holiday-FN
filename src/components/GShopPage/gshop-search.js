@@ -1,9 +1,9 @@
 import React from "react"
 import GameKey from "../../secrets"
 import GShopSearchA from "./gshop-searchA"
+import "./gshop-z.css"
 
 function GShopSearch() {
-
     const [state,setState] = React.useState({
         search: "",
         info: ""
@@ -25,26 +25,39 @@ function GShopSearch() {
     function handleSubmit(event){
         event.preventDefault()
         getGame()
-        console.log(state)
     }
 
     return <div>
-        <div>Games</div>
+        <div
+        className="gshop-container"
+        >
+        <div
+        className="gshop-title"
+        >Add To WishList</div>
+        <div
+        className="gshop-searchbar"
+        >
         <form
+        className="gshop-form"
+
         onSubmit={handleSubmit}
         >
             <input
+            className="gshop-form-input"
             name ="search"
             type="text"
             value={state.search}
             onChange={handleChange}
-            placeholder="Search"
+            placeholder=""
             >
             </input>
             <button
+            className="gshop-button"
             type="submit"
             >Search</button>
         </form>
+        </div>
+        </div>
         <div>
             {state.info ? (
         <div>{state.info.games.map((item) => {
@@ -53,7 +66,7 @@ function GShopSearch() {
                key = {item.id}
                name ={item.name}
                price ={item.price}
-               image ={item.medium}
+               image ={item.images.medium}
                rulesUrl={item.rulesUrl}
                officialUrl={item.officialUrl}
                />
