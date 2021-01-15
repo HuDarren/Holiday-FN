@@ -1,0 +1,53 @@
+.gshop-container {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+    background: rgb(236, 225, 225);
+}
+
+.gshop-title {
+     font-size: 25px;
+    color: #000;
+    font-weight: 700;
+    margin-top: 5%;
+    margin-left: 4%;
+}
+
+.gshop-searchbar {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.gshop-form {
+  display: flex;
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.gshop-form-input {
+  width: 100%;
+  border: 3px solid #00b4cc;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: black
+}
+
+.gshop-button {
+  width: auto;
+  height: 36px;
+  border: 1px solid #00b4cc;
+  background: #00b4cc;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
