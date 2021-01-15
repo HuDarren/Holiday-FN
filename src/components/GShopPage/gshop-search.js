@@ -1,12 +1,14 @@
 import React from "react"
 import GameKey from "../../secrets"
 import GShopSearchA from "./gshop-searchA"
+import GShopSearchB from "./gshop-searchB"
+import GShopSearchC from "./gshop-searchC"
 import "./gshop-z.css"
 
-function GShopSearch() {
+function GShopSearch(props) {
     const [state,setState] = React.useState({
         search: "",
-        info: ""
+        info: "",
     })
 
     async function getGame() {
@@ -58,9 +60,13 @@ function GShopSearch() {
         </form>
         </div>
         </div>
-        <div>
+        <div
+           className="gshopA-content-container1"
+        >
             {state.info ? (
-        <div>{state.info.games.map((item) => {
+        <div
+        className="gshopA-content-container2"
+        >{state.info.games.map((item) => {
             return (
                <GShopSearchA
                key = {item.id}
@@ -68,10 +74,20 @@ function GShopSearch() {
                price ={item.price}
                image ={item.images.medium}
                rulesUrl={item.rulesUrl}
-               officialUrl={item.officialUrl}
+               officialUrl={item.official_url}
+               wishListId={props.wishListId}
                />
             )
-        })}</div> ): null}
+        })}</div> ): 
+        <div>
+        <GShopSearchB
+        wishListId={props.wishListId}
+        />
+        <GShopSearchC
+        wishListId={props.wishListId}
+        />
+        </div>
+        }
         </div>
     </div>
 }
