@@ -6,36 +6,65 @@ function UserProfileForm(props) {
   const [state, setState] = useState({
     name: '',
     email: '',
-    password: '',
   });
+
+  // const [imagex, setImage] = React.useState('');
 
   React.useEffect(() => {
     setState(props.user);
   }, []);
 
-  // const { updateUser } = props;
-
-  // console.log(props.edit);
 
   function handleSubmit(event) {
     event.preventDefault();
     const { user } = props;
+    // let info = {...state, profileImage: imagex}
     props.updateUser(user.id, state);
     props.edit();
-    // setState({
-    //   name: "",
-    //   email: "",
-    //   password: "",
-    // });
   }
 
   function handleChange(event) {
     setState({ ...state, [event.target.name]: event.target.value });
   }
 
+  //   async function uploadImage(e) {
+  //   const files = e.target.files;
+  //   const data = new FormData();
+  //   data.append('file', files[0]);
+  //   data.append('upload_preset', 'uploadx');
+  
+
+  //   const res = await fetch(
+  //     'https://api.cloudinary.com/v1_1/dsi0jbonx/image/upload',
+  //     {
+  //       method: 'Post',
+  //       body: data,
+  //     }
+  //   );
+
+  //   const file = await res.json();
+  //   setImage(file.secure_url);
+
+  // }
+
   return (
     <div>
+       <div className="userview-container2">
+          <img
+            className="userview-image"
+            alt="text"
+            src={props.user.profileImage}
+          ></img>
+        </div>
       <form className="profileview-content" onSubmit={handleSubmit}>
+        {/* <div>
+          <input
+         className="groupviewC-name-input"
+         name="image"
+         type="file"
+         onChange={uploadImage}
+          ></input>
+        </div> */}
         <div>
           {/* <label>Name</label> */}
           <input
@@ -47,16 +76,6 @@ function UserProfileForm(props) {
             onChange={handleChange}
           ></input>
         </div>
-        {/* <div>
-          <label>Username</label>
-          <input
-            name="username"
-            type="text"
-            value={state.username}
-            placeholder="Change Username"
-            onChange={handleChange}
-          ></input>
-        </div> */}
         <div>
           {/* <label>Email</label> */}
           <input
@@ -68,16 +87,6 @@ function UserProfileForm(props) {
             onChange={handleChange}
           ></input>
         </div>
-        {/* <div>
-          <label>Password</label>
-          <input
-            name="password"
-            type="password"
-            value={state.password}
-            placeholder="Change Email"
-            onChange={handleChange}
-          ></input>
-        </div> */}
         <div className="profile-button-container">
           <button className="profile-button" type="submit">
             Submit

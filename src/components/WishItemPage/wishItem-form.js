@@ -9,7 +9,7 @@ function WishItemForm(props) {
     description: '',
   });
 
-    const [imagex, setImage] = React.useState('');
+  const [imagex, setImage] = React.useState('');
 
   function handleSubmit(event) {
     event.preventDefault();

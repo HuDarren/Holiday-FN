@@ -16,15 +16,15 @@ function UserView(props) {
   return (
     <div className="userview-container1">
       <div>
-        <div className="userview-container2">
+        {state.showForm ? (
+          <div className="userview-content">
+          <div className="userview-container2">
           <img
             className="userview-image"
             alt="text"
             src={props.user.profileImage}
           ></img>
         </div>
-        {state.showForm ? (
-          <div className="userview-content">
             <div className="userview-name">{props.user.name}</div>
             <div className="userview-email">{props.user.email}</div>
             <button className="userview-button">

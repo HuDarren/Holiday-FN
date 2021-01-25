@@ -8,9 +8,7 @@ import './nav-z.css';
 
 const NavHome = ({ handleClick, isLoggedIn }) => (
   <div className="nav-container">
-    <nav 
-    className="nav-container1"
-    >
+    <nav className="nav-container1">
       {isLoggedIn ? (
         <div className="nav-container2">
           <div className="nav-title">
@@ -18,25 +16,23 @@ const NavHome = ({ handleClick, isLoggedIn }) => (
               Holiday
             </Link>
           </div>
-          <div
-          className="nav-log-container"
-          >
-              <div className="nav-log">
-            <a className="nav-log2" href="#" onClick={handleClick}>
-              Logout
-            </a>
-          </div>
-          <div className="nav-profile">
-            <Link className="nav-profile3" to="/profile"> Profile
-              {/* <img
+          <div className="nav-log-container">
+            <div className="nav-log">
+              <a className="nav-log2" href="#" onClick={handleClick}>
+                Logout
+              </a>
+            </div>
+            <div className="nav-profile">
+              <Link className="nav-profile3" to="/profile">
+                Profile
+                {/* <img
                 className="nav-profile2"
                 alt="img"
                 src="https://res.cloudinary.com/dsi0jbonx/image/upload/v1607114436/snowman_mtdwl8.png"
               /> */}
-            </Link>
+              </Link>
+            </div>
           </div>
-          </div>
-  
         </div>
       ) : (
         <div className="nav-container2">
@@ -45,10 +41,8 @@ const NavHome = ({ handleClick, isLoggedIn }) => (
               Holiday
             </Link>
           </div>
-          <div
-          className="nav-log-container"
-          >
-              <div className="nav-login">
+          <div className="nav-log-container">
+            <div className="nav-login">
               <Link className="nav-login2" to="/login">
                 Login
               </Link>
@@ -59,11 +53,9 @@ const NavHome = ({ handleClick, isLoggedIn }) => (
               </Link>
             </div>
           </div>
-
         </div>
       )}
     </nav>
-   
   </div>
 );
 

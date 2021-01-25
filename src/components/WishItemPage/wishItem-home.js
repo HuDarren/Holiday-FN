@@ -10,14 +10,11 @@ import './wishItem-z.css';
 function WishItemHome(props) {
   React.useEffect(() => {
     props.fetchWishList(props.match.params.id);
-    const target = props.match.params.id
-    ;
+    const target = props.match.params.id;
     props.fetchItem(target);
   }, []);
 
-  const target = props.match.params.id
-
- 
+  const target = props.match.params.id;
 
   return (
     <div>
@@ -52,18 +49,27 @@ function WishItemHome(props) {
         </div>
       </div>
 
-      <div className="home-button3">
-        {props.isLoggedIn && props.wishList.length ? (
+      <div className="itemHome-button-container">
+        <div className="home-button3">
           <div>
-            {props.user.id === props.wishList[0].userId ? (
-              <button className="home-button1">
-                <Link className="home-button2" to={`/itemForm/${target}`}>
-                  ADD
-                </Link>
-              </button>
-            ) : null}
+            {/* {props.user.id === props.wishList[0].userId ? ( */}
+            <button className="home-button1">
+              <Link className="home-button2" to={`/itemForm/${target}`}>
+                ADD
+              </Link>
+            </button>
+            {/* ) : null} */}
           </div>
-        ) : null}
+        </div>
+        <div className="home-button3">
+          <div>
+            <button className="home-button1">
+              <Link className="home-button2" to={`/wishList/${target}/games`}>
+                SHOP
+              </Link>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
