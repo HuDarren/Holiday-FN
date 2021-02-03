@@ -33,8 +33,7 @@ function WishListView(props) {
         target={props.match.params.id}
       />
       <div className="wishlist-title">
-        {' '}
-        {props.friend.follow.name} 's Wishlists{' '}
+        {props.friend.follow.name} 's Wishlists
       </div>
       <div className="wishview-container">
         <div className="wishview2-container">

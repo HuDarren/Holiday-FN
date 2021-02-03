@@ -11,16 +11,11 @@ function WishListForm(props) {
 
   const [imagex, setImage] = React.useState('');
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
     let info = { ...state, image: imagex };
-    props.addWishList(props.user.id, info);
-    setState({
-      name: '',
-      description: '',
-      image: '',
-    });
-    history.push(`/wishListView/${props.user.id}`);
+    await props.addWishList(props.user.id, info);
+    await history.push(`/wishListView/${props.user.id}`);
   }
 
   function handleChange(event) {
