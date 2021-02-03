@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function SpinnerView(props) {
-
-
   let matchName = '';
   let selectedId = 0;
 
@@ -23,7 +21,6 @@ function SpinnerView(props) {
   }
 
   match();
-
 
   return (
     <div>
@@ -53,9 +50,9 @@ function SpinnerView(props) {
           </div>
         </div>
       ) : (
-        <div
-        className= "groupview-selections"
-        >Check Back Soon, Require atleast 3 participants</div>
+        <div className="groupview-selections">
+          Check Back Soon, Require atleast 3 participants
+        </div>
       )}
     </div>
   );

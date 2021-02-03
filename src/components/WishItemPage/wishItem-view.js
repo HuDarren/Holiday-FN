@@ -11,8 +11,6 @@ function WishItemView(props) {
     refreshPage();
   }
 
-
-
   return (
     <div className="view-container1">
       <div className="view-container2">
@@ -35,7 +33,6 @@ function WishItemView(props) {
                     <button className="view-button">
                       <span className="view-content3">
                         <Link
-                        
                           className="view-content3"
                           to={`/itemFormB/${props.wishId}/${props.number}`}
                         >

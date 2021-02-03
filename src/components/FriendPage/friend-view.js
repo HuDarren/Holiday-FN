@@ -34,8 +34,6 @@ function FriendView(props) {
     });
   }
 
-
-
   return (
     <div className="friendview-container1">
       <div>

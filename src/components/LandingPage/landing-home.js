@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LandingViewA from "./landingViewA"
-import LandingViewB from "./landingViewB"
+import LandingViewA from './landingViewA';
+import LandingViewB from './landingViewB';
 import LandingViewC from './landingViewC';
 import LandingViewD from './landingViewD';
 import './landing-z.css';
@@ -18,16 +18,17 @@ function LandingHome() {
           </div>
           <div className="landingI-content2">
             <button className="landingI-button1">
-              <Link className="landingI-button2" to="/login"><span className="landingI-buttontext">Sign up today </span></Link>
-              
+              <Link className="landingI-button2" to="/login">
+                <span className="landingI-buttontext">Sign up today </span>
+              </Link>
             </button>
           </div>
         </div>
       </div>
-      <LandingViewA/>
-      <LandingViewB/>
-      <LandingViewC/>
-      <LandingViewD/>
+      <LandingViewA />
+      <LandingViewB />
+      <LandingViewC />
+      <LandingViewD />
     </div>
   );
 }

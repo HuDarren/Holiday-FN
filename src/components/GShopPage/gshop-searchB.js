@@ -23,8 +23,6 @@ function GShopSearchB(props) {
     });
   }
 
-  console.log(state);
-
   return (
     <div className="gshopB-container">
       <div className="gshopB-title">

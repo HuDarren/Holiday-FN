@@ -21,7 +21,7 @@ function WishListView(props) {
     // props.fetchProfile(props.match.params.id)
   }, [id]);
 
-  console.log(props)
+  console.log(props);
 
   return (
     <div>
@@ -32,9 +32,10 @@ function WishListView(props) {
         friend={props.friend}
         target={props.match.params.id}
       />
-      <div
-      className="wishlist-title"
-      > {props.friend.follow.name} 's Wishlists </div>
+      <div className="wishlist-title">
+        {' '}
+        {props.friend.follow.name} 's Wishlists{' '}
+      </div>
       <div className="wishview-container">
         <div className="wishview2-container">
           {props.wishList.length ? (
@@ -83,7 +84,7 @@ const mapState = (state) => ({
   user: state.user,
   isLoggedIn: !!state.user.id,
   friend: state.friend,
-  profile:state.profile
+  profile: state.profile,
 });
 
 const mapDispatch = (dispatch) => ({

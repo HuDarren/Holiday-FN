@@ -7,23 +7,21 @@ function SpinnerHome(props) {
     window.location.reload(false);
   }
 
-  let selections = "";
+  let selections = '';
 
   function pair() {
-    if (props.groups && props.groups.length >2) {
-      selections={}
+    if (props.groups && props.groups.length > 2) {
+      selections = {};
       let pool = [];
       for (let i = 0; i < props.groups.length; i++) {
         pool.push(props.groups[i].id);
       }
       pool.sort(() => Math.random() - 0.5);
-        pool.push(pool[0]);
+      pool.push(pool[0]);
       for (let i = 0; i < pool.length - 1; i++) {
-    
         selections[pool[i]] = pool[i + 1];
       }
     }
-
   }
 
   function handleSubmit(event) {
