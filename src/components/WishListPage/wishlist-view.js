@@ -9,7 +9,7 @@ import {
   fetchWishList,
   removeSingleWishListThunk,
   fetchFollow,
-  // fetchProfile
+  fetchAllProfile,
 } from '../../store';
 
 function WishListView(props) {
@@ -18,10 +18,20 @@ function WishListView(props) {
   React.useEffect(() => {
     props.fetchWishList(props.match.params.id);
     props.fetchFollow(id);
-    // props.fetchProfile(props.match.params.id)
+    props.fetchAllProfile();
   }, [id]);
 
   console.log(props);
+
+  function getName() {
+    let name = '';
+    for (let i = 0; i < props.profile.length; i++) {
+      if (props.profile[i].id === Number(props.match.params.id)) {
+        name = props.profile[i].name;
+      }
+    }
+    return name;
+  }
 
   return (
     <div>
@@ -32,9 +42,7 @@ function WishListView(props) {
         friend={props.friend}
         target={props.match.params.id}
       />
-      <div className="wishlist-title">
-        {props.friend.follow.name} 's Wishlists
-      </div>
+      <div className="wishlist-title">{getName()} 's Wishlists</div>
       <div className="wishview-container">
         <div className="wishview2-container">
           {props.wishList.length ? (
@@ -94,7 +102,7 @@ const mapDispatch = (dispatch) => ({
   unSubToFriend: (friendId, userId) =>
     dispatch(unSubToFriend(friendId, userId)),
   fetchFollow: (id) => dispatch(fetchFollow(id)),
-  // fetchProfile: (userId)=>dispatch(fetchProfile(userId))
+  fetchAllProfile: () => dispatch(fetchAllProfile()),
 });
 
 export default connect(mapState, mapDispatch)(WishListView);
