@@ -257,7 +257,13 @@
 .groupviewC-container4 {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
+}
+
+.groupviewC-container5 {
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
 }
 
 .groupviewC-org-container {

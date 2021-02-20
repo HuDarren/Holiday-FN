@@ -86,7 +86,7 @@
   height: 20px;
   border-radius: 5px 0 0 5px;
   outline: none;
-  color: black
+  color: black;
 }
 
 .search-button {
@@ -104,6 +104,7 @@
 .friendviewb-container1 {
   display: flex;
   justify-content: flex-start;
+  margin-left: 5%;
 }
 
 .friendviewb-button1 {
@@ -134,7 +135,7 @@
 
 .friendviewb-container3 {
   margin-left: 5%;
-  margin-top: 2%;
+  display: flex;
 }
 
 .friendviewb-button2 {
